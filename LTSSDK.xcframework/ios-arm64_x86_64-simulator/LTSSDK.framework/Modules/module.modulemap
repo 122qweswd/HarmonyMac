@@ -1,0 +1,6 @@
+framework module LTSSDK {
+  umbrella header "LTSSDK.h"
+
+  export *
+  module * { export * }
+}

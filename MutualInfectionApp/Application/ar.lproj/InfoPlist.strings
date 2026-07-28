@@ -1,0 +1,21 @@
+/* 
+  InfoPlist.strings
+  MutualInfection
+
+  Created by delegate on 2025/9/8.
+  
+*/
+
+"CFBundleName" = "هونر مينغ شينغ هوانغ (HarmonyOS)";
+"CFBundleDisplayName" = "هونر مينغ شينغ هوانغ (HarmonyOS)";
+"NSCameraUsageDescription" = "يُستخدم لاسترداد الصور ونقلها ومشاركتها";
+"NSContactsUsageDescription" = "يُستخدم لاختيار جهة اتصال ونقلها ومشاركتها";
+"NSPhotoLibraryUsageDescription" = "يُستخدم لاختيار الصور والفيديوهات ونقلها ومشاركتها";
+"NSBluetoothAlwaysUsageDescription" = "يُستخدم للكشف عن أجهزة المرفقات والاتصال بها";
+"NSBluetoothPeripheralUsageDescription" = "يُستخدم للكشف عن أجهزة المرفقات والاتصال بها";
+"UTGetWiFiSSID" = "يُستخدم للحصول على موقع دقيق يُساعدها في التعرف بسرعة وفعّالًا وإنشاء اتصال بمحطات الاتصال للاشتراك";
+"NSLocationWhenInUseUsageDescription" = "يُستخدم للحصول على موقع دقيق يُساعدها في التعرف بسرعة وفعّالًا وإنشاء اتصال بمحطات الاتصال للاشتراك";
+"NSLocationUsageDescription" = "يُستخدم للحصول على موقع دقيق يُساعدها في التعرف بسرعة وفعّالًا وإنشاء اتصال بمحطات الاتصال للاشتراك";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "حتى لو لم تستخدم التطبيق، فإننا نحتاج إلى الوصول المستمر إلى موقعك لتسجيل مسار حركتك في الخلفية، وإرسال تنبيهات عند الوصول إلى مناطق معينة، أو تقديم خدمات الملاحة بشكل مستمر.";
+"NSLocalNetworkUsageDescription" = "نحتاج إلى الوصول إلى معلومات شبكةك لضمان اتصال جهازك بنجاح بمحطات الاتصال.";
+"NSLocationNetworkUsageDescription" = "نحتاج إلى الوصول إلى معلومات شبكةك لضمان اتصال جهازك بنجاح بمحطات الاتصال.";

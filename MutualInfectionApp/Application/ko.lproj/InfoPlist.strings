@@ -1,0 +1,21 @@
+/*
+  InfoPlist.strings
+  MutualInfection
+
+  Created by delegate on 2025/9/8.
+  
+*/
+
+"CFBundleName" = "홍멍성하이 인터넷";
+"CFBundleDisplayName" = "홍멍성하이 인터넷";
+"NSCameraUsageDescription" = "사진 선택 및 전송/공유";
+"NSContactsUsageDescription" = "연락처 선택 및 전송/공유";
+"NSPhotoLibraryUsageDescription" = "사진 및 동영상 선택 및 전송/공유";
+"NSBluetoothAlwaysUsageDescription" = "첨부 장치 탐색 및 연결";
+"NSBluetoothPeripheralUsageDescription" = "첨부 장치 탐색 및 연결";
+"UTGetWiFiSSID" = "정확한 위치 정보를 얻어 빠르고 효과적으로 식별하여 핫스팟 연결을 설정하고 공유할 수 있도록 하기 위해";
+"NSLocationWhenInUseUsageDescription" = "정확한 위치 정보를 얻어 빠르고 효과적으로 식별하여 라우팅 연결을 설정하고 공유할 수 있도록 하기 위해";
+"NSLocationUsageDescription" = "정확한 위치 정보를 얻어 빠르고 효과적으로 식별하여 라우팅 연결을 설정하고 공유할 수 있도록 하기 위해";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "앱을 사용하지 않더라도, 귀하의 위치 정보를 계속해서 접근하여 백그라운드에서 이동 경로를 기록하거나 특정 지역에 도착했을 때 알림을 보내며, 지도 안내 서비스를 지속적으로 제공할 수 있습니다.";
+"NSLocalNetworkUsageDescription" = "귀하의 네트워크 정보에 접근하여 기기가 핫스팟에 성공적으로 연결되었음을 확인하기 위해 필요합니다.";
+"NSLocationNetworkUsageDescription" = "귀하의 네트워크 정보에 접근하여 기기가 핫스팟에 성공적으로 연결되었음을 확인하기 위해 필요합니다.";

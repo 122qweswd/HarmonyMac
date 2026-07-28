@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>mutualinfection</string>
+	</array>
+	<key>NSExtension</key>
+	<dict>
+		<key>MemoryLimit</key>
+		<integer>50</integer>
+		<key>NSExtensionAttributes</key>
+		<dict>
+            <!-- 关键配置：允许打开其他应用 -->
+			<key>NSExtensionActivationRule</key>
+			<string>
+                SUBQUERY(
+                extensionItems,
+                $extensionItem,
+                SUBQUERY(
+                $extensionItem.attachments,
+                $attachment,
+                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.vcard&quot; ||
+                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.contact&quot; ||
+                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.image&quot; ||
+                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.movie&quot; ||
+                ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.url&quot;
+                ).@count == $extensionItem.attachments.@count
+                ).@count &gt;= 1
+            </string>
+            <!-- 支持的文件提供者 -->
+            <key>NSExtensionServiceAllowsFileProvider</key>
+            <true/>
+            <key>NSExtensionServiceAllowsPhotoLibrary</key>
+            <true/>
+            <key>NSExtensionServiceAllowsNetworkAccess</key>
+            <true/>
+            <key>NSExtensionServiceAllowsFinderPreviewItem</key>
+            <true/>
+            <key>NSExtensionServiceAllowsTouchBarItem</key>
+            <true/>
+            <key>NSExtensionServiceAllowsTighteningText</key>
+            <true/>
+            <!-- 支持的图片类型 -->
+            <key>NSExtensionServiceSupportedFileTypes</key>
+            <array>
+                <string>public.image</string>
+                <string>public.jpeg</string>
+                <string>public.png</string>
+                <string>public.heic</string>
+                <string>public.heif</string>
+            </array>
+		</dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.share-services</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>$(PRODUCT_MODULE_NAME).ShareExtension</string>
+	</dict>
+    <!-- 添加必要的权限 -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>需要保存图片到相册</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>需要访问文件来管理分享的文档</string>
+	<key>NSContactsUsageDescription</key>
+	<string>需要访问通讯录来处理联系人信息</string>
+	
+</dict>
+</plist>

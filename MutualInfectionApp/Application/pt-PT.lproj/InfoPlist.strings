@@ -1,0 +1,21 @@
+/*
+  InfoPlist.strings
+  MutualInfection
+
+  Created by delegate on 2025/9/8.
+  
+*/
+
+"CFBundleName" = "HarmonyOS Interconnect";
+"CFBundleDisplayName" = "HarmonyOS Interconnect";
+"NSCameraUsageDescription" = "Para obter fotos e transmiti-las ou compartilhá-las";
+"NSContactsUsageDescription" = "Para selecionar contatos a fim de transmitir ou compartilhar";
+"NSPhotoLibraryUsageDescription" = "Para selecionar fotos e vídeos a fim de transmitir ou compartilhar";
+"NSBluetoothAlwaysUsageDescription" = "Para detectar e conectar dispositivos com anexos";
+"NSBluetoothPeripheralUsageDescription" = "Para detectar e conectar dispositivos com anexos";
+"UTGetWiFiSSID" = "Para obter localização precisa, permitindo identificação rápida e eficaz e estabelecer conexão com ponto de acesso (hotspot) para compartilhamento";
+"NSLocationWhenInUseUsageDescription" = "Para obter localização precisa, permitindo identificação rápida e eficaz e estabelecer conexão com ponto de acesso (hotspot) para compartilhamento";
+"NSLocationUsageDescription" = "Para obter localização precisa, permitindo identificação rápida e eficaz e estabelecer conexão com ponto de acesso (hotspot) para compartilhamento";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Mesmo que você não esteja usando o aplicativo, precisamos continuar acessando sua localização para registrar em segundo plano o seu trajeto, enviar notificações ao chegar a determinadas áreas ou fornecer continuamente serviços de navegação.";
+"NSLocalNetworkUsageDescription" = "Precisamos acessar suas informações de rede para garantir que o dispositivo esteja conectado com sucesso ao hotspot.";
+"NSLocationNetworkUsageDescription" = "Precisamos acessar suas informações de rede para garantir que o dispositivo esteja conectado com sucesso ao hotspot.";

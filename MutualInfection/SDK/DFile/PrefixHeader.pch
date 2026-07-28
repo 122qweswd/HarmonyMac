@@ -1,0 +1,109 @@
+//
+//  PrefixHeader.pch
+//  MutualInfection
+//
+//  Created by apple on 2025/9/14.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define _GNU_SOURCE
+#define NSTACKX_WITH_LITEOS
+#define LWIP_DONT_PROVIDE_BYTEORDER_FUNCTIONS
+#define LWIP_LITEOS_A_COMPAT
+#define SSL_AND_CRYPTO_INCLUDED
+#define NSTACKX_EXTEND_BUSINESSDATA
+#define NSTACKX_WITH_LITEOS_M
+#define DFINDER_SAVE_DEVICE_LIST
+#define DFINDER_SUPPORT_SET_SCREEN_STATUS
+#define DFINDER_DISTINGUISH_ACTIVE_PASSIVE_DISCOVERY
+
+#define NSTACKX_EOK 0 /* OK */
+#define NSTACKX_EFAILED (-1) /* Operation failed */
+
+/*
+ * Description:Invalid argument.
+ * Solution: Verify that related input parameters are correctly set.
+ */
+#define NSTACKX_EINVAL (-2)
+#define NSTACKX_EINPROGRESS (-3) /* Operation now in progress */
+
+/*
+ * Description: Device or resource busy.
+ * Solution: Please retry later.
+ */
+#define NSTACKX_EBUSY (-4)
+
+/*
+ * Description: Out of memory.
+ * Solution: 1. Verify whether the memory has exceeded the threshold.
+ *           2. Release the memory and try again.
+ */
+#define NSTACKX_ENOMEM (-5)
+#define NSTACKX_EEXIST (-6) /* Resource already exist */
+
+/*
+ * Description: The resource is temporarily unavailable.
+ * Solution: Try again later.
+ */
+#define NSTACKX_EAGAIN (-7)
+
+/*
+ * Description: Timeout.
+ * Solution: Try again.
+ */
+#define NSTACKX_ETIMEOUT (-8)
+
+/*
+ * Description: Overflow.
+ * Solution: Try again.
+ */
+#define NSTACKX_OVERFLOW (-9)
+
+/*
+ * Description: Not exist.
+ * Solution: Try again.
+ */
+#define NSTACKX_NOEXIST (-10)
+
+/*
+ * Description: Interrupted system call.
+ * Solution: Try again.
+ */
+#define NSTACKX_EINTR (-11)
+
+#define NSTACKX_TRUE 1
+#define NSTACKX_FALSE 0
+
+#define NSTACKX_NOTSUPPORT (-12)
+
+#define NSTACKX_PEER_CLOSE (-13)
+
+#define NSTACKX_EPERM (-14)
+
+#define NSTACKX_EDQUOT (-15)
+
+#define NSTACKX_ENETDOWN (-16)
+
+#define NSTACKX_ENOENT (-17)
+
+#define P2P_DEV_NAME_PRE "p2p"
+#define WLAN_DEV_NAME_PRE "wlan"
+#ifndef ETH_DEV_NAME_PRE
+#define ETH_DEV_NAME_PRE "eth"
+#endif
+#define USB_DEV_NAME_PRE "rndis"
+#define WIFI_DIRECT_NAME "Wi-Fi Direct"
+#define INTERFCAE_NAME_MAX_LENGTH (128 + 4)
+#define INTERFACE_GUID_MAX_LENGTH (256 + 4)
+#define INTERFACE_NETMASK (0xffffff)
+#define INTERFCAE_DES_MAX_LENGTH 128
+#define INTERFCAE_ADDR_MAX_LENGTH 16
+#define INTERFCAE_TYPE_MAX_LENGTH 20
+#define INTERFACE_MAX 16
+#define SOFTAP_ADDR_KEY (0xc0a82b01)
+#define P2P_ADDR_KEY (0xc0a83101)
+#endif /* PrefixHeader_pch */

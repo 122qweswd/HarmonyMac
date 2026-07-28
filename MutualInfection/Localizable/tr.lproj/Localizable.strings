@@ -1,0 +1,725 @@
+/*
+  Localizable.strings
+  MutualInfection
+
+  Created by Niko on 2025/8/31.
+  
+*/
+
+//土耳其语
+
+"账号名称最多输入 12 个字符" = "Hesap adı en fazla 12 karakter girilebilir.";
+"无法保存，需要12个字符以内" = "Kaydedilemiyor. 12 karakter veya daha az olmalıdır.";
+"iPhone存储空间不足，你没有足够的存储空间将已接收的内容导入到\"照片\"。请释放空间后，再打开app重新导入。" = "iPhone depolama alanı dolu. Alınan içeriği \"Fotoğraflar\" uygulamasına aktarmak için yeterli depolama alanınız yok. Lütfen depolama alanı açın ve tekrar aktarmak için uygulamayı yeniden açın.";
+"以后" = "Daha Sonra";
+"管理" = "Yönet";
+"文件夹" = "klasör";
+"个文件夹" = "bir klasör";
+"网络连接异常,请重启手机" = "Ağ bağlantısı anormal, lütfen telefonunuzu yeniden başlatın";
+"空文件夹不支持分享" = "Boş klasörler paylaşılamaz";
+"对方空间不足" = "Karşı tarafın yeterli depolama alanı yok";
+"文件预处理空间不足\n请预留%@以上空间再试，\n或分批发送" = "Dosya ön işleme için yeterli alan yok.\nLütfen %@ veya daha fazla alan ayırın ve tekrar deneyin,\nya da toplu gönderim yapın";
+
+"failed_to_obtain_resources" = "Kaynak edinimi başarısız oldu";
+"sharing_not_allowed" = "Şu anda iletim aşamasında ve paylaşılamıyor";
+
+//-------底部引导页面------
+"version_requirements" = "Karşı tarafın sürüm gereksinimleri";
+"version_requirements_content" = "HarmonyOS 6.0.0.112 veya üstü gereklidir";
+"device_not_found" = "Cihazınızı bulamıyor musunuz?";
+"found_huawei_devices" = "Huawei cihazları nasıl keşfedilir";
+"learn_more" = "Daha fazla bilgi edinin";
+"对方需在控制中心将华为分享设置成\"所有人可见\"" = "Diğer tarafın Kontrol Merkezi'nde Huawei Paylaşımı'nı \"Herkese Görünür\" olarak ayarlaması gerekiyor";
+"visible to everyone" = "Herkese görünür";
+//--------------------
+
+"取消" = "İptal";
+"确定" = "Emin misiniz";
+"选择要发送的文件" = "Göndermek istediğiniz dosyayı seçin";
+"照片或视频" = "Fotoğraf veya video";
+"文件" = "dosya";
+"通讯录" = "Bağlantılar";
+"我要发送" = "Göndereceğim";
+"关于" = "Hakkında";
+"连接中..." = "Bağlantı kuruyor...";
+"等待中..." = "Bekliyor...";
+"发送中..." = "Gönderiyorum...";
+"已发送" = "gönderildi";
+"发送取消" = "İptal gönder";
+"已连接" = "bağlantılı";
+"已断开连接" = "Bağlantısı Kopuk";
+"对方忙" = "Diğer taraf meşgul";
+"己方忙" = "Meşgulüm";
+"未识别用户" = "Kullanıcı tanınmıyor";
+"附近" = "yakınlarda";
+"鸿蒙星河互联" = "HarmonyOS Galaxy Bağlantısı";
+"设备名称" = "Cihaz adı";
+"帮助与反馈" = "Yardım ve geri bildirim";
+"系统权限管理" = "Sistem izin yönetimi";
+"以此身份使用鸿蒙星河互联" = "Bu amaçla HarmonyOS Galaxy Internet'i kullanın";
+"拒绝" = "reddedildi";
+"接收" = "Alındı";
+"取消接收" = "Alınmayan";
+//"发送中" = "";
+"取消发送" = "Göndermeyi Geri Alma";
+"欢迎使用" = "Hoş geldiniz";
+"跨系统多设备文件随心流转" = "Sistemler arası çoklu cihazlı dosyalar serbest akış";
+"接受" = "Kabul et";
+"关于鸿蒙星河互联与隐私的声明" = "HarmonyOS Galaxy İnternet ve Gizlilik Açıklaması";
+"鸿蒙星河互联隐私政策" = "HarmonyOS Galaxy İnternet Gizlilik Politikası";
+"鸿蒙星河互联用户服务协议" = "HarmonyOS Galaxy İnternet Kullanıcı Hizmet Sözleşmesi";
+"互传记录" = "Kayıtlar değiş tokuş edilir";
+"权限使用说明" = "İzin kullanım talimatları";
+"意见反馈" = "Geri bildirim";
+"问题描述" = "Problem açıklaması";
+"请尽量详细描述您的问题（不少于10字）" = "Lütfen sorununuzu mümkün olduğunca ayrıntılı olarak (en az 10 kelime olarak) anlatın.";
+"上传图片" = "Bir görsel yükle";
+"联系方式" = "İletişim bilgileri";
+"请输入您的联系方式" = "Lütfen iletişim bilgilerinizi girin";
+"发送错误报告" = "Hata raporu gönderin";
+"版本号" = "Versiyon numarası";
+"检查更新" = "Güncellemeleri kontrol edin";
+"个人信息收集清单" = "Kişisel Bilgi Toplama Listesi";
+"个人信息共享清单" = "Kişisel Bilgi Paylaşım Listesi";
+"访问位置" = "Ziyaret Yeri";
+"用于判断是否处于同一局域网" = "Aynı LAN'de olup olmadıklarını belirlemek için kullanılır";
+"访问照片" = "Erişim fotoğrafları";
+"用于互传时读取照片、视频等文件" = "Birbirine aktarma sırasında fotoğraf, video ve diğer dosyaları okumak için kullanılır";
+"访问通讯录" = "Adres defterine erişim";
+"用于互传时读通讯录" = "Birbirlerine iletim sırasında adres defterini okumak için kullanılır";
+"无线局域网" = "Kablosuz LAN";
+"用于在相同局域网下连接设备，传输文件" = "Aynı LAN altında cihazları bağlamak ve dosyaları aktarmak için kullanılır";
+"蓝牙" = "Bluetooth";
+"用于使用蓝牙搜索附近的设备" = "Bluetooth kullanarak yakındaki cihazları aramak için kullanılır";
+"存储权限" = "Depolama izinleri";
+"用于存储传输记录" = "İletim kayıtlarını depolamak için kullanılır";
+"修改名称" = "İsmi değiştirin";
+"名称" = "İsim";
+"输入要修改的名称" = "Değiştirmek istediğiniz bir ismi girin";
+"2-12位字符，可包含英文字母、数字、汉字，该名称将在对方的搜索页面展示。" = "2-12 basamaklık karakterler, İngilizce harfler, sayılar ve Çince karakterler içerebilir ve isim karşı tarafın arama sayfasında görüntülenir.";
+"接收中" = "Alındı";
+"接收完成" = "Tam alın";
+"查看历史记录" = "Tarihçe görüntüle";
+"加入" = "Join";
+"个文件接收完成" = "Dosya alındı";
+"个文件接收失败" = "Dosyaları alınamadı";
+"个文件" = "dosyalar";
+"\"鸿蒙星河互联\" 想要加入无线局域网" = "HarmonyOS Galaxy Connection kablosuz LAN'e katılmak istiyor";
+"张图片" = "Resim";
+"个视频" = "Videolar";
+"共" = "Birlikte";
+"个联系人" = "Bağlantılar";
+"文件互传设备条件" = "Dosya aktarım ekipmanı koşulları";
+"文件传输方式" = "Dosya aktarım yöntemi";
+"发送与接收文件" = "Belgelerin gönderilmesi ve alınması";
+"正在搜索设备…" = "Bir cihaz arıyorum...";
+"需要权限" = "İzinler gereklidir";
+"请在设备的设置中允许应用删除照片" = "Uygulamaların cihazınızın ayarlarında fotoğrafları silmesine izin verin";
+"对方暂不支持接收大众点评内容" = "Diğer taraf ise şimdilik Dianping içeriği almayı desteklemiyor";
+"对方暂不支持接收备忘录等文本非文件内容" = "Diğer taraf ise şu anda notlar gibi metin dosya dışı içeriklerin alınmasını desteklemiyor";
+"导入中" = "İthalat";
+"存储空间不足无法导入图库" = "Galeriyi içe aktarmak için yeterli depolama alanı";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“接受”，即表示您同意鸿蒙星河互联用户协议、权限使用说明、关于鸿蒙星河互联与隐私的声明。" = "Bu hizmet, veri bağlamak, göndermek ve almak, resimleri, videoları, kontakları ve dosyaları okumak ve ağ bilgisini almak için Bluetooth ve WLAN kullanmalıdır. Bu hizmet, HarmonyOS Galaxy Internet'in temel iş fonksiyonlarını sağlar. \"Kabul et\" tuşuna tıklayarak HarmonyOS Kullanıcı Sözleşmesi, İzin Kullanım Talimatları ve HarmonyOS Galaxy İnternet ve Gizlilik Açıklamasını kabul etmiş olursunuz.";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“接受”，即表示您同意" = "Bu hizmet, veri bağlamak, göndermek ve almak, resimleri, videoları, kontakları ve dosyaları okumak ve ağ bilgisini almak için Bluetooth ve WLAN kullanmalıdır. Bu hizmet, HarmonyOS Galaxy Internet'in temel iş fonksiyonlarını sağlar. \"Kabul et\" seçeneğine tıklayarak kabul etmiş olursunuz";
+"蓝牙、WLAN" = "Bluetooth, WLAN";
+"图片、视频、联系人" = "Fotoğraflar, videolar, bağlantılar";
+"网络信息" = "Ağ bilgileri";
+"鸿蒙星河互联用户协议" = "HarmonyOS Galaxy İnternet Kullanıcı Sözleşmesi";
+"支持与HarmonyOS 6 及以上版本华为设备互传，\n对方需在控制中心将华为分享设为“所有人可见”" = "HarmonyOS 6 ve üzeri Huawei cihazlarıyla karşılıklı iletim desteklenir ve diğer taraf Kontrol Merkezi'nde Huawei Paylaşım'ı \"Herkese Görünür\" olarak ayarlamalıdır.";
+"正在导入“照片”，请勿退出应用" = "Fotoğrafları içe aktarıyorum, uygulamadan çıkmayın";
+"正在导入“文件”，请勿退出应用" = "Dosyaları içe aktarıyorum, uygulamadan çıkmayın";
+"正在导入" = "İthalat";
+"当前已是最新版本" = "Şu anda en yeni sürümdür";
+"未监测到线上版本" = "Çevrimiçi bir sürüm tespit edilmedi";
+"实时活动权限" = "Gerçek zamanlı etkinlik izinleri";
+"用于后台时通过灵动岛显示传输进度" = "Arka planda kullanıldığında, iletim ilerlemesi Smart Island üzerinden görüntülenir";
+"发生时间*" = "Ne zaman oldu*";
+"请检查网络连接" = "Lütfen ağ bağlantınızı kontrol edin";
+"请填写10字以上的问题描述" = "Lütfen 10 kelimeden fazla bir problem açıklaması doldurun";
+"请填写联系方式" = "Lütfen iletişim bilgilerinizi doldurun";
+"请选择发生时间" = "Lütfen gerçekleşeceği zamanı seçin";
+"提交成功" = "Teslim olma başarılı oldu";
+"选择要上传的文件" = "Yüklemek istediğiniz dosyayı seçin";
+"从相册选择" = "Albümden seçme";
+"拍照" = "Fotoğraf çek";
+"无法访问相机" = "Kameraya erişemiyor";
+"没有获得相机访问权限，请在设置中允许访问相机" = "Kamera erişimi olamazsa, ayarlardan kamera erişimine izin verin";
+"开启权限" = "İzinleri aç";
+"无法访问相册" = "Albüme erişilemiyor";
+"没有获得相册访问权限，请在设置中允许访问相册" = "Albüm erişimi verilmediyse, lütfen ayarlarda albüme erişim izni verin";
+"保存" = "Kayd et";
+"使用过程中申请
+
+无线局域网
+用于在相同局域网下连接设备，传输文件
+
+蓝牙
+用于使用蓝牙搜索附近的设备
+
+位置
+用于判断是否处于同一局域网
+
+照片
+用于互传时读取照片，视频等文件
+
+通讯录
+用于互传时读取通讯录
+
+存储权限
+用于存储传输记录" = "Kullanım sırasında kullanılan uygulama\n\nKablosuz LAN\nAynı LAN altında cihazları bağlamak ve dosyaları aktarmak için kullanılır\n\nBluetooth\nBluetooth kullanarak yakındaki cihazları aramak için kullanılır\n\nKonum\nAynı LAN üzerinde olup olmadığınızı belirlemek için kullanılır\n\nFotoğraflar\nBirbirinize iletilirken fotoğraf, video ve diğer dosyaları okumak için kullanılır\n\nBağlantılar\nBirbirlerine iletilirken kişileri okumak için kullanılır\n\nDepolama izni\nİletim kayıtlarını depolamak için kullanılır";
+//"位置" = "";
+"照片" = "Fotoğraf";
+"对端设备：HarmonyOS软件版本6.0.0.112及以上的手机、平板、电脑。" = "Karşıt cihazlar: HarmonyOS yazılım sürüm 6.0.0.112 veya üzeri işletim sistemini çalıştıran telefonlar, tabletler ve bilgisayarlar.";
+"本端设备：iOS 13及以上、iPad OS 13及以上、Mac OS 10.15及以上。" = "Yerel cihazlar: iOS 13 ve üzeri, iPad OS 13 ve üzeri, Mac OS 10.15 ve üzeri.";
+"方式一：同WLAN传输" = "Yöntem 1: WLAN ile iletim";
+"当两台设备连接同一可用WLAN时，确认接收后将直接进行文件互传。" = "İki cihaz aynı mevcut Wi-Fi ağına bağlandığında, dosyalar alındıktan sonra doğrudan aktarılır.";
+"方式二：热点传输" = "Yöntem 2: Hotspot iletimi";
+"当两台设备未连接同一可用WLAN时，确认接收后需连接对方设备热点以进行免流量文件互传。" = "İki cihaz aynı mevcut Wi-Fi ağına bağlı değilse, alıcı onaylandıktan sonra trafik olmadan dosyaları aktarmak için diğer cihazın hotspot'una bağlanmanız gerekir.";
+"注：大文件互传时，建议使用热点传输(速度较快)以快速完成传输任务。" = "Not: Büyük dosyaları birbirine aktarırken, aktarım görevini hızlıca tamamlamak için hotspot transfer'i (daha hızlı hız) kullanmak önerilir.";
+"接收文件" = "Dosyaları alın";
+"1.本设备打开“鸿蒙星河互联”app，并保持亮屏。" = "1. Bu cihazda \"HarmonyOS Galaxy Internet\" uygulamasını açın ve ekranı açık tutun.";
+"2.对方选择要发送的文件，在华为分享界面选择本设备。" = "2. Göndermek istediğiniz dosyayı seçin ve Huawei paylaşım arayüzünde cihazı seçin.";
+"3.与对方处于同一WLAN或连接对方热点，开始传输。" = "3. Aynı WLAN'da olun veya diğer tarafın hotspot'una bağlanın ve yayına başlayın.";
+"发送文件" = "Dosya gönder";
+"方式一：鸿蒙星河互联app内发送" = "Yöntem 1: HarmonyOS Galaxy İnternet uygulamasından gönderin";
+"﻿1.对方开启华为分享，并保持亮屏。首次使用需设为“所有人可见”。" = "1. Diğer taraf Huawei Paylaşım'ı açar ve ekranı açık tutar. İlk kullanım \"Herkese Görünür\" olarak ayarlanmalıdır.";
+"2.本设备选择要发送的文件，点击对方设备头像。或先点击对方设备头像，再选择要发送的文件。" = "2. Göndermek istediğiniz dosyayı seçin ve diğer cihazın avatarına dokunun. Ya da önce karşı tarafın cihaz avatarına tıklayın, ardından göndermek istediğiniz dosyayı seçin.";
+"方式二：通过“共享”选择鸿蒙星河互联app发送" = "Yöntem 2: \"Paylaşma\" yoluyla göndermek için HarmonyOS Galaxy İnternet uygulamasını seçin";
+"1.对方开启华为分享，并保持亮屏。" = "1. Diğer taraf Huawei Paylaşım'ı açar ve ekranı açık tutar.";
+"2.本设备选择要发送的文件，点击“共享”按钮选择鸿蒙星河互联app。" = "2. Bu cihazda göndermek istediğiniz dosyayı seçin ve HarmonyOS Galaxy İnternet uygulamasını seçmek için \"Paylaş\" butonuna tıklayın.";
+"导入完成" = "İthalat tamamlandı";
+"等待中" = "Beklemek";
+"对方已取消接收" = "Diğer taraf makbuzu iptal etti";
+"接收中..." = "Alıyorum...";
+"张图片，" = "Fotoğraf,";
+//"个视频，" = "";
+//"个文件，" = "";
+"连接中" = "Bağlantı";
+"正在连接对方热点" = "Karşı tarafın hotspot'ına bağlanma";
+"确定要取消接收吗？" = "Resepsiyonunu iptal etmek istediğinden emin misin?";
+"继续接收" = "Alıma devam edin";
+"cancelReceivingAlertBtn" = "Alınmayan";
+"接收取消" = "İptal alın";
+"知道了" = "Anladım";
+"对方取消发送，接收失败" = "Diğer taraf iletimi iptal eder ve alamaz";
+"局域网连接中" = "LAN bağlantısı";
+"前往\"照片\"查看" = "Görüntülemek için \"Fotoğraflar\"a gidin";
+"前往\"文件\"查看" = "Dosyalar bölümüne gidip görüntüleyin";
+"文件还在导入中" = "Dosya hâlâ içe aktarılıyor";
+"可在互传记录中查看导入进度" = "İthalat ilerlemesini iletim kaydında görebilirsiniz";
+"退出应用会导致导入失败" = "Uygulamadan çıkmak itişin başarısız olmasına neden olur";
+"退出应用" = "Uygulamadan çıkış";
+"继续导入" = "İthalata devam edin";
+"蓝牙已关闭,请在“设置”中允许新连接" = "Bluetooth kapalı, lütfen Ayarlar'da yeni bağlantılara izin verin";
+"设备不支持蓝牙" = "Cihaz Bluetooth'u desteklemiyor";
+"蓝牙正在重置" = "Bluetooth burada";
+"蓝牙状态未知" = "Bluetooth durumu bilinmiyor";
+"蓝牙权限未打开" = "Bluetooth izni açık değil";
+"没有获得蓝牙权限，请在设置中打开蓝牙权限" = "Bluetooth izinleri alamazsanız, ayarlardan Bluetooth izinlerini açın";
+"去设置" = "Ayarlara git";
+"位置权限未打开" = "Konum izinleri açık değil";
+"没有获得位置权限，请在设置中打开位置权限" = "Konum iznini alamazsanız, ayarlarda konum izinlerini açın";
+"通讯录权限未打开" = "İletişim izni açık değil";
+"没有获得通讯录访问权限，请在设置中允许访问通讯录" = "Eğer iletişim bilgilerinize erişemezseniz, ayarlarınızda kişilerinize erişim izni verin";
+"照片权限未打开" = "Fotoğraf izinleri açılmıyor";
+"没有获得照片访问权限，请在设置中允许访问照片" = "Fotoğraflarınıza erişemezseniz, ayarlarınızdan onlara erişim izni verin";
+"WIFI权限未打开" = "WIFI izni açık değil";
+"没有获得WIFI权限，请在设置中打开WIFI权限" = "WIFI izni alamazsanız, lütfen ayarlardan WIFI iznini açın";
+"正在导入至“照片”，请勿退出应用" = "Fotoğraflar'a içe aktarıyorum, uygulamadan çıkmayın";
+"存储空间不足，导入失败，请清理空间后在接收记录中重新导入" = "Depolama alanı yetersizse ve aktarma başarısız olursa, lütfen alanı boşaltın ve alıcı kayıtta tekrar içe aktarın";
+"去设置界面开启允许通讯录选择" = "Ayarlar arayüzüne gidip Kişilere İzin Et seçimini etkinleştirin";
+"设置" = "Kurulum";
+
+
+"发送过程中请不要退出当前界面" = "Gönderme sürecinde lütfen mevcut arayüzden çıkmayın";
+"正在导入至“照片”，请不要退出当前页面" = "Fotoğraflara aktarıyorum, lütfen mevcut sayfadan çıkmayın";
+"请不要退出当前页面" = "Lütfen mevcut sayfadan çıkmayın";
+"选择联系人" = "Bir kontak seçin";
+"全选" = "Herkesi Seç";
+"取消全选" = "Hepsini iptal et";
+"搜索" = "Arama";
+"暂无数据" = "Mevcut veri yok";
+"完成" = "Tamam";
+
+"分享失败" = "Hisse kaybı";
+"连接已超时，请重新点击对方设备后再连接" = "Bağlantı zaman dolmamışsa, lütfen diğer cihaza tekrar dokunarak bağlanabilirsiniz";
+"内存不足,分享失败" = "Hafızadan çıkınca, paylaşım başarısız oldu";
+"请关闭热点后重试" = "Lütfen hotspot'u kapatın ve tekrar deneyin";
+"接收失败" = "Alıcı başarısız oldu";
+"连接已超时，请对端重新点击设备发起连接" = "Bağlantı zaman dolmamışsa, bağlantıyı başlatmak için cihazı tekrar tıklayın";
+"内存不足，接收失败" = "Hafıza bitti ve alınmadı";
+"本机内存不足，发送失败" = "Makinenin belleği tükeniyor ve gönderme başarısız oluyor";
+"点击上传" = "Yüklemeye tıklayın";
+"提交" = "Gönder";
+"与HarmonyOS设备自由连接，免流量高效互传" = "Trafik olmadan verimli alışveriş için HarmonyOS cihazlarına serbestçe bağlanın";
+"待接收" = "Alınacak";
+"已拒绝" = "Reddedildi";
+"文件还在发送中，是否终止发送？" = "Dosya hâlâ gönderiliyor mu, göndermek için sonlandırıldı mı?";
+"终止发送" = "Göndermeyi sonlandır";
+"继续发送" = "Göndermeye devam edin";
+"接收失败，请关闭热点后再试" = "Eğer resepsiyon başarısız olursa, lütfen hotspot'u kapatın ve tekrar deneyin";
+"发送失败，请关闭热点后再传输" = "Eğer iletim başarısız olursa, lütfen iletim öncesi hotspot'u kapatın";
+"请关闭热点后再传输" = "Lütfen transfer öncesi hotspot'u kapatın";
+"我知道了" = "Biliyorum";
+"提示" = "İpuçları";
+"蓝牙已关闭，可能会影响传输和接收，请在“设置”中允许新连接" = "Bluetooth kapalı ve iletim ile çekimleri etkileyebilir, lütfen Ayarlar'da yeni bağlantılara izin verin";
+"接收雷达" = "Alıcı radar";
+"提交中，请保持在当前页面，不要退出后台" = "Gönderim sırasında lütfen güncel sayfada kalın ve arka plandan çıkmayın";
+"提交失败请重试" = "Gönderim başarısız olursa, lütfen tekrar deneyin";
+"设备名称不能为空" = "Cihaz adı boş olamaz";
+"请输入符合要求的文本（2-12位字符，可包含英文字母、数字、汉字）" = "Lütfen gerekli metni girin (İngilizce harfler, sayılar ve Çince karakterler dahil olmak üzere 2-12 karakter)";
+"请输入你要修改的名称" = "Lütfen değiştirmek istediğiniz ismi girin";
+"请求超时" = "Mola talebi";
+"确定要取消发送吗？" = "Göndermeyi iptal etmek istediğinizden emin misiniz?";
+"取消失败" = "İptal başarısız oldu";
+"选择的文件" = "Seçilmiş dosya";
+"未选择文件" = "Dosya seçilmedi";
+"0个文件" = "0 dosya";
+"选择日期时间" = "Bir tarih ve saat seçin";
+"来自" = "Kaynak";
+"首次使用需设为“所有人可见”。" = "İlk kullanım \"Herkese Görünür\" olarak ayarlanmalıdır.";
+"并保持亮屏。" = "ve ekranı açık tutun.";
+"恢复默认" = "Varsayılan Geri Getir";
+"无法访问相册，请检查设备权限设置。" = "Albüme erişemiyorsanız, cihazınızın izin ayarlarını kontrol edin.";
+"修改成功" = "Değişiklik başarılı oldu";
+"控制中心创建快捷入口" = "Control Center bir kestirme yol oluşturur";
+"﻿1.在控制中心的空白处长按，点击“添加控制”按钮；" = "1. Kontrol merkezindeki boş alana uzun basarak \"Kontrol Ekle\" butonuna tıklayın;";
+"2.下滑找到“快捷指令”栏，点击“打开APP”按钮；" = "2. \"Kısayollar\" sütununu bulmak için aşağıya kaydırın ve \"Uygulamayı Aç\" butonuna tıklayın;";
+"3.选取“鸿蒙星河互联”app，即可创建快捷入口。" = "3. Hızlı giriş oluşturmak için \"HarmonyOS Galaxy Internet\" uygulamasını seçin.";
+"部分或全部格式不支持导入“照片”，已存入“文件-鸿蒙星河互联-image” 文件夹" = "Bazı veya tüm formatlar Fotoğrafların içe aktarılmasını desteklemez ve File-HarmonyOS Galaxy-Image-klasöründe saklanır";
+"好的" = "İyi.";
+"去查看" = "Git bir bak";
+"“最近存储”或“鸿蒙星河互联”相簿" = "Recently Saved veya \"HarmonyOS Galaxy Connection\" albümü";
+"查看时可以使用“通讯录”打开并导入" = "Görüntüleme sırasında Contact'ları kullanarak açabilir ve içe aktarabilirsiniz";
+"个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹" = "Özel format dosyaları\nFiles-HarmonyOS Galaxy-Image klasörüne kaydedildi";
+"已取消接收" = "Alınmayan";
+"想要分享" = "Paylaşmak ister misiniz?";
+//"个文件，是否接收？" = "";
+"对方暂不支持接收此类型内容" = "Diğer taraf şu anda bu tür içeriklerin alınmasını desteklemiyor";
+"正在处理文件..." = "Bir dosya üzerinde çalışıyorum...";
+"输入已达上限" = "Giriş sınırına ulaşıldı";
+"，" = ",";
+"高速传输模式" = "Yüksek hızlı şanzıman modu";
+//"开启后，每次传输都将直连华为设备 WLAN" = "";
+"iCloud照片下载失败" = "iCloud fotoğraf indirme başarısız oldu";
+"请连接好网络再试" = "Lütfen internete bağlanın ve tekrar deneyin";
+"跳过云图" = "Bulut haritasını atlayın";
+"类型文件暂不支持分享" = "Tip dosyaları paylaşım için desteklenmemektedir";
+// 互换记录
+// Localizable.strings (英文)
+//"transfer_records"           = "";
+//"search"                     = "";
+"received_from"              = "Alınan";
+"import_failed"              = "İthalat başarısız oldu";
+"partial_import_failed"      = "Kısmi ithal başarısız oldu";
+"import_no_complete"         = "İçhal tamamlanmadı";
+"retry"                      = "Yeniden Deneyin";
+"i_received"                 = "Aldım";
+"i_sent"                     = "Gönderdim";
+"edit"                       = "Editörler";
+"sort_by_time"               = "Zamana göre sıralayın";
+"sort_by_type"               = "Tipe göre sıralayın";
+"descending_order"           = "Soyundan";
+"ascending_order"            = "Yükselen";
+"confirm_delete_record"      = "Kaydı silmek isteyip istemediğinizi kontrol edin";
+//"cancel"                     = "";
+//"confirm"                    = "";
+//"no_data_available"          = "";
+"can_not_find"               = "Dosya aranamaz";
+//"select_all"                 = "";
+//"deselect_all"               = "";
+"source_file_corrupted"      = "Kaynak dosyası bozulmuş ve içe aktarılamaz";
+//"i_know"                     = "";
+"view"                       = "Görünüm";
+"open_with"                  = "Nasıl açılır";
+"delete_record_and_file"     = "Kayıtları ve belgeleri sil";
+"delete_record"              = "Kaydı sil";
+"file_moved_or_deleted"      = "Dosya taşındı veya silindi";
+"delete_record_confirmation" = "Kayıt silindi mi?";
+"file_moved_or_deleted_confirm_delete_record"      = "Belge taşındı ya da silindiyse, kayıt silinecek mi?";
+"ignore"                     = "görmezden gelmek";
+"delete"                     = "Sil";
+"image_imported_to_album"    = "Fotoğraf sistem albümüne aktarıldı\nLütfen cep telefonunuzda [Fotoğraflar]> [Albümler]> [HarmonyOS Galaxy Connection] bölümlerinde görüntüleyin";
+"imported_to_system_album"   = "İthalat sistemi albümleri";
+//"importing"                  = "";
+
+
+
+
+//************** PhotoPicker
+"无法访问相册中照片" = "Albümlerdeki fotoğraflara erişilemiyor";
+"当前无照片访问权限，建议前往系统设置，\n允许访问「照片」中的「所有照片」。" = "Şu anda fotoğraflara erişiminiz yok, bu yüzden \"Fotoğraflar\" bölümünden \"Tüm Fotoğraflar\"a erişim sağlamak için Sistem Ayarları'na gitmeniz önerilir.";
+"前往系统设置" = "Sistem Ayarları'na git";
+"相册" = "Fotoğraf albümü";
+"原图" = "Orijinal görüntü";
+"原片" = "Orijinal film";
+"预览" = "Önizleme";
+//"编辑" = "";
+"返回" = "Dönüş";
+"还原" = "Restore";
+"自由" = "Ücretsiz";
+"下一步" = "Sonraki adım";
+"没有可选资源" = "Isteğe bağlı kaynaklar yoktur";
+"照片和视频不能同时选择" = "Fotoğraflar ve videolar aynı anda seçilemez.";
+"最多只能选择%d张照片" = "En fazla %d fotoğrafları seçilebilir";
+"已达到最大选择数" = "Maksimum seçim sayısına ulaşıldı";
+"视频最大时长为%d秒，无法选择" = "Maksimum video süresi %d saniyedir ve seçilemez.";
+"视频最小时长为%d秒，无法选择" = "Videonun maksimum uzunluğu %d saniyedir ve bu seçilemez.";
+"视频和照片不能同时选择" = "Videolar ve fotoğraflar aynı anda seçilemez";
+"最多只能选择%d个视频" = "Sadece %d videoları seçebilirsiniz";
+"正在下载" = "İndirme";
+"下载失败" = "İndirme başarısız oldu";
+"没有照片" = "Fotoğraf yok";
+"你可以使用相机拍些照片" = "Fotoğraf çekmek için kameranızı kullanabilirsin";
+"无法访问相册中所有照片，\n请允许访问「照片」中的「所有照片」" = "Albümdeki tüm fotoğraflara erişemezsiniz, lütfen \"Fotoğraflar\"da \"Tüm Fotoğraflar\"a erişim izin verin.";
+"只能查看允许访问的照片和相关相册" = "Sadece fotoğraflara ve ilgili albümlere erişim izni";
+"无法使用相机!" = "Kamerayı kullanamıyorum!";
+"无法使用相机功能" = "Kamera fonksiyonunu kullanamıyoruz";
+"请前往系统设置中，允许访问「相机」。" = "Sistem Ayarları'na gidin ve Kamera'ya erişim izni verin.";
+"照片大小超过最大限制" = "Fotoğraf boyutu maksimum sınırı aşıyor";
+"视频大小超过最大限制" = "Video boyutu maksimum sınırı aşıyor";
+"视频导出失败" = "Video dışına çıkış başarısız oldu";
+"保存失败" = "Kaydetme başarısız oldu";
+"所有照片" = "Tüm fotoğraflar";
+"正在处理..." = "İşleme...";
+"处理失败" = "İşleme başarısız oldu";
+"导出失败" = "İhracat başarısız oldu";
+"视频加载中" = "Yükleme";
+"视频加载失败!" = "Video Yükleme Başarısız Oldu!";
+"视频可编辑最大时长为%d秒，无法编辑" = "Bir videonun maksimum düzenlenebilir süresi %d saniyedir ve düzenlenemez.";
+"相机不可用!" = "Kamera mevcut değil!";
+"图片获取失败!" = "Görüntü edinimi başarısız oldu!";
+"视频获取失败!" = "Video alımı başarısız oldu!";
+"图片下载中" = "Görsel indirme";
+"视频下载中" = "Video indirme";
+"设置失败!" = "Kurulum başarısız oldu!";
+"唯美" = "Güzel";
+"梦幻" = "Rüya";
+"老电影" = "Eski filmler";
+"怀旧" = "Nostalji";
+"黑白" = "Siyah beyaz";
+"色调" = "Hue";
+"模糊" = "Bulanıklık";
+"岁月" = "Yıllar";
+"单色" = "Monokrom";
+"褪色" = "Soluk";
+"冲印" = "Baskı";
+"铬黄" = "Krom sarı";
+"暂无配乐" = "Şu an için bir müzikler yok";
+"配乐" = "Film Müziği";
+"视频原声" = "Video müzik";
+"正在同步iCloud" = "iCloud senkronize oluyor";
+"iCloud同步失败" = "iCloud senkronizasyonu başarısız oldu";
+"拖动到此处删除" = "Silmek için buraya sürükle";
+"松手即可删除" = "Silmek için bırak";
+"背景音乐" = "Arka plan müziği";
+"搜索歌名" = "Şarkı isimleri araması";
+"此歌曲暂无歌词，请您欣赏" = "Bu şarkının sözleri yok, lütfen keyfini çıkarın";
+"选择" = "Seçim";
+"取消选择" = "Seçimi kaldır";
+"歌词" = "Şarkı Sözleri";
+"拍摄失败!" = "Ateş başarısız oldu!";
+"摄像头切换失败!" = "Kamera değiştirme başarısız oldu!";
+"相机初始化失败!" = "Kamera başlatma başarısız oldu!";
+"轻触拍照" = "Fotoğraf çekmek için dokunun";
+"按住摄像" = "Kameraya bas ve basılı tut";
+"轻触拍照，按住摄像" = "Fotoğraf çekmek için dokunun, sonra kameraya basıp basılı tutun";
+"拍摄时长不足%d秒" = "Çekim süresi %d saniyelerden azdır";
+"麦克风添加失败，录制视频会没有声音哦!" = "Mikrofon eklenmezse, video kaydederken ses çıkmaz!";
+"无法使用麦克风" = "Mikrofon kullanılamaz";
+"请在设置-隐私-相机中允许访问麦克风" = "Lütfen Ayarlar - Gizlilik - Kamera bölümünde mikrofona erişim izni verin";
+"更多" = "Daha fazlası";
+"张照片" = "Fotoğraflar";
+"实况" = "Olaylar";
+"视频" = "Video";
+"点击摄像" = "Kamera Tıklat";
+"音量" = "Hacim";
+"明亮" = "Parlak";
+//"删除" = "";
+"原始比例" = "Orijinal ölçek";
+"自由格式" = "Serbest Form";
+"正方形" = "Kare";
+"亮度" = "Parlaklık";
+"对比度" = "Karşılaştırma";
+"饱和度" = "Doygunluk";
+"曝光度" = "Görünürlük";
+"色温" = "Renk sıcaklığı";
+"暗角" = "vinyetleme";
+"锐化" = "Keskinleştirme";
+"蒙版素材" = "Maske malzemesi";
+"筛选" = "Gösterim";
+"筛选条件" = "Filtre kriterleri";
+"无筛选条件" = "Filtre yok";
+"没有项目" = "Proje yok";
+"筛选结果" = "Filtre sonuçları";
+"所有项目" = "Tüm ürünler";
+"已编辑" = "Düzenlendi";
+"仅显示" = "Sadece gösteri";
+//"筛选照片" = "";
+//"筛选视频" = "";
+"选择相册" = "Seçilmiş Albümler";
+"我的相册" = "Fotoğraf albümüm";
+"媒体类型" = "Medya tipi";
+"查看全部" = "Hepsini gör";
+"全部" = "Hepsi";
+"清空已编辑的内容" = "Düzenlenen içeriği temizleyin";
+"高光" = "Öne Çıkanlar";
+"阴影" = "Gölgeler";
+
+"HXAlbumCameraRoll" = "Tüm fotoğraflar";
+"HXAlbumPanoramas" = "Panoramik fotoğraf";
+//"HXAlbumVideos" = "";
+"HXAlbumFavorites" = "Kişisel koleksiyon";
+"HXAlbumTimelapses" = "Zaman atlama fotoğrafçılığı";
+"HXAlbumRecents" = "Son projeler";
+"HXAlbumRecentlyAdded" = "Yakın zamanda eklenenler";
+"HXAlbumBursts" = "Kısa aralıklarla bir fotoğraf çek";
+"HXAlbumSlomoVideos" = "Yavaş çekim";
+"HXAlbumSelfPortraits" = "Selfie";
+"HXAlbumScreenshots" = "Ekran Görüntüsü";
+"HXAlbumDepthEffect" = "Portre";
+"HXAlbumLivePhotos" = "Canlı fotoğraf";
+"HXAlbumAnimated" = "GIF";
+
+"下载" = "İndir";
+
+"传输iCloud照片需先下载到本地，是否下载" = "iCloud fotoğraflarını aktarmak için önce yerel olarak indirmeniz gerekir";
+"非WiFi状态，下载将消耗流量" = "WiFi dışı durum, indirme veri tüketir";
+"所选内容为云图，请先连接网络下载后再分享" = "Seçilen içerik bulut haritasıdır, lütfen paylaşmadan önce ağıya bağlanarak indirin";
+
+//单数适配
+"receiveFileSuccess" = "Dosya alındı";
+"receiveFileFailed" = "Dosyaları alınamadı";
+//"file" = "";
+//"picture" = "";
+//"video" = "";
+//"contact" = "";
+"fileAdd" = "dosyalar,";
+//"pictureAdd" = "";
+//"videoAdd" = "";
+//"specialFileSaved" = "";
+"isReceiveFile" = "Dosyalar, alıyor musun?";
+
+//复数适配
+"receiveFilesSuccess" = "Dosya alındı";
+"receiveFilesFailed" = "Dosyaları alınamadı";
+//"files" = "";
+//"pictures" = "";
+//"videos" = "";
+//"contacts" = "";
+"filesAdd" = "dosyalar,";
+//"picturesAdd" = "";
+//"videosAdd" = "";
+//"specialFilesSaved" = "";
+"isReceiveFiles" = "Dosyalar, alıyor musun?";
+
+"network_error" = "Ağ bağlantısı anormalse, lütfen telefonunuzu yeniden başlatın";
+//"network_permission_error_title" = "";
+//"network_permission_error_message" = "";
+
+
+"位置" = "Konum";
+"个文件，是否接收？" = "Bir dosya var, kabul edilsin mi?";
+"编辑" = "Düzenle";
+"删除" = "Sil";
+"筛选照片" = "Fotoğrafları filtrele";
+"筛选视频" = "Videoları filtrele";
+"开启后，每次传输都将直连华为设备 WLAN" = "Açıldıktan sonra, her aktarım doğrudan Huawei cihazı WLAN'ıyla bağlanacaktır.";
+//"network_permission_error_title" = "无线数据权限未开启";
+"network_permission_error_title" = "Kablosuz veri izni açılmadı";
+//"network_permission_error_message" = "无线数据权限未开启，会导致传输失败，请先开启无线数据权限。";
+"network_permission_error_message" = "Kablosuz veri izni açılmadığında, aktarım başarısız olabilir. Lütfen önce kablosuz veri iznini açın.";
+
+
+"发送中" = "Gönderiyorum";
+"个视频，" = "Videolar,";
+"个文件，" = "dosyalar,";
+//"transfer_records"           = "互传记录";
+"transfer_records"           = "Kayıtlar değiş tokuş edilir";
+//"search"                     = "搜索";
+"search"                     = "Arama";
+//"cancel"                     = "取消";
+"cancel"                     = "İptal";
+//"confirm"                    = "确定";
+"confirm"                    = "Emin misiniz";
+//"no_data_available"          = "暂无数据";
+"no_data_available"          = "Mevcut veri yok";
+//"select_all"                 = "全选";
+"select_all"                 = "Herkesi Seç";
+//"deselect_all"               = "取消全选";
+"deselect_all"               = "Hepsini iptal et";
+//"i_know"                     = "我知道了";
+"i_know"                     = "Biliyorum";
+//"importing"                  = "正在导入";
+"importing"                  = "İthalat";
+
+//"HXAlbumVideos" = "视频";
+"HXAlbumVideos" = "Video";
+//"file" = "个文件";
+"file" = "dosyalar";
+//"picture" = "张图片";
+"picture" = "Resim";
+//"video" = "个视频";
+"video" = "Videolar";
+//"contact" = "个联系人";
+"contact" = "Bağlantılar";
+//"pictureAdd" = "张图片，";
+"pictureAdd" = "Resim,";
+//"videoAdd" = "个视频，";
+"videoAdd" = "Videolar,";
+//"specialFileSaved" = "个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹";
+"specialFileSaved" = "Özel format dosyaları\nFiles-HarmonyOS Galaxy-Image klasörüne kaydedildi";
+//"files" = "个文件";
+"files" = "dosyalar";
+//"pictures" = "张图片";
+"pictures" = "Resim";
+//"videos" = "个视频";
+"videos" = "Videolar";
+//"contacts" = "个联系人";
+"contacts" = "Bağlantılar";
+//"picturesAdd" = "张图片，"
+"picturesAdd" = "Resim,";
+//"videosAdd" = "个视频，";
+"videosAdd" = "Videolar,";
+//"specialFilesSaved" = "个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹";
+"specialFilesSaved" = "Özel format dosyaları\nFiles-HarmonyOS Galaxy-Image klasörüne kaydedildi";
+
+
+
+
+"注：如已和华为设备配对，和该华为设备传输时，请在双端设备“设置-蓝牙”中，取消配对连接。避免传输失败" = "Not: Eğer bir Huawei cihazıyla eşleştirip Huawei cihazına aktarma yaptıysanız, her iki cihazda da Ayarlar - Bluetooth bölümünden eşleştirme bağlantısını kesin. Şanzıman arızalarından kaçının";
+
+"如无法发现对方设备，请完成以下操作后再试：" = "Diğer cihazı bulamıyorsanız, lütfen tekrar denemeden önce aşağıdaki işlemleri tamamlayın:";
+"1.如已和华为设备配对，和该华为设备传输时，请在双端设备“设置-蓝牙”中，取消配对连接。避免传输失败" = "1. Huawei cihazıyla önceden eşleştirme yapıldıysa, cihaz ile veri aktarımı sırasında her iki cihazın \"Ayarlar > Bluetooth\" menüsünde eşleştirme bağlantısını sonlandırın. Bu işlem aktarım hatasını önleyecektir.";
+"2.如已打开其他互传文件的应用，请关闭其他互传应用" = "2. Aktif durumda olan diğer dosya aktarma uygulamaları varsa, bu uygulamaları kapatın.";
+"3.两端设备连接同一局域网，华为设备在控制中心将华为分享设为“所有人可见”。" = "3. Her iki cihazın aynı yerel ağa bağlı olduğundan ve Huawei cihazının kontrol merkezinde \"Huawei Share\" özelliğinin \"Herkese Açık\" olarak ayarlandığından emin olun.";
+"如上述操作依旧无法发现对方设备：" = "Yukarıdaki işlemlere rağmen cihaz hala bulunamıyorsa:";
+"建议一端设备开启热点，另一端设备手动连接热点后再试。" = "Bir cihazda internet paylaşımı noktası (hotspot) etkinleştirip diğer cihazın bu noktaya manuel olarak bağlanmasını öneriyoruz. Bağlantı sonrasında işlemi tekrar deneyebilirsiniz.";
+
+
+// ***********  Mac相关  ****************
+//土耳其语
+"欢迎使用鸿蒙星河互联" = "HarmonyOS'a hoş geldiniz Galaxy Internet'e";
+"\"鸿蒙星河互联\" 想要加入无线局域网" = "HarmonyOS Galaxy Connection kablosuz LAN'e katılmak istiyor";
+"支持与HarmonyOS 6 及以上版本华为设备互传，\n对方需在控制中心将华为分享设为“所有人可见”，\n本端需在app右上角的“设置-系统权限管理”中打开位置和蓝牙" = "HarmonyOS 6 ve üzeri Huawei cihazlarıyla karşılıklı iletimi desteklemek için, diğer taraf Kontrol Merkezi'nde Huawei Paylaşımı'nı \"Herkese Görünür\" olarak ayarlamalı, yerel cihaz ise uygulamanın sağ üst köşesindeki \"Ayarlar - Sistem İzni Yönetimi\" bölümünde konum ve Bluetooth'u açmalıdır";
+"已是最新版本" = "En son sürümdür";
+"从手机相册选择" = "Telefonunuzun albümünden seçin";
+"使用过程中申请" = "Kullanım sırasında uygulanır";
+"用于互传时读取照片，视频等文件" = "Fotoğraf, video ve diğer dosyaları birbirine aktarırken okuyordum";
+"用于互传时读取通讯录" = "Birbirlerine iletilirken adres defterini okurduk";
+"该文件已被移动或删除，是否删除该项纪录。" = "dosyanın taşınıp taşınmadığı, silinmiş mi, kaydın silinip silinmediği.";
+"删除后将无法恢复此记录。" = "Bu kayıt silindikten sonra geri dönememez.";
+"无法获取本地应用版本" = "Yerel uygulama sürümünü alamıyorum";
+"无法获取App Store版本信息" = "App Store sürüm bilgisi mevcut değildir";
+"检查到新版本" = "Yeni versiyona bak";
+"当前版本" = "Güncel sürüm";
+"立即更新" = "Şimdi Güncelleştir";
+"检查更新失败" = "Güncellemeleri kontrol etmek başarısız oldu";
+"可被其他设备发现" = "Diğer cihazlarla keşfedilebilen";
+"已取消" = "İptal edildi";
+"确认要取消接收吗？" = "Makbuzu iptal etmek istediğinizi doğrulayacak mısınız?";
+"蓝牙权限被拒绝" = "Bluetooth izni reddedildi";
+"请在系统设置的\"隐私与安全性\"中启用蓝牙权限" = "Lütfen sistem ayarlarınızın \"Gizlilik ve Güvenlik\" bölümünde Bluetooth izinlerini etkinleştirin";
+"打开设置" = "Açık ayarlar";
+"稍后" = "Biraz sonra";
+"需要本地网络权限" = "Yerel ağ izinleri gerektirir";
+"此操作需要访问本地网络以发现设备。请授予本地网络权限后重试。" = "Bu işlem, cihazı keşfetmek için yerel ağa erişim gerektirir. Lütfen yerel ağ izinlerini verin ve tekrar deneyin.";
+"请求权限" = "İzin talep et";
+"
+为了发现和连接本地网络中的设备，需要授予本地网络权限。
+
+请按以下步骤操作：
+1. 打开「系统设置」
+2. 进入「隐私与安全性」 
+3. 选择「本地网络」
+4. 找到此应用并开启权限
+5. 返回应用继续使用
+" = "Yerel ağınızdaki cihazları keşfetmek ve bağlamak için yerel ağ izinleri vermeniz gerekir.
+
+Şu adımları takip edin:
+1. \"Sistem Ayarları\"nı açın
+2. \"Gizlilik ve Güvenlik\" bölümüne gidin
+3. \"Yerel Ağ\"ı seçin
+4. Bu uygulamayı bulun ve izinleri açın
+5. Uygulamaya geri dönüp kullanmaya devam et
+";
+"打开系统设置" = "Açık Sistem Ayarları";
+"显示菜单" = "Gösteri menüsü";
+"确认要取消发送吗" = "Teslimatı iptal etmek istediğinizi doğrulamak ister misiniz?";
+"设备已断开" = "Cihaz bağlantısı kesildi";
+"链接的设备已丢失，文件选择已取消。" = "Bağlantılı cihaz eksik ve dosya seçimi iptal edildi.";
+"未知版本" = "Bilinmeyen versiyon";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“同意”，即表示您同意鸿蒙星河互联用户协议、权限使用说明、关于鸿蒙星河互联与隐私的声明。" = "Bu hizmet, veri bağlamak, göndermek ve almak, resimleri, videoları, kontakları ve dosyaları okumak ve ağ bilgisini almak için Bluetooth ve WLAN kullanmalıdır. Bu hizmet, HarmonyOS Galaxy Internet'in temel iş fonksiyonlarını sağlar. \"Kabul et\" tuşuna tıklayarak, HarmonyOS Kullanıcı Sözleşmesi, İzin Kullanım Talimatları ve HarmonyOS Galaxy İnternet ve Gizlilik Açıklamasını kabul etmiş olursunuz.";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“同意”，即表示您同意" = "Bu hizmet, veri bağlamak, göndermek ve almak, resimleri, videoları, kontakları ve dosyaları okumak ve ağ bilgisini almak için Bluetooth ve WLAN kullanmalıdır. Bu hizmet, HarmonyOS Galaxy Internet'in temel iş fonksiyonlarını sağlar. \"Katılıyorum\" seçeneğine tıklayarak kabul etmiş olursunuz";
+"选择新图片" = "Yeni bir görüntü seç";
+"头像修改成功" = "Avatar başarıyla değiştirilmiştir";
+"请输入符合要求的文本（2-17位字符，可包含英文字母、数字、汉字）" = "Lütfen gerekli metni girin (İngilizce harfler, sayılar ve Çince karakterler dahil olmak üzere 2-17 karakter)";
+"请输入设备名称" = "Lütfen cihazın adını girin";
+"无效的URL" = "Geçersiz URL";
+"连接断开" = "Bağlantı koptu";
+"发送失败" = "Gönderemedi.";
+"内存不足" = "Yetersiz bellek";
+"发送中，请不要退出当前页面" = "Gönderme sırasında, lütfen mevcut sayfadan çıkmayın";
+"内存不足，分享失败" = "Hafızadan çıkınca, paylaşım başarısız oldu";
+"与HarmonyOS设备自由连接，高效互传" = "Verimli karşılıklı iletim için HarmonyOS cihazlarına serbestçe bağlanın";
+"当前版本：v%@" = "Versiyon: v% @";
+"蓝牙已关闭，可能会影响传输和接收，请在”设置“中允许新连接" = "Bluetooth kapalı ve iletim ile çekimleri etkileyebilir, lütfen Ayarlar'da yeni bağlantılara izin verin";
+"1.对方开启华为分享，" = "1. Diğer taraf Huawei Paylaşımını açar,";
+"连接失败" = "Bağlantı başarısız oldu";
+"加载失败" = "Yükleme başarısız oldu";
+"一次最多只能拖拽100个，超出数量将无法捕获拖拽内容" = "Aynı anda sadece 100 öğeyi sürükleyip bırakabilirsiniz ve sürüklenen içeriği bu sayının ötesine kaydedemezsiniz";
+"1.本设备打开“鸿蒙星河互联”app，" = "1. Bu cihazda \"HarmonyOS Galaxy Internet\" uygulamasını açın.";
+"commonQuestions" = "SSS";
+"问题1：Mac端打开鸿蒙星河APP后无法发现设备？" = "Soru 1: Mac'te HarmonyOS Galaxy uygulamasını açtıktan sonra cihazı bulamıyor musunuz?";
+"answerOne" = "Cevap: Lütfen Bluetooth'un her iki ucunda açık olduğundan ve Huawei cihazınızın sisteminin 6.0.0.112 veya daha yeni olduğundan ve \"Kontrol Merkezi\"nde \"Huawei Paylaşım\"ın açık olduğundan ve \"Herkese Görünür\" olarak ayarlandığından emin olun. Cihazınızı hâlâ bulamıyorsanız, Mac'inizde diğer iletişim uygulamalarının açık olup olmadığını kontrol edin (örneğin Kuaiya, Xiaomi Mutual Transfer Service vb.) ve tekrar denemeden önce bu uygulamaları kapattığınızdan emin olun.";
+"问题2：Mac端总是提示连接失败/发送或接收不成功？" = "Soru 2: Mac her zaman bağlantı arızası/gönderme veya alma başarısız mı diyor?";
+"answerTwo" = "Cevap: Mac ağının gönderme arızasından kaynaklanabilir, özel adımlar şunlardır: Sistem Tercihleri - >Wi-Fi/Ağ> İleriye > \"Ağ Değiştir\" ve \"Wi-Fi'yi açıp kapat\" işaretlerini kaldırın. Yukarıdaki işlemleri tamamladıktan sonra transfer işlemi tekrar deneyin.";
+"sendMethodsOneStepTwo" = "2. Göndermek istediğiniz dosyayı seçin ve göndermek için diğer cihazın avatarına sürükleyin. Ya da önce karşı tarafın cihaz avatarına tıklayın, ardından göndermek istediğiniz dosyayı seçin.";
+"sendMethodsTwoStepTwo" = "2. Göndermek istediğiniz dosyayı seçin, \"Paylaş\" butonuna tıklayarak HarmonyOS Galaxy İnternet uygulamasını seçin ve göndermek için diğer cihazı seçin.";
+"commitTips" = "Lütfen gönderim sırasında arka plandan çıkmayın";
+"maxUploadTips" = "Sadece 3 fotoğrafa kadar yükleyebilirsiniz";
+"前往\"下载\"查看" = "Görüntülemek için \"İndirmeler\" bölümüne gidin";
+"接收记录" = "Kayıt alma";
+"想向您发送" = "Sana göndermek istiyorum";
+"（" = "（";
+"）" = "）";
+"取消，分享失败" = "İptal edildi, paylaşım başarısız oldu";
+"请断开已连接的WIFI后重试" = "Lütfen bağlı WIFI'yi kapatıp tekrar deneyin";
+"协议与声明" = "Anlaşma ve Açıklama";
+"同意" = "Katılıyorum";
+"deviceNameComfirmBtn" = "Gönder";
+"不支持发送应用程序包" = "Başvuru paketlerinin gönderilmesi desteklenmemektedir";
+"检测到应用程序(.app)、项目文件或其他包文件，这些文件类型暂不支持发送。" = "Uygulama (.app), proje dosyaları veya diğer paket dosyaları tespit edilir ve bu dosya türleri şu anda gönderilmek için desteklenmez.";
+"请选择普通文件或文件夹。" = "Lütfen normal bir dosya veya klasör seçin.";
+"发送" = "Gönder";
+"查看文件" = "Belgeyi görüntüleyin";
+"正在加载..." = "Yükleniyor...";
+"等" = "vs.";
+"未知大小" = "Boyutu bilinmemektedir";
+"解析plist失败：" = "Ayrıştırma plisti başarısız oldu:";
+"图片Data无效，无法转成图像" = "Görüntü verisi geçersizdir ve görüntüye dönüştürülemez";
+"plist提取数据转PNG成功！PNG大小：" = "PNG Başarısına Çıkarma Verisi plist! PNG Boyutu:";
+"字节" = "Baytlar";
+"截屏" = "Ekran Görüntüsü";
+"CGImage编码PNG失败" = "CGImage kodlama PNG başarısız oldu";
+"NSImage转PNG失败" = "NSImage PNG'ye başarısız oldu";
+"加载实况图包失败" = "Canlı paket yüklenemedi";
+"确认" = "Onay";
+"该文件已被移动或删除，是否删除该项记录？" = "Dosya taşındı ya da silindi, kayıt silindi mi?";
+"请确认是否删除记录。" = "Kaydı silmek isteyip istemediğinizi kontrol edin.";
+"删除记录和文件" = "Kayıtları ve dosyaları sil";
+"确定要删除记录和文件吗？" = "Kayıtları ve dosyaları silmek istediğinize karar verdiniz mi?";
+"确定要删除记录吗？" = "Bir kaydı silmek istediğinizden emin misiniz?";
+"请到" = "Lütfen gel";
+"“下载”" = "İndir";
+"中查看" = "Görünüm";
+"对方需在控制中心将华为分享设置成“所有人可见”，本端需在app右上角的“设置-系统管理权限”中打开位置和蓝牙" = "Diğer taraf kontrol merkezinde Huawei Paylaşım'ı \"Herkese Görünür\" olarak ayarlamalı, yerel cihaz ise uygulamanın sağ üst köşesindeki \"Ayarlar - Sistem Yönetimi İzinleri\" bölümünde konum ve Bluetooth'u açmalı";
+"发现新版本" = "Yeni çıkanları keşfedin";
+"最新版本:" = "Son Sürüm:";
+"是否前往 App Store 更新？" = "Güncellemeler için App Store'a mı gidiyorsunuz?";
+"前往更新" = "Güncellemelere Gidin";
+"非本地文件，请先存到本地后再重试" = "Yerel olmayan dosya. Lütfen önce yerel olarak kaydedin ve tekrar deneyin";
+"检测到应用程序(.app)、项目文件或其他包文件，这些文件类型暂不支持发送。\n\n请选择普通文件或文件夹。" = "Uygulama (.app), proje dosyaları veya diğer paket dosyaları tespit edildi. Bu dosya türleri şu anda gönderim için desteklenmemektedir.\n\nLütfen normal bir dosya veya klasör seçin.";
+"版本检测" = "Sürüm Kontrolü";
+"在“照片”中打开" = "Fotoğraflarda Aç";
+"保存到“下载”" = "İndirilenlere Kaydet";

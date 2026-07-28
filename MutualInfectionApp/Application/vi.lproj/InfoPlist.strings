@@ -1,0 +1,21 @@
+/*
+  InfoPlist.strings
+  MutualInfection
+
+  Created by delegate on 2025/9/8.
+  
+*/
+
+"CFBundleName" = "Hồng Mông Tinh Hà Liên Kết";
+"CFBundleDisplayName" = "Hồng Mông Tinh Hà Liên Kết";
+"NSCameraUsageDescription" = "Sử dụng để tải và chia sẻ ảnh";
+"NSContactsUsageDescription" = "Sử dụng để chọn liên hệ để tải và chia sẻ";
+"NSPhotoLibraryUsageDescription" = "Sử dụng để chọn ảnh và video để tải và chia sẻ";
+"NSBluetoothAlwaysUsageDescription" = "Sử dụng để phát hiện và kết nối thiết bị đính kèm";
+"NSBluetoothPeripheralUsageDescription" = "Sử dụng để phát hiện và kết nối thiết bị đính kèm";
+"UTGetWiFiSSID" = "Sử dụng để lấy vị trí chính xác nhằm dễ dàng nhận diện nhanh chóng và hiệu quả, đồng thời thiết lập kết nối hotspot để chia sẻ";
+"NSLocationWhenInUseUsageDescription" = "Sử dụng để lấy vị trí chính xác nhằm dễ dàng nhận diện nhanh chóng và hiệu quả, đồng thời thiết lập kết nối hotspot để chia sẻ";
+"NSLocationUsageDescription" = "Sử dụng để lấy vị trí chính xác nhằm dễ dàng nhận diện nhanh chóng và hiệu quả, đồng thời thiết lập kết nối hotspot để chia sẻ";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Ngay cả khi bạn không sử dụng ứng dụng, chúng tôi vẫn cần tiếp tục truy cập vị trí của bạn để ghi lại lộ trình di chuyển trong nền, gửi thông báo khi đến khu vực cụ thể hoặc liên tục cung cấp dịch vụ định vị.";
+"NSLocalNetworkUsageDescription" = "Chúng tôi cần truy cập thông tin mạng của bạn để đảm bảo thiết bị đã kết nối thành công với điểm trạm (hotspot).";
+"NSLocationNetworkUsageDescription" = "Chúng tôi cần truy cập thông tin mạng của bạn để đảm bảo thiết bị đã kết nối thành công với điểm trạm (hotspot).";

@@ -1,0 +1,740 @@
+/*
+  Localizable.strings
+  MutualInfection
+
+  Created by Niko on 2025/8/31.
+  
+*/
+// 英语
+
+
+"账号名称最多输入 12 个字符" = "Account name can be up to 12 characters.";
+"无法保存，需要12个字符以内" = "Unable to save — must be within 12 characters.";
+"iPhone存储空间不足，你没有足够的存储空间将已接收的内容导入到\"照片\"。请释放空间后，再打开app重新导入。" = "iPhone storage is full. You don’t have enough storage to import the received content to \"Photos\". Please free up space, then reopen the app to import again.";
+"以后" = "Later";
+"管理" = "Manage";
+"文件夹" = "folder";
+"个文件夹" = "a folder";
+"网络连接异常,请重启手机" = "Network connection abnormal, please restart your phone";
+"空文件夹不支持分享" = "Empty folders cannot be shared";
+"对方空间不足" = "The other party has insufficient storage";
+"文件预处理空间不足\n请预留%@以上空间再试，\n或分批发送" = "Insufficient space for file preprocessing.\nPlease reserve %@ or more space and try again,\nor send in batches";
+
+"failed_to_obtain_resources" = "Failed to obtain resources";
+"sharing_not_allowed" = "Currently being transmitted, sharing not allowed";
+
+//-------底部引导页面------
+"version_requirements" = "Counterparty version requirements";
+"version_requirements_content" = "Requires HarmonyOS 6.0.0.112 or higher";
+"device_not_found" = "Device not found？";
+"found_huawei_devices" = "How to discover Huawei devices";
+"learn_more" = "Learn more";
+
+"对方需在控制中心将华为分享设置成\"所有人可见\"" = "The other party needs to set Huawei sharing to 'visible to everyone' in the control center";
+"visible to everyone" = "visible to everyone";
+//--------------------
+
+"取消" = "Cancel";
+"确定" = "Ok";
+"选择要发送的文件" = "Select the file to send";
+"照片或视频" = "Photos Or Videos";
+"文件" = "File";
+"通讯录" = "Address Book";
+"我要发送" = "I want to send";
+"关于" = "About";
+"连接中..." = "Connecting...";
+"等待中..." = "Waiting...";
+"发送中..." = "Sending...";
+"已发送" = "Completed";
+"发送取消" = "Send cancelled";
+"已连接" = "Connected";
+"已断开连接" = "Disconnected";
+"对方忙" = "Recipient Busy";
+"己方忙" = "Local Busy";
+"未识别用户" = "Unrecognized User";
+"附近" = "Nearby";
+"鸿蒙星河互联" = "HarmonyOS Interconnect";
+"设备名称" = "Device Name";
+"帮助与反馈" = "Help and Feedback";
+"系统权限管理" = "System Permission Manage";
+"以此身份使用鸿蒙星河互联" = "Your device name";
+"拒绝" = "Reject";
+"接收" = "Receive";
+"取消接收" = "Cancel receiving";
+"发送中" = "Sending";
+"已发送" = "Send successfully";
+"取消发送" = "Cancel";
+"欢迎使用" = "Welcome to use";
+"跨系统多设备文件随心流转" = "Cross system multi device file flow freely";
+"取消" = "Cancel";
+"接受" = "Accept";
+"关于鸿蒙星河互联与隐私的声明" = "Statement on HarmonyOS Interconnect and Privacy";
+"鸿蒙星河互联隐私政策" = "HarmonyOS Interconnect Privacy Policy";
+"鸿蒙星河互联用户服务协议" = "HarmonyOS Interconnect User Service Agreement";
+"互传记录" = "Transfer Records";
+"权限使用说明" = "Permission Usage Instructions";
+"意见反馈" = "Feedback";
+"问题描述" = "Problem description";
+"请尽量详细描述您的问题（不少于10字）" = "Please provide a detailed description of your problem (no less than 10 words)";
+"上传图片" = "Upload pictures";
+"联系方式" = "Contact information";
+"请输入您的联系方式" = "Your CI";
+"发送错误报告" = "Send error report";
+"版本号" = "Version";
+"检查更新" = "Check for updates";
+"个人信息收集清单" = "Personal Information Collection List";
+"个人信息共享清单" = "Personal Information Sharing List";
+"访问位置" = "Access location";
+"用于判断是否处于同一局域网" = "Used to determine whether they are in the same local area network";
+"访问照片" = "Access photos";
+"用于互传时读取照片、视频等文件" = "Used for reading photos, videos, and other files during mutual transmission";
+"访问通讯录" = "Accessing the address book";
+"用于互传时读通讯录" = "Used for reading contact lists during mutual transmission";
+"无线局域网" = "Wireless Local Area Network";
+"用于在相同局域网下连接设备，传输文件" = "Used to connect devices and transfer files within the same local area network";
+"蓝牙" = "Bluetooth";
+"用于使用蓝牙搜索附近的设备" = "Used to search for nearby devices using Bluetooth";
+"存储权限" = "Storage permissions";
+"用于存储传输记录" = "Used for storing transmission records";
+"修改名称" = "Change Name";
+"名称" = "Name";
+"输入要修改的名称" = "Enter the name to be modified";
+"2-12位字符，可包含英文字母、数字、汉字，该名称将在对方的搜索页面展示。" = "2-12 characters, which can include English letters, numbers, and Chinese characters. The name will be displayed on the other party's search page";
+"接收中" = "Receiving";
+"接收完成" = "Receipt completed";
+"查看历史记录" = "View History";
+"加入" = "Join";
+"个文件接收完成" = " files received completed";
+"个文件接收失败" = " files received failed";
+"个文件" = " files";
+"\"鸿蒙星河互联\" 想要加入无线局域网" = "HarmonyOS Interconnect wants to join the wireless LAN";
+"张图片" = " pictures";
+"个视频" = " videos";
+"共" = "All ";
+"个联系人" = " contacts";
+"文件互传设备条件" = "Equipment conditions for file transfer";
+"文件传输方式" = "File transfer method";
+"发送与接收文件" = "Sending and receiving files";
+"正在搜索设备…" = "Searching for devices...";
+"需要权限" = "Requires permission";
+"请在设备的设置中允许应用删除照片" = "Please enable the application to delete photos in the device settings";
+"对方暂不支持接收大众点评内容" = "They currently do not support receiving content from Dianping";
+"对方暂不支持接收备忘录等文本非文件内容" = "They currently do not support receiving non file content such as memos";
+"导入中" = "Importing...";
+"存储空间不足无法导入图库" = "Insufficient storage space to import gallery";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“接受”，即表示您同意鸿蒙星河互联用户协议、权限使用说明、关于鸿蒙星河互联与隐私的声明。" = "This service requires the use of Bluetooth, WLAN connections to transmit and receive data, as well as to read information such as Images, videos, and contacts, and Document, and to access Internet information. We only collect and use related personal information when specific business functions are utilized. This service provides you with the basic business functions of HarmonyOS Interconnect. By clicking 'Accept' you agree to the HarmonyOS Interconnect User Agreement, Permission Usage Instructions, Statement on HarmonyOS Interconnect and Privacy. ";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“接受”，即表示您同意" = "This service requires Bluetooth, WLAN connection and data transmission, reading images, videos, contacts and files, obtaining network information. We only trigger the above behaviors to collect and use relevant personal information when using specific business functions. This service provides the basic business functions of Harmony Star River Interconnection. Click \"Accept\" to indicate your consent";
+"蓝牙、WLAN" = "Bluetooth, WLAN";
+"图片、视频、联系人" = "Images, videos, and contacts";
+"文件" = "Files";
+"网络信息" = "Internet information";
+"鸿蒙星河互联用户协议" = "HarmonyOS Interconnect User Agreement";
+"支持与HarmonyOS 6 及以上版本华为设备互传，\n对方需在控制中心将华为分享设为“所有人可见”" = "Supports sharing with devices running HarmonyOS 6 or later.On the other device,Huawei Share must be set to 'Everyone' in the Control Panel.";
+"正在导入“照片”，请勿退出应用" = "Importing \"Photos\"... Please do not exit the app";
+"正在导入“文件”，请勿退出应用" = "Importing \"File\"... Please do not exit the application";
+"正在导入" = "Importing...";
+"当前已是最新版本" = "This is already the latest version";
+"未监测到线上版本" = "No online version detected";
+"实时活动权限" = "Real-time Activity Permissions";
+"用于后台时通过灵动岛显示传输进度" = "When used in the background, display the transmission progress through the dynamic island";
+"发生时间*" = "Time of occurrence*";
+"请检查网络连接" = "Please check the network connection";
+"请填写10字以上的问题描述" = "Please provide a problem description of at least 10 words";
+"请填写联系方式" = "Please provide your contact information";
+"请选择发生时间" = "Please select the time of occurrence";
+"提交成功" = "Submitted successfully";
+"选择要上传的文件" = "Select the file to upload";
+"从相册选择" = "Select from photo album";
+"拍照" = "Take photos";
+"无法访问相机" = "Unable to access camera";
+"没有获得相机访问权限，请在设置中允许访问相机" = "Not obtained camera access permission. Please allow access to the camera in the settings";
+"开启权限" = "Enable permissions";
+"无法访问相册" = "Unable to access album";
+"没有获得相册访问权限，请在设置中允许访问相册" = "Not granted access to the album, please allow access to the album in the settings";
+"保存" = "Save";
+"使用过程中申请
+
+无线局域网
+用于在相同局域网下连接设备，传输文件
+
+蓝牙
+用于使用蓝牙搜索附近的设备
+
+位置
+用于判断是否处于同一局域网
+
+照片
+用于互传时读取照片，视频等文件
+
+通讯录
+用于互传时读取通讯录
+
+存储权限
+用于存储传输记录" = "Apply during use
+
+Wireless LAN
+Used to connect devices and transfer files within the same local area network
+
+Bluetooth
+Used to search for nearby devices using Bluetooth
+
+position
+Used to determine whether they are in the same local area network
+
+photo
+Used for reading photos, videos, and other files during mutual transmission
+
+address book
+Used to read the address book during mutual transmission
+
+Storage permission
+Used for storing transmission records";
+"无线局域网" = "Wireless LAN";
+"蓝牙" = "Bluetooth";
+"位置" = "Position";
+"照片" = "Photos";
+"通讯录" = "Address Book";
+"存储权限" = "Storage permission";
+"对端设备：HarmonyOS软件版本6.0.0.112及以上的手机、平板、电脑。" = "The other device must be a Huawei phone,tablet,or computer running HarmonyOS 6 or later.";
+"本端设备：iOS 13及以上、iPad OS 13及以上、Mac OS 10.15及以上。" = "Local device: iOS 13 or later, iPadOS 13 or later, macOS 10.15 or later.";
+"方式一：同WLAN传输" = "Method 1: Same WLAN transmission";
+"当两台设备连接同一可用WLAN时，确认接收后将直接进行文件互传。" = "When two devices are connected to the same available WLAN, file exchange will occur directly after confirming receipt.";
+"方式二：热点传输" = "Method 2: Hotspot transmission";
+"当两台设备未连接同一可用WLAN时，确认接收后需连接对方设备热点以进行免流量文件互传。" = "When two devices are not connected to the same available WLAN, after confirming receipt, they need to connect to the other device's hotspot for data free file transfer.";
+"注：大文件互传时，建议使用热点传输(速度较快)以快速完成传输任务。" = "Note: When transferring large files to each other, it is recommended to use hotspot transfer (faster speed) to quickly complete the transfer task.";
+"接收文件" = "Receive files";
+"1.本设备打开“鸿蒙星河互联”app，并保持亮屏。" = "1. Open the 'HarmonyOS Interconnect' app on this device,keep the screen on.";
+"2.对方选择要发送的文件，在华为分享界面选择本设备。" = "2. The other party selects the file to be sent and selects this device on the Huawei Share interface.";
+"3.与对方处于同一WLAN或连接对方热点，开始传输。" = "3. Connect to the same WLAN or hotspot as the other party and start transmitting.";
+"发送文件" = "Send files";
+"方式一：鸿蒙星河互联app内发送" = "Method 1: Send within the HarmonyOS Interconnect app";
+"﻿1.对方开启华为分享，并保持亮屏。首次使用需设为“所有人可见”。" = "1. The other party has enabled Huawei Share,keep the screen on.For the first use, set it to 'Everyone'.";
+"2.本设备选择要发送的文件，点击对方设备头像。或先点击对方设备头像，再选择要发送的文件。" = "2. Select the file to be sent on this device and click on the recipient's device avatar. Or first click on the other party's device avatar, and then select the file to send.";
+"3.与对方处于同一WLAN或连接对方热点，开始传输。" = "3. Connect to the same WLAN or hotspot as the other party and start transmitting.";
+"方式二：通过“共享”选择鸿蒙星河互联app发送" = "Method 2: Select 'Share' and send it through the HarmonyOS Interconnect app";
+"1.对方开启华为分享，并保持亮屏。" = "1. The other party has enabled Huawei Share,keep the screen on.";
+"2.本设备选择要发送的文件，点击“共享”按钮选择鸿蒙星河互联app。" = "2. Select the file to be sent on this device, click the 'Share' button, and choose the HarmonyOS Interconnect app.";
+"3.与对方处于同一WLAN或连接对方热点，开始传输。" = "3. Connect to the same WLAN or hotspot as the other party and start transmitting.";
+"导入完成" = "completed";
+"正在导入" = "Importing";
+"等待中" = "Waiting...";
+"对方已取消接收" = "The other party has cancelled the reception";
+"连接中..." = "Connecting...";
+"发送中..." = "Sending...";
+"已发送" = "Sent";
+"接收中..." = "Receiving...";
+"接收完成" = "Received completed";
+"张图片，" = " pictures,";
+"个视频，" = " videos,";
+"个文件，" = " files,";
+"连接中" = "Connecting...";
+"正在连接对方热点" = "Connecting to the other party's hotspot";
+"确定要取消接收吗？" = "Are you sure you want to cancel receiving?";
+"继续接收" = "Continue";
+"cancelReceivingAlertBtn" = "Cancel";
+"接收取消" = "Cancel receiving";
+"知道了" = "Got it";
+"对方取消发送，接收失败" = "The other party canceled sending, receiving failed";
+"局域网连接中" = "LAN connection in progress";
+"前往\"照片\"查看" = "Go to 'Photos' viewing";
+"前往\"文件\"查看" = "Go to 'Files' viewing";
+"文件还在导入中" = "The file is still being imported";
+"可在互传记录中查看导入进度" = "You can view the import progress in the mutual transfer record";
+"退出应用会导致导入失败" = "Exiting the application will result in import failure";
+"退出应用" = "Exit";
+"继续导入" = "Continue";
+"蓝牙已关闭,请在“设置”中允许新连接" = "Bluetooth is turned off, please allow new connections in 'Settings'";
+"设备不支持蓝牙" = "The device does not support Bluetooth";
+"蓝牙正在重置" = "Bluetooth is resetting";
+"蓝牙状态未知" = "Unknown Bluetooth status";
+"蓝牙权限未打开" = "Bluetooth permission not turned on";
+"没有获得蓝牙权限，请在设置中打开蓝牙权限" = "I have not obtained Bluetooth permission. Please enable Bluetooth permission in the settings";
+"去设置" = "Go to Settings";
+"位置权限未打开" = "Location permission not enabled";
+"没有获得位置权限，请在设置中打开位置权限" = "I have not obtained location permission. Please enable location permission in the settings";
+"通讯录权限未打开" = "Address book permission not opened";
+"没有获得通讯录访问权限，请在设置中允许访问通讯录" = "Not granted access to the address book, please allow access to the address book in the settings";
+"照片权限未打开" = "Photo permission not opened";
+"没有获得照片访问权限，请在设置中允许访问照片" = "I have not obtained photo access permission. Please allow access to photos in the settings";
+"WIFI权限未打开" = "WIFI permission not turned on";
+"没有获得WIFI权限，请在设置中打开WIFI权限" = "I have not obtained WIFI permission. Please enable WIFI permission in the settings";
+"正在导入至“照片”，请勿退出应用" = "Importing to \"Photos\", please do not exit the app";
+"存储空间不足，导入失败，请清理空间后在接收记录中重新导入" = "Insufficient space.Import failed.Please free up some space and try importing again on the reveiving page";
+"去设置界面开启允许通讯录选择" = "Go to the settings interface and enable the option to allow contact selection";
+"设置" = "Setting";
+
+
+"发送过程中请不要退出当前界面" = "Sending... Please do not exit the current page";
+"正在导入至“照片”，请不要退出当前页面" = "Importing to 'Photos', please do not exit the current page";
+"请不要退出当前页面" = "Please do not exit the current page";
+"选择联系人" = "Select Contact";
+"全选" = "Select All";
+"取消全选" = "Deselect All";
+"搜索" = "Search";
+"暂无数据" = "No data available";
+"完成" = "Finish";
+
+"分享失败" = "Share failed";
+"连接已超时，请重新点击对方设备后再连接" = "The connection has timed out. Please click the other device again before reconnecting";
+"内存不足,分享失败" = "Insufficient memory, sharing failed";
+"请关闭热点后重试" = "Please turn off the hotspot and try again";
+"接收失败" = "Reception failed";
+"连接已超时，请对端重新点击设备发起连接" = "The connection has timed out. Please have the remote party click the device to initiate the connection again";
+"内存不足，接收失败" = "Insufficient memory, reception failed";
+"本机内存不足，发送失败" = "Insufficient memory on this device, send failed";
+"点击上传" = "Upload";
+"提交" = "Submit";
+"与HarmonyOS设备自由连接，免流量高效互传" = "Effortlessly share files with nearby HarmonyOS devices without data usage";
+"待接收" = "Preparing...";
+"已拒绝" = "Rejected";
+"文件还在发送中，是否终止发送？" = "File transmission in progress,Terminate transmission?";
+"终止发送" = "Terminate";
+"继续发送" = "Continue";
+"接收失败，请关闭热点后再试" = "Reception failed. Please disable hotspot and retry";
+"发送失败，请关闭热点后再传输" = "Sending failed, please turn off the hotspot before transferring again";
+"请关闭热点后再传输" = "Please disable hotspot before retransmitting";
+"我知道了" = "I known";
+"提示" = "Notification";
+"蓝牙已关闭，可能会影响传输和接收，请在“设置”中允许新连接" = "Bluetooth is disabled, which may affect transmission and reception. Please allow new connections in 'Settings'";
+"接收雷达" = "Reception Radar";
+"提交中，请保持在当前页面，不要退出后台" = "Submitting. Please remain on the current page and do not exit the background";
+"提交失败请重试" = "Submission failed. Please retry";
+"设备名称不能为空" = "Device name cannot be empty.";
+"请输入符合要求的文本（2-12位字符，可包含英文字母、数字、汉字）" = "Please enter a valid text (2-17 characters, including letters, numbers, and Chinese characters).";
+"请输入你要修改的名称" = "Please enter the name you want to modify";
+"请求超时" = "Request Timeout";
+"确定要取消发送吗？" = "Are you sure to cancel sending?";
+"取消失败" = "Cancel Failed";
+"选择的文件" = "Selected File";
+"未选择文件" = "No file selected";
+"0个文件" = "0 files";
+"选择日期时间" = "Select date and time";
+"来自" = "From ";
+"首次使用需设为“所有人可见”。" = "For the first use, set it to 'Everyone'.";
+"并保持亮屏。" = "keep the screen on.";
+"恢复默认" = "Restore";
+"无法访问相册，请检查设备权限设置。" = "Unable to access album, please check device permission settings.";
+"修改成功" = "Modified successfully";
+"控制中心创建快捷入口" = "Create a shortcut entrance in the control center";
+"﻿1.在控制中心的空白处长按，点击“添加控制”按钮；" = "1. Press the 'Add a Control' button in the blank section of the control center;";
+"2.下滑找到“快捷指令”栏，点击“打开APP”按钮；" = "2. Scroll down to find the 'Shortcuts' column and click the 'Open APP' button;";
+"3.选取“鸿蒙星河互联”app，即可创建快捷入口。" = "3. Select the 'HarmonyOS Interconnect' app,You can create a shortcut entrance.";
+"部分或全部格式不支持导入“照片”，已存入“文件-鸿蒙星河互联-image” 文件夹" = "Partial or full formats are not supported for importing 'Photos';they have been saved in the 'Files-HarmonyOS Interconnect-image' folder";
+"好的" = "OK";
+"去查看" = "Go Check";
+"“最近存储”或“鸿蒙星河互联”相簿" = "\"Recently Stored\" or \"HarmonyOS Interconnect\" album";
+"查看时可以使用“通讯录”打开并导入" = "You can open and import it using the 'Contacts' app when viewing.";
+"个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹" = " special format files\nstored in 'Files-HarmonyOS Interconnect-Image' folder";
+"已取消接收" = "Reception has been canceled";
+"想要分享" = " wants to share ";
+"个文件，是否接收？" = " files, received?";
+"对方暂不支持接收此类型内容" = "The other party does not currently support receiving this type of content";
+"正在处理文件..." = "Processing files...";
+"输入已达上限" = "The input has reached the upper limit";
+"，" = ",";
+"高速传输模式" = "High-speed";
+"开启后，每次传输都将直连华为设备 WLAN" = "After activation, each transmission will connect directly to the Huawei device's WLAN";
+"iCloud照片下载失败" = "Failed to download photos from iCloud";
+"请连接好网络再试" = "Please connect to the network and try again";
+"跳过云图" = "skip iCloud";
+"类型文件暂不支持分享" = "files are temporarily not supported for sharing";
+// 互换记录
+// Localizable.strings (英文)
+"transfer_records"           = "Transfer Records";
+"search"                     = "Search";
+"received_from"              = "Received From";
+"import_failed"              = "Import Failed";
+"partial_import_failed"      = "Partial Import Failed";
+"import_no_complete"         = "Import Not Completed";
+"retry"                      = "Retry";
+"i_received"                 = "I Received";
+"i_sent"                     = "I Sent";
+"edit"                       = "Edit";
+"sort_by_time"               = "Sort by Time";
+"sort_by_type"               = "Sort by Type";
+"descending_order"           = "Descending Order";
+"ascending_order"            = "Ascending Order";
+"confirm_delete_record"      = "Please Confirm to Delete Record";
+"cancel"                     = "Cancel";
+"confirm"                    = "Confirm";
+"no_data_available"          = "No data available";
+"can_not_find"               = "Can't find";
+"select_all"                 = "Select All";
+"deselect_all"               = "Deselect All";
+"source_file_corrupted"      = "Source File is Corrupted and Cannot be Imported";
+"i_know"                     = "I know";
+"view"                       = "View";
+"open_with"                  = "Open With";
+"delete_record_and_file"     = "Delete Record and File";
+"delete_record"              = "Delete Record";
+"file_moved_or_deleted"      = "This file has been moved or deleted";
+"delete_record_confirmation" = "Whether to delete this record?";
+"file_moved_or_deleted_confirm_delete_record"      = "This file has been moved or deleted, Whether to delete this record?";
+"ignore"                     = "Ignore";
+"delete"                     = "Delete";
+"image_imported_to_album"    = "Image has been imported to system album\nPlease check in [Photos] > [Albums] \n> [HarmonyOS Interconnect]";
+"imported_to_system_album"   = "imported to system album";
+"importing"                  = "importing";
+
+
+
+
+//************** PhotoPicker
+"无法访问相册中照片" = "Can't access photos in album";
+"当前无照片访问权限，建议前往系统设置，\n允许访问「照片」中的「所有照片」。" = "Currently no photo access，System settings recommended，\nAllow access to all photos in photos.";
+"前往系统设置" = "Settings";
+"取消" = "Cancel";
+"相册" = "Album";
+"完成" = "Finish";
+"原图" = "Original";
+"原片" = "Original";
+"预览" = "Preview";
+"编辑" = "Edit";
+"返回" = "Back";
+"还原" = "Reset";
+"自由" = "Free";
+"全选" = "Select All";
+"下一步" = "Next";
+"取消全选" = "Deselect All";
+"没有可选资源" = "No optional resources";
+"照片和视频不能同时选择" = "Photos and videos cannot be selected at the same time";
+"最多只能选择%d张照片" = "You can only select up to %d photos";
+"已达到最大选择数" = "Maximum number of choices reached";
+"视频最大时长为%d秒，无法选择" = "The maximum video duration is %d seconds and cannot be selected";
+"视频最小时长为%d秒，无法选择" = "The minimum length of the video is %d seconds and cannot be selected";
+"视频和照片不能同时选择" = "Video and photo cannot be selected at the same time";
+"最多只能选择%d个视频" = "You can only select up to %d videos";
+"正在下载" = "Downloading";
+"下载失败" = "Download failed";
+"没有照片" = "No photo";
+"你可以使用相机拍些照片" = "You can take some pictures with the camera";
+"无法访问相册中所有照片，\n请允许访问「照片」中的「所有照片」" = "Can't access photos in album\nAllow access to all photos in photos.";
+"只能查看允许访问的照片和相关相册" = "Can only view allowed photos and related albums";
+"无法使用相机!" = "Cannot use the camera!";
+"无法使用相机功能" = "Cannot use camera function";
+"请前往系统设置中，允许访问「相机」。" = "Please go to the system settings to allow access to the camera";
+"照片大小超过最大限制" = "The photo size exceeds the maximum limit";
+"视频大小超过最大限制" = "Video size exceeds the maximum limit";
+"视频导出失败" = "Video export failed";
+"保存失败" = "Save failed";
+"所有照片" = "All photos";
+"正在处理..." = "Processing...";
+"处理失败" = "Processing failed";
+"导出失败" = "Export failed";
+"视频加载中" = "Video loading";
+"视频加载失败!" = "The video failed to load!";
+"视频可编辑最大时长为%d秒，无法编辑" = "The maximum length of the video that can be edited is %d seconds and cannot be edited";
+"相机不可用!" = "Camera is not available!";
+"确定" = "Done";
+"提示" = "Prompt";
+"图片获取失败!" = "Image acquisition failed!";
+"视频获取失败!" = "Video acquisition failed!";
+"图片下载中" = "Picture downloading";
+"视频下载中" = "Video downloading";
+"设置失败!" = "Setup failed!";
+"唯美" = "Nashville";
+"梦幻" = "Toaster";
+"老电影" = "Old movie";
+"怀旧" = "Nostalgia";
+"黑白" = "Black";
+"色调" = "Tone";
+"模糊" = "Blurry";
+"岁月" = "Years";
+"单色" = "Monochrome";
+"褪色" = "Fade";
+"冲印" = "Print";
+"铬黄" = "Chrome";
+"暂无配乐" = "No soundtrack";
+"配乐" = "Soundtrack";
+"视频原声" = "Original sound";
+"正在同步iCloud" = "iCloud syncing";
+"iCloud同步失败" = "iCloud sync failed";
+"拖动到此处删除" = "Drag here to delete";
+"松手即可删除" = "Let go to delete";
+"搜索" = "Search";
+"背景音乐" = "Music";
+"搜索歌名" = "Search song title";
+"此歌曲暂无歌词，请您欣赏" = "There are no lyrics for this song, please enjoy";
+"选择" = "Select";
+"取消选择" = "Deselect";
+"歌词" = "Lyrics";
+"拍摄失败!" = "Filming failed!";
+"摄像头切换失败!" = "Camera switching failed!";
+"相机初始化失败!" = "Camera initialization failed!";
+"轻触拍照" = "Tap to take a photo";
+"按住摄像" = "Hold to record";
+"轻触拍照，按住摄像" = "Tap to take a photo, Hold to record";
+"拍摄时长不足%d秒" = "The shooting time is less than %d second";
+"麦克风添加失败，录制视频会没有声音哦!" = "Failed to add microphone, there will be no sound when recording video!";
+"无法使用麦克风" = "Cannot use microphone";
+"请在设置-隐私-相机中允许访问麦克风" = "Please allow access to the microphone in Settings-Privacy-Camera";
+"更多" = "More";
+"张照片" = " Photos";
+"个视频" = " videos";
+"实况" = "Live";
+"照片" = "Photo";
+"视频" = "Video";
+"点击摄像" = "Click to record";
+"音量" = "Volume";
+"明亮" = "Light";
+"删除" = "Delete";
+"原始比例" = "Original";
+"自由格式" = "FreeForm";
+"正方形" = "Square";
+"亮度" = "Brightness";
+"对比度" = "Contrast";
+"饱和度" = "Exposure";
+"曝光度" = "Saturation";
+"色温" = "Warmth";
+"暗角" = "Vignette";
+"锐化" = "Sharpen";
+"蒙版素材" = "Masks";
+"筛选" = "Filters";
+"筛选条件" = "Filted by";
+"无筛选条件" = "No Filters";
+"没有项目" = "No Items";
+"筛选结果" = "Filter Results";
+"所有项目" = "All Items";
+"已编辑" = "Edited";
+"仅显示" = "Show";
+"筛选照片" = "Photos";
+"筛选视频" = "Videos";
+"选择相册" = "Select Album";
+"我的相册" = "My Albums";
+"媒体类型" = "Media Types";
+"查看全部" = "See All";
+"全部" = "All";
+"清空已编辑的内容" = "Clear Edited";
+"高光" = "Highlights";
+"阴影" = "Shadows";
+
+"HXAlbumCameraRoll" = "Camera Roll";
+"HXAlbumPanoramas" = "Panoramas";
+"HXAlbumVideos" = "Videos";
+"HXAlbumFavorites" = "Favorites";
+"HXAlbumTimelapses" = "Time-Lapse";
+"HXAlbumRecents" = "Recents";
+"HXAlbumRecentlyAdded" = "Recently Added";
+"HXAlbumBursts" = "Bursts";
+"HXAlbumSlomoVideos" = "Slo-mo";
+"HXAlbumSelfPortraits" = "Selfies";
+"HXAlbumScreenshots" = "Screenshots";
+"HXAlbumDepthEffect" = "Depth Effect";
+"HXAlbumLivePhotos" = "Live Photo";
+"HXAlbumAnimated" = "Animated";
+
+"下载" = "Download";
+
+"传输iCloud照片需先下载到本地，是否下载" = "Download iCloud Photos to transfer them";
+"非WiFi状态，下载将消耗流量" = "This will use cellular data";
+"所选内容为云图，请先连接网络下载后再分享" = "Connect to a network to download from iCloud before sharing";
+
+//单数适配
+"receiveFileSuccess" = " file received completed";
+"receiveFileFailed" = " file received failed";
+"file" = " file";
+"picture" = " picture";
+"video" = " video";
+"contact" = " contact";
+"fileAdd" = " file,";
+"pictureAdd" = " picture,";
+"videoAdd" = " video,";
+"specialFileSaved" = " special format file\nstored in 'Files-HarmonyOS Interconnect-Image' folder";
+"isReceiveFile" = " file, received?";
+
+//复数适配
+"receiveFilesSuccess" = " files received completed";
+"receiveFilesFailed" = " files received failed";
+"files" = " files";
+"pictures" = " pictures";
+"videos" = " videos";
+"contacts" = " contacts";
+"filesAdd" = " files,";
+"picturesAdd" = " pictures,";
+"videosAdd" = " videos,";
+"specialFilesSaved" = " special format files\nstored in 'Files-HarmonyOS Interconnect-Image' folder";
+"isReceiveFiles" = " files, received?";
+
+"network_error" = "Network connection abnormal. Please restart the phone";
+"network_permission_error_title" = "Wireless data permission not enabled";
+"network_permission_error_message" = "Wireless data permission is not enabled, which may cause transmission failure. Please enable wireless data permission first.";
+
+"注：如已和华为设备配对，和该华为设备传输时，请在双端设备“设置-蓝牙”中，取消配对连接。避免传输失败" = "Note: If you have already paired with a Huawei device, when transferring data with that Huawei device, please cancel the pairing connection in \"Settings - Bluetooth\" on both devices to avoid transfer failure.Restore Default";
+
+"如无法发现对方设备，请完成以下操作后再试：" = "If unable to discover the other device, please complete the following steps and try again:";
+"1.如已和华为设备配对，和该华为设备传输时，请在双端设备“设置-蓝牙”中，取消配对连接。避免传输失败" = "1.If already paired with a Huawei device, when transmitting with that Huawei device, please cancel the pairing connection in \"Settings > Bluetooth\" on both devices to avoid transmission failure.";
+"2.如已打开其他互传文件的应用，请关闭其他互传应用" = "2.If other file transfer applications are open, please close other transfer apps.";
+"3.两端设备连接同一局域网，华为设备在控制中心将华为分享设为“所有人可见”。" = "3.Ensure both devices are connected to the same local network, and on the Huawei device, set Huawei Share to \"Visible to Everyone\" in the Control Center.";
+"如上述操作依旧无法发现对方设备：" = "If the above steps still fail to discover the other device:";
+"建议一端设备开启热点，另一端设备手动连接热点后再试。" = "It is recommended that one device enables a hotspot, and the other device manually connects to the hotspot, then try again.";
+
+"已是最新版本" = "It is already the latest version";
+"已是最新版本" = "No online version detected";
+"从手机相册选择" = "Select from phone photo album";
+"使用过程中申请" = "Apply during use";
+"用于互传时读取照片，视频等文件" = "Used for reading photos, videos, and other files during mutual transmission";
+"用于互传时读取通讯录" = "Used to read the address book during mutual transmission";
+"点击上传" = "Upload";
+"提交" = "Submit";
+"该文件已被移动或删除，是否删除该项纪录。" = "The file has been moved or deleted. Do you want to delete this record?";
+"删除后将无法恢复此记录。" = "Once deleted, this record cannot be recovered";
+"忽略" = "Ignore";
+"无法获取本地应用版本" = "Unable to retrieve the local app version";
+"无法获取App Store版本信息" = "Unable to retrieve App Store version information";
+"检查到新版本" = "A new version has been detected";
+"当前版本" = "Current version";
+"立即更新" = "Update immediately";
+"检查更新失败" = "Failed to check for updates";
+"可被其他设备发现" = "Discoverable by other devices";
+"已取消" = "Cancelled";
+"确认要取消接收吗？" = "Confirm to cancel receiving?";
+"蓝牙权限被拒绝\n请在系统设置的\"隐私与安全性\"中启用蓝牙权限" = "Bluetooth permission denied. Please enable Bluetooth permission in the 'Privacy and Security' section of the system settings";
+"打开设置" = "Open Settings";
+"稍后" = "Later";
+"需要本地网络权限" = "Local network permissions are required";
+"此操作需要访问本地网络以发现设备。请授予本地网络权限后重试。" = "This operation requires access to the local network to discover devices. Please grant local network permissions and try again";
+"请求权限" = "Request permission";
+"
+为了发现和连接本地网络中的设备，需要授予本地网络权限。
+
+请按以下步骤操作：
+1. 打开「系统设置」
+2. 进入「隐私与安全性」 
+3. 选择「本地网络」
+4. 找到此应用并开启权限
+5. 返回应用继续使用
+" = "
+In order to discover and connect devices in the local network, local network permissions need to be granted.
+Please follow the steps below:
+1. Open 'System Settings'
+2. Enter 'Privacy and Security'
+3. Select 'Local Network'
+4. Find this application and grant permission
+5. Return to the application and continue using it
+";
+"打开系统设置" = "Open System Settings";
+"显示菜单" = "Display menu";
+"确认要取消发送吗" = "Are you sure you want to cancel sending";
+"非本地文件，请先存到本地后再重试" = "Non-local file. Please save it to local storage first before retrying";
+"设备已断开" = "The device has been disconnected";
+"链接的设备已丢失，文件选择已取消。" = "The linked device is lost and file selection has been canceled";
+"未知版本" = "Unknown version";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“同意”，即表示您同意鸿蒙星河互联用户协议、权限使用说明、关于鸿蒙星河互联与隐私的声明。" = "This service requires the use of Bluetooth and WLAN connections to send and receive data, read images, videos, contacts, files, and other information, and obtain network information. We only trigger the above behavior to collect and use personal information related to specific business functions. This service provides you with the basic business functions of HarmonyOS Interconnect. By clicking 'Agree', you agree to the HarmonyOS Interconnect user agreement, permission usage instructions, and statements regarding HarmonyOS Interconnect and privacy. ";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“同意”，即表示您同意" = "This service requires the use of Bluetooth and WLAN connections to send and receive data, read images, videos, contacts, files, and other information, and obtain network information. We only trigger the above behavior to collect and use personal information related to specific business functions. This service provides you with the basic business functions of HarmonyOS Interconnect. By clicking 'Agree', you agree to the ";
+"选择新图片" = "Select a new image";
+"头像修改成功" = "The avatar has been successfully modified";
+"请输入设备名称" = "Please enter the device name";
+"无效的URL" = "Invalid URL";
+"连接断开" = "Disconnected";
+"发送失败" = "Sending failed";
+"内存不足" = "Out of memory";
+"与HarmonyOS设备自由连接，高效互传" = "Effortlessly share files with nearby HarmonyOS devices";
+"1.对方开启华为分享，" = "1. The other party has enabled Huawei Share,";
+"连接失败" = "Connection failed";
+"加载失败" = "Failed to load";
+"一次最多只能拖拽100个，超出数量将无法捕获拖拽内容" = "A maximum of 100 items can be dragged at a time. Exceeding this limit will prevent the dragged content from being captured.";
+"1.本设备打开“鸿蒙星河互联”app，" = "1. Open the 'HarmonyOS Interconnect' app on this device,";
+"1.对方开启华为分享，" = "1. The other party has enabled Huawei Share,";
+"并保持亮屏。" = "keep the screen on.";
+"file_cannot_found"          = "The file cannot be found";
+//帮助与反馈
+"commonQuestions" = "Frequently asked questions";
+"问题1：Mac端打开鸿蒙星河APP后无法发现设备？" = "Question 1: Can't find the device after opening the HarmonyOS Interconnect APP on Mac?";
+"answerOne" = "Answer: Please ensure that both Bluetooth ports are turned on, and that the Huawei device's system is version 6.0.0.112 or higher. Also, open 'Huawei Share' in the 'Control Center' and set it to 'Everyone'. If the device still cannot be detected, please check if other transfer applications (such as WebShare by Zapya, Xiaomi Interconnectivity, etc.) are open on the Mac side, and make sure to close these applications before trying again.";
+"问题2：Mac端总是提示连接失败/发送或接收不成功？" = "Question 2: Does the Mac always prompt connection failure/unsuccessful sending or receiving?";
+"answerTwo" = "Answer: The sending failure may be caused by the Mac network. The specific steps are as follows: System Preferences ->Wi Fi/Network ->Advanced ->Uncheck 'Change Network' and 'Turn Wi Fi On or Off'. Please try transferring again after completing the above steps.";
+"sendMethodsOneStepTwo" = "2. Select the file to be sent on this device and drag it to the recipient's device avatar to send it. Or first click on the other party's device avatar, and then select the file to send.";
+"sendMethodsTwoStepTwo" = "2. Select the file to be sent on this device, click the 'Share' button to select the HarmonyOS Interconnect app, and click on the other device to send it.";
+"commitTips" = "Submitting,don’t close background.";
+"maxUploadTips" = "Maximum of 3 pictures can be uploaded";
+"maxWordCountTips" = "Input has reached the maximum limit";
+//接收页
+"前往\"下载\"查看" = "Go to 'Download' viewing";
+"接收记录" = "Receive record";
+"想向您发送" = " wants to send you ";
+"（" = "(";
+"）" = ")";
+//主页
+"取消，分享失败" = " cancelled, sharing failed";
+"请断开已连接的WIFI后重试" = "Please disconnect the connected WIFI and try again";
+//声明页
+"协议与声明" = "Agreements and Declarations";
+"同意" = "Agree";
+//设备名称修改
+"deviceNameComfirmBtn" = "Ok";
+//不支持应用程序包提示弹窗
+"不支持发送应用程序包" = "Not supporting sending application packages";
+//系统
+"发送" = "Send";
+"查看文件" = "View file";
+"正在加载..." = "Loading...";
+"等" = ", etc";
+"共" = "All ";
+"未知大小" = "Unknown size";
+"解析plist失败：" = "Failed to parse plist:";
+"图片Data无效，无法转成图像" = "The image data is invalid and cannot be converted to an image";
+"plist提取数据转PNG成功！PNG大小：" = "Plist successfully extracted data and converted it to PNG! PNG size:";
+"字节" = " bytes";
+"截屏" = "screenshot";
+"CGImage编码PNG失败" = "CGImage encoding PNG failed";
+"NSImage转PNG失败" = "NSImage to PNG conversion failed";
+"加载实况图包失败" = "Failed to load live image package";
+"确认" = "Confirm";
+"忽略" = "Ignore";
+"删除" = "Delete";
+"该文件已被移动或删除，是否删除该项记录？" = "This file has been moved or deleted. Do you want to delete this record?";
+"删除后将无法恢复此记录。" = "After deletion, this record cannot be restored.";
+"请确认是否删除记录。" = "Please confirm whether to delete the record.";
+
+"接收自" = "Received from";
+"导入失败" = "Import failed";
+"部分导入失败" = "Partial import failed";
+"重试" = "Retry";
+
+"查看" = "View";
+"删除记录和文件" = "Delete record and file";
+"删除记录" = "Delete record";
+"确定要删除记录和文件吗？" = "Are you sure you want to delete the record and file?";
+"确定要删除记录吗？" = "Are you sure you want to delete the record?";
+
+"编辑" = "Edit";
+"按时间排序" = "Sort by time";
+"按类型排序" = "Sort by type";
+"升序" = "Ascending order";
+"降序" = "Descending order";
+
+
+"我发送的" = "I Sent";
+"我接收的" = "I Received";
+
+"全选" = "Select All";
+"取消全选" = "Deselect All";
+
+
+"请到" = "Please go to";
+"“下载”" = "'Download'";
+"中查看" = "View in the middle";
+//mac 首页
+"找不到设备？" = "Cannot find device?";
+"了解详情" = "Learn more";
+"版本要求" = "Version requirements";
+"HarmonyOS 6.0.0.112 及以上华为设备互传。" = "Cross-device file sharing between Huawei devices with HarmonyOS 6.0.0.112 or later.";
+"如何发现华为设备" = "How to discover Huawei devices";
+"对方需在控制中心将华为分享设置成“所有人可见”，本端需在app右上角的“设置-系统管理权限”中打开位置和蓝牙" = "On the target device, set Huawei Share to 'Visible to all' in Control Center. On your device, enable Location and Bluetooth permissions in 'Settings > System permissions' in the app's top-right corner";
+"所有人可见" = "Visible to all";
+"位置" = "Location";
+"蓝牙" = "Bluetooth";
+
+
+
+// ***********  Mac  ****************
+//
+"发现新版本" = "Discover the new version";
+"最新版本:" = "Latest version:";
+"是否前往 App Store 更新？" = "Do you want to update via the App Store?";
+"前往更新" = "Update now";
+"非本地文件，请先存到本地后再重试" = "Non-local file. Please save it locally and try again";
+"检测到应用程序(.app)、项目文件或其他包文件，这些文件类型暂不支持发送。\n\n请选择普通文件或文件夹。" = "Application (.app), project files, or other package files have been detected. These file types are currently not supported for sending.\n\nPlease select a regular file or folder.";
+"版本检测" = "Version detection";
+"在“照片”中打开" = "Open in \"Photos\"";
+"保存到“下载”" = "Save to \"Downloads\"";

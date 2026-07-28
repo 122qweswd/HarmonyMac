@@ -1,0 +1,80 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Liquid Glass@2x.png",
+      "idiom" : "iphone",
+      "resizing" : {
+        "cap-insets" : {
+          "left" : 46,
+          "right" : 46
+        },
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "mode" : "3-part-horizontal"
+      },
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Liquid Glass@3x.png",
+      "idiom" : "iphone",
+      "resizing" : {
+        "cap-insets" : {
+          "left" : 66,
+          "right" : 68
+        },
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "mode" : "3-part-horizontal"
+      },
+      "scale" : "3x"
+    },
+    {
+      "filename" : "btn_agree@2x.png",
+      "idiom" : "ipad",
+      "resizing" : {
+        "cap-insets" : {
+          "left" : 46,
+          "right" : 46
+        },
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "mode" : "3-part-horizontal"
+      },
+      "scale" : "1x"
+    },
+    {
+      "filename" : "btn_agree@3x.png",
+      "idiom" : "ipad",
+      "resizing" : {
+        "cap-insets" : {
+          "left" : 66,
+          "right" : 68
+        },
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "mode" : "3-part-horizontal"
+      },
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true,
+    "template-rendering-intent" : "original"
+  }
+}

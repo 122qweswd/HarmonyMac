@@ -1,0 +1,733 @@
+/*
+  Localizable.strings
+  MutualInfection
+
+  Created by Niko on 2025/8/31.
+ 
+ 印尼语
+  
+*/
+
+"账号名称最多输入 12 个字符" = "Nama akun maksimal dapat dimasukkan 12 karakter.";
+"无法保存，需要12个字符以内" = "Tidak dapat disimpan, perlu 12 karakter atau kurang.";
+"iPhone存储空间不足，你没有足够的存储空间将已接收的内容导入到\"照片\"。请释放空间后，再打开app重新导入。" = "Penyimpanan iPhone penuh. Anda tidak memiliki cukup penyimpanan untuk mengimpor konten yang diterima ke \"Foto\". Harap kosongkan ruang penyimpanan, lalu buka kembali aplikasi untuk mengimpor.";
+"以后" = "Nanti";
+"管理" = "Mengelola";
+"文件夹" = "folder";
+"个文件夹" = "sebuah folder";
+"网络连接异常,请重启手机" = "Koneksi jaringan tidak normal, harap restart ponsel Anda";
+"空文件夹不支持分享" = "Folder kosong tidak dapat dibagikan";
+"对方空间不足" = "Pihak lain tidak memiliki ruang penyimpanan yang cukup";
+"文件预处理空间不足\n请预留%@以上空间再试，\n或分批发送" = "Ruang tidak cukup untuk prapemrosesan file.\nHarap sisakan ruang %@ atau lebih dan coba lagi,\natau kirim secara bertahap";
+
+"failed_to_obtain_resources" = "Gagal mengakses sumber daya";
+"sharing_not_allowed" = "Sedang dalam proses transmisi, tidak dapat dibagikan";
+
+//-------底部引导页面------
+"version_requirements" = "Persyaratan versi pihak lain";
+"version_requirements_content" = "Diperlukan HarmonyOS 6.0.0.112 atau lebih tinggi";
+"device_not_found" = "Tidak menemukan perangkat?";
+"found_huawei_devices" = "Cara menemukan perangkat Huawei";
+"learn_more" = "Baca selengkapnya";
+"对方需在控制中心将华为分享设置成\"所有人可见\"" = "Pihak penerima harus mengatur pengaturan berbagi Huawei di Pusat Kontrol menjadi \"Terlihat oleh semua orang\"";
+"visible to everyone" = "Terlihat oleh semua orang";
+//--------------------
+
+"取消" = "Batal";
+"确定" = "Konfirmasi";
+"选择要发送的文件" = "Pilih file yang ingin dikirim";
+"照片或视频" = "Foto atau video";
+"文件" = "File";
+"通讯录" = "Daftar kontak";
+"我要发送" = "Saya ingin mengirim";
+"关于" = "Tentang";
+"连接中..." = "Sedang terhubung...";
+"等待中..." = "Menunggu...";
+"发送中..." = "Dalam proses pengiriman...";
+"已发送" = "Sudah dikirim";
+"发送取消" = "Batal mengirim";
+"已连接" = "Telah terhubung";
+"已断开连接" = "Sudah terputus koneksi";
+"对方忙" = "Pihak penerima sibuk";
+"己方忙" = "Pihak pengirim sibuk";
+"未识别用户" = "Pengguna tidak dikenali";
+"附近" = "Dekat";
+"鸿蒙星河互联" = "Interkoneksi HarmonyOS Starry Sky";
+"设备名称" = "Nama perangkat";
+"帮助与反馈" = "Bantuan & Umpan Balik";
+"系统权限管理" = "Manajemen izin sistem";
+"以此身份使用鸿蒙星河互联" = "Gunakan Interkoneksi HarmonyOS Starry Sky dengan identitas ini";
+"拒绝" = "Tolak";
+"接收" = "Terima";
+"取消接收" = "Batal menerima";
+//"发送中" = "";
+"取消发送" = "Batal mengirim";
+"欢迎使用" = "Selamat datang";
+"跨系统多设备文件随心流转" = "Transfer file lintas sistem dan perangkat secara fleksibel";
+"接受" = "Terima";
+"关于鸿蒙星河互联与隐私的声明" = "Pernyataan tentang Interkoneksi HarmonyOS Starry Sky dan privasi";
+"鸿蒙星河互联隐私政策" = "Kebijakan Privasi Koneksi HarmonyOS Galaxy";
+"鸿蒙星河互联用户服务协议" = "Perjanjian Layanan Pengguna Koneksi HarmonyOS Galaxy";
+"互传记录" = "Catatan Transmisi Saling";
+"权限使用说明" = "Panduan Penggunaan Hak Akses";
+"意见反馈" = "Umpan Balik";
+"问题描述" = "Deskripsi Masalah";
+"请尽量详细描述您的问题（不少于10字）" = "Hindari memberikan informasi yang terlalu ringkas (tidak kurang dari 10 karakter).";
+"上传图片" = "Unggah gambar";
+"联系方式" = "Informasi kontak";
+"请输入您的联系方式" = "Masukkan informasi kontak Anda";
+"发送错误报告" = "Laporkan kesalahan pengiriman";
+"版本号" = "Nomor versi";
+"检查更新" = "Periksa pembaruan";
+"个人信息收集清单" = "Daftar pengumpulan data pribadi";
+"个人信息共享清单" = "Daftar berbagi data pribadi";
+"访问位置" = "Akses lokasi";
+"用于判断是否处于同一局域网" = "Untuk memeriksa apakah berada dalam jaringan lokal yang sama";
+"访问照片" = "Akses foto";
+"用于互传时读取照片、视频等文件" = "Untuk membaca foto, video, dan file lainnya saat melakukan transmisi";
+"访问通讯录" = "Akses daftar kontak";
+"用于互传时读通讯录" = "Untuk membaca daftar kontak saat melakukan transmisi";
+"无线局域网" = "Jaringan lokal nirkabel";
+"用于在相同局域网下连接设备，传输文件" = "Untuk menghubungkan perangkat dalam jaringan lokal yang sama dan mentransmisikan file";
+"蓝牙" = "Bluetooth";
+"用于使用蓝牙搜索附近的设备" = "Untuk mencari perangkat terdekat menggunakan Bluetooth";
+"存储权限" = "Izin penyimpanan";
+"用于存储传输记录" = "Untuk menyimpan catatan transmisi";
+"修改名称" = "Ubah nama";
+"名称" = "Nama";
+"输入要修改的名称" = "Masukkan nama yang ingin diubah";
+"2-12位字符，可包含英文字母、数字、汉字，该名称将在对方的搜索页面展示。" = "2-12 karakter, boleh mengandung huruf alfabet, angka, dan karakter Tionghoa. Nama ini akan ditampilkan di halaman pencarian pihak penerima.";
+"接收中" = "Menerima";
+"接收完成" = "Selesai menerima";
+"查看历史记录" = "Lihat riwayat";
+"加入" = "Bergabung";
+"个文件接收完成" = "X buah file telah selesai diterima";
+"个文件接收失败" = "X buah file gagal diterima";
+"个文件" = "X buah file";
+"\"鸿蒙星河互联\" 想要加入无线局域网" = "Interkoneksi HarmonyOS Starry Sky ingin bergabung ke jaringan lokal nirkabel";
+"张图片" = "X gambar";
+"个视频" = "X video";
+"共" = "Total";
+"个联系人" = "X kontak";
+"文件互传设备条件" = "Persyaratan perangkat untuk transfer file lintas sistem";
+"文件传输方式" = "Metode pengiriman file";
+"发送与接收文件" = "Kirim dan terima file";
+"正在搜索设备…" = "Sedang mencari perangkat…";
+"需要权限" = "Membutuhkan izin";
+"请在设备的设置中允许应用删除照片" = "Harap izinkan aplikasi menghapus foto di pengaturan perangkat Anda";
+"对方暂不支持接收大众点评内容" = "Pihak penerima saat ini tidak mendukung penerimaan konten Dianping";
+"对方暂不支持接收备忘录等文本非文件内容" = "Pihak penerima saat ini tidak mendukung penerimaan konten non-file seperti catatan ingatan";
+"导入中" = "Sedang mengimpor";
+"存储空间不足无法导入图库" = "Tidak cukup ruang penyimpanan untuk mengimpor galeri gambar";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“接受”，即表示您同意鸿蒙星河互联用户协议、权限使用说明、关于鸿蒙星河互联与隐私的声明。" = "Layanan ini memerlukan koneksi Bluetooth dan WLAN untuk mengirim dan menerima data, membaca informasi seperti gambar, video, kontak, dan file, serta mengambil informasi jaringan. Kami hanya mengumpulkan informasi pribadi terkait ketika fungsi layanan tertentu digunakan. Layanan ini menyediakan fungsi dasar dari HarmonyOS Interconnect. Dengan mengklik \"Sesuaikan\", Anda menyetujui Persyaratan Pengguna HarmonyOS Interconnect, panduan penggunaan izin, serta pernyataan mengenai privasi HarmonyOS Interconnect.";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“接受”，即表示您同意" = "Layanan ini menggunakan koneksi Bluetooth dan WLAN, mengirim dan menerima data, membaca gambar, video, kontak, dan file, serta mengakses informasi jaringan. Kami hanya mengumpulkan informasi pribadi terkait ketika Anda menggunakan fitur-fitur tertentu dari layanan ini. Layanan ini menyediakan fungsi dasar yang diperlukan untuk koneksi Harmony Star River. Dengan mengklik \"Sesuai\", Anda menyetujui";
+"蓝牙、WLAN" = "Bluetooth, WLAN";
+"图片、视频、联系人" = "Gambar, video, kontak";
+"网络信息" = "Informasi jaringan";
+"鸿蒙星河互联用户协议" = "Persyaratan Pengguna HarmonyOS Interconnect";
+"支持与HarmonyOS 6 及以上版本华为设备互传，\n对方需在控制中心将华为分享设为“所有人可见”" = "Dukungan untuk saling berbagi dengan perangkat Huawei versi HarmonyOS 6 atau lebih tinggi, \npemilik perangkat lain harus mengaktifkan opsi \"Tampak bagi semua\" di pusat kontrol";
+"正在导入“照片”，请勿退出应用" = "Sedang memuat \"Foto\", harap jangan keluar aplikasi";
+"正在导入“文件”，请勿退出应用" = "Sedang memuat \"File\", harap jangan keluar aplikasi";
+"正在导入" = "Sedang memuat";
+"当前已是最新版本" = "Sudah versi terbaru";
+"未监测到线上版本" = "Tidak ditemukan versi online";
+"实时活动权限" = "Izin aktivitas real-time";
+"用于后台时通过灵动岛显示传输进度" = "Digunakan untuk menampilkan progres pengiriman saat bekerja di latar belakang melalui tampilan Lingkaran Cerdas";
+"发生时间*" = "Waktu terjadinya*";
+"请检查网络连接" = "Harap periksa koneksi jaringan";
+"请填写10字以上的问题描述" = "Harap isi deskripsi pertanyaan minimal 10 karakter";
+"请填写联系方式" = "Harap isi nomor kontak";
+"请选择发生时间" = "Pilih waktu terjadinya";
+"提交成功" = "Pengiriman berhasil";
+"选择要上传的文件" = "Pilih file yang ingin diunggah";
+"从相册选择" = "Pilih dari album foto";
+"拍照" = "Ambil foto";
+"无法访问相机" = "Tidak dapat mengakses kamera";
+"没有获得相机访问权限，请在设置中允许访问相机" = "Tidak memiliki izin akses kamera, harap aturannya izinkan akses kamera";
+"开启权限" = "Aktifkan izin";
+"无法访问相册" = "Tidak dapat mengakses album foto";
+"没有获得相册访问权限，请在设置中允许访问相册" = "Tidak memiliki izin akses album foto, harap aturannya izinkan akses album foto";
+"保存" = "Simpan";
+"使用过程中申请
+
+无线局域网
+用于在相同局域网下连接设备，传输文件
+
+蓝牙
+用于使用蓝牙搜索附近的设备
+
+位置
+用于判断是否处于同一局域网
+
+照片
+用于互传时读取照片，视频等文件
+
+通讯录
+用于互传时读取通讯录
+
+存储权限
+用于存储传输记录" = "Penggunaan dalam proses aplikasi
+WLAN (Wi-Fi Local Area Network): Digunakan untuk menghubungkan perangkat dan mentransfer file dalam jaringan lokal yang sama.
+Bluetooth: Digunakan untuk mencari perangkat terdekat melalui Bluetooth.
+Posisi: Digunakan untuk memeriksa apakah kedua perangkat berada dalam jaringan lokal yang sama.
+Foto: Digunakan untuk membaca foto, video, dan file lainnya saat melakukan transfer saling.
+Daftar kontak: Digunakan untuk membaca daftar kontak saat melakukan transfer saling.
+Akses penyimpanan: Digunakan untuk menyimpan catatan transfer.";
+//"位置" = "";
+"照片" = "Foto";
+"对端设备：HarmonyOS软件版本6.0.0.112及以上的手机、平板、电脑。" = "Perangkat penerima: Ponsel, tablet, atau komputer dengan versi aplikasi HarmonyOS 6.0.0.112 ke atas.";
+"本端设备：iOS 13及以上、iPad OS 13及以上、Mac OS 10.15及以上。" = "Perangkat pengirim: iOS 13 ke atas, iPad OS 13 ke atas, Mac OS 10.15 ke atas.";
+"方式一：同WLAN传输" = "Cara 1: Transfer melalui WLAN";
+"当两台设备连接同一可用WLAN时，确认接收后将直接进行文件互传。" = "Ketika dua perangkat terhubung ke WLAN yang sama, setelah konfirmasi penerimaan, file akan langsung ditransfer.";
+"方式二：热点传输" = "Cara 2: Transfer melalui hotspot";
+"当两台设备未连接同一可用WLAN时，确认接收后需连接对方设备热点以进行免流量文件互传。" = "Jika dua perangkat tidak terhubung ke WLAN yang sama, setelah konfirmasi penerimaan, perlu menghubungkan ke hotspot perangkat lawan untuk melakukan transfer file tanpa menggunakan data internet.";
+"注：大文件互传时，建议使用热点传输(速度较快)以快速完成传输任务。" = "Catatan: Untuk file besar, disarankan menggunakan transfer melalui hotspot (cepat) agar penyelesaian transfer lebih cepat.";
+"接收文件" = "Menerima file:";
+"1.本设备打开“鸿蒙星河互联”app，并保持亮屏。" = "1. Nyalakan aplikasi \"Harmony Connect\" di perangkat Anda dan pertahankan layar tetap menyalam.";
+"2.对方选择要发送的文件，在华为分享界面选择本设备。" = "2. Perangkat lawan memilih file yang ingin dikirim, lalu pada antarmuka Huawei Share, pilih perangkat Anda.";
+"3.与对方处于同一WLAN或连接对方热点，开始传输。" = "3. Pastikan kedua perangkat berada dalam jaringan WLAN yang sama atau terhubung ke hotspot perangkat lawan, lalu mulai transfer.";
+"发送文件" = "Mengirim file:";
+"方式一：鸿蒙星河互联app内发送" = "Cara 1: Mengirim melalui aplikasi Harmony Connect";
+"﻿1.对方开启华为分享，并保持亮屏。首次使用需设为“所有人可见”。" = "1. Perangkat lawan nyalakan Huawei Share dan pertahankan layar tetap menyalam. Untuk pengguna pertama, atur sebagai \"Tersedia bagi semua\".";
+"2.本设备选择要发送的文件，点击对方设备头像。或先点击对方设备头像，再选择要发送的文件。" = "2. Pilih file yang ingin dikirim di perangkat pengirim, lalu klik profil perangkat lawan. Atau bisa juga klik profil perangkat lawan terlebih dahulu, kemudian pilih file yang ingin dikirim.";
+"方式二：通过“共享”选择鸿蒙星河互联app发送" = "Cara 2: Mengirim melalui opsi \"Share\"";
+"1.对方开启华为分享，并保持亮屏。" = "1. Perangkat lawan nyalakan Huawei Share dan pertahankan layar tetap menyalam.";
+"2.本设备选择要发送的文件，点击“共享”按钮选择鸿蒙星河互联app。" = "2. Pilih file yang ingin dikirim di perangkat pengirim, lalu klik tombol \"Share\" dan pilih aplikasi Harmony Connect.";
+"导入完成" = "Transfer selesai";
+"等待中" = "Menunggu...";
+"对方已取消接收" = "Perangkat lawan telah membatalkan penerimaan";
+"接收中..." = "Sedang menerima...";
+"张图片，" = "fotes，";
+//"个视频，" = "";
+//"个文件，" = "";
+"连接中" = "Sedang terhubung";
+"正在连接对方热点" = "Sedang menghubungkan ke hotspot perangkat lawan";
+"确定要取消接收吗？" = "Apakah Anda ingin membatalkan penerimaan?";
+"继续接收" = "Terus menerima";
+"cancelReceivingAlertBtn" = "Batal penerimaan";
+"接收取消" = "Batal penerimaan";
+"知道了" = "Baiklah";
+"对方取消发送，接收失败" = "Perangkat lawan membatalkan pengiriman, gagal menerima";
+"局域网连接中" = "Sedang terhubung ke jaringan lokal";
+"前往\"照片\"查看" = "Layari \"Foto\" untuk melihat";
+"前往\"文件\"查看" = "Layari \"File\" untuk melihat";
+"文件还在导入中" = "File masih dalam proses impor";
+"可在互传记录中查看导入进度" = "Progres impor dapat dilihat di catatan transfer";
+"退出应用会导致导入失败" = "Keluar dari aplikasi akan menyebabkan gagalnya proses impor";
+"退出应用" = "Keluar dari aplikasi";
+"继续导入" = "Teruskan impor";
+"蓝牙已关闭,请在“设置”中允许新连接" = "Bluetooth sudah dimatikan, harap aktifkan kembali di \"Pengaturan\"";
+"设备不支持蓝牙" = "Perangkat tidak mendukung Bluetooth";
+"蓝牙正在重置" = "Bluetooth sedang dipulihkan";
+"蓝牙状态未知" = "Status Bluetooth tidak diketahui";
+"蓝牙权限未打开" = "Akses Bluetooth belum dibuka";
+"没有获得蓝牙权限，请在设置中打开蓝牙权限" = "Belum memiliki izin akses Bluetooth, harap buka izin akses Bluetooth di Pengaturan";
+"去设置" = "Ke Pengaturan";
+"位置权限未打开" = "Akses lokasi belum dibuka";
+"没有获得位置权限，请在设置中打开位置权限" = "Belum memiliki izin lokasi, harap buka izin lokasi di Pengaturan";
+"通讯录权限未打开" = "Akses daftar kontak belum dibuka";
+"没有获得通讯录访问权限，请在设置中允许访问通讯录" = "Belum memiliki izin akses daftar kontak, harap buka izin akses daftar kontak di Pengaturan";
+"照片权限未打开" = "Akses foto belum dibuka";
+"没有获得照片访问权限，请在设置中允许访问照片" = "Belum memiliki izin akses foto, harap buka izin akses foto di Pengaturan";
+"WIFI权限未打开" = "Akses WiFi belum dibuka";
+"没有获得WIFI权限，请在设置中打开WIFI权限" = "Belum memiliki izin akses WiFi, harap buka izin akses WiFi di Pengaturan";
+"正在导入至“照片”，请勿退出应用" = "Sedang mengimpor ke \"Foto\", harap jangan keluar dari aplikasi";
+"存储空间不足，导入失败，请清理空间后在接收记录中重新导入" = "Ruang penyimpanan tidak cukup, gagal mengimpor. Harap bersihkan ruang penyimpanan dan coba kembali mengimpor di catatan penerimaan";
+"去设置界面开启允许通讯录选择" = "Pergi ke antarmuka pengaturan dan aktifkan opsi pilihan daftar kontak.";
+"设置" = "Pengaturan";
+
+
+"发送过程中请不要退出当前界面" = "Jangan keluar dari antarmuka saat proses pengiriman";
+"正在导入至“照片”，请不要退出当前页面" = "Sedang mengimpor ke \"Foto\", jangan keluar dari halaman saat ini";
+"请不要退出当前页面" = "Jangan keluar dari halaman saat ini";
+"选择联系人" = "Pilih kontak memilih semua";
+"全选" = "Pilih Semua";
+"取消全选" = "Belum ada data";
+"搜索" = "Selesai";
+"暂无数据" = "Gagal berbagi";
+"完成" = "Selesai";
+
+"分享失败" = "Gagal berbagi";
+"连接已超时，请重新点击对方设备后再连接" = "Koneksi telah melewati masa, silakan klik perangkat lawan kembali untuk terhubung";
+"内存不足,分享失败" = "Memori tidak cukup, gagal berbagi";
+"请关闭热点后重试" = "Harap tutup hotspot dan coba lagi";
+"接收失败" = "Gagal menerima";
+"连接已超时，请对端重新点击设备发起连接" = "Koneksi telah melewati masa, silakan klik perangkat di sisi penerima kembali untuk memulai koneksi";
+"内存不足，接收失败" = "Memori tidak cukup, penerimaan gagal";
+"本机内存不足，发送失败" = "Memori lokal tidak cukup, gagal mengirim";
+"点击上传" = "Klik untuk mengunggah";
+"提交" = "Kirim";
+"与HarmonyOS设备自由连接，免流量高效互传" = "Koneksi bebas dengan perangkat HarmonyOS, berbagi efisien tanpa penggunaan data";
+"待接收" = "Menunggu penerimaan";
+"已拒绝" = "Telah ditolak";
+"文件还在发送中，是否终止发送？" = "File masih dalam proses dikirim, apakah ingin menghentikan pengiriman?";
+"终止发送" = "Hentikan pengiriman";
+"继续发送" = "Teruskan pengiriman";
+"接收失败，请关闭热点后再试" = "Gagal menerima, harap tutup hotspot dan coba lagi";
+"发送失败，请关闭热点后再传输" = "Gagal mengirim, harap tutup hotspot sebelum mentransfer";
+"请关闭热点后再传输" = "Harap tutup hotspot sebelum mentransfer";
+"我知道了" = "Saya sudah tahu";
+"提示" = "Pemberitahuan";
+"蓝牙已关闭，可能会影响传输和接收，请在“设置”中允许新连接" = "Bluetooth telah dimatikan, mungkin akan memengaruhi pengiriman dan penerimaan, izinkan koneksi baru di \"Pengaturan\"";
+"接收雷达" = "Radar penerima";
+"提交中，请保持在当前页面，不要退出后台" = "Dalam proses pengiriman, harap tetap di halaman ini, jangan keluar dari latar belakang";
+"提交失败请重试" = "Gagal mengirim, harap coba lagi";
+"设备名称不能为空" = "Nama perangkat tidak boleh kosong";
+"请输入符合要求的文本（2-12位字符，可包含英文字母、数字、汉字）" = "Masukkan teks yang sesuai (2-12 karakter, dapat mengandung huruf alfabet, angka, dan karakter Tionghoa)";
+"请输入你要修改的名称" = "Masukkan nama yang ingin Anda ubah";
+"请求超时" = "Permintaan melewat waktu";
+"确定要取消发送吗？" = "Apakah Anda yakin ingin membatalkan pengiriman?";
+"取消失败" = "Gagal membatalkan";
+"选择的文件" = "Pilihan file";
+"未选择文件" = "Belum memilih file";
+"0个文件" = "0 file";
+"选择日期时间" = "Pilih tanggal dan waktu";
+"来自" = "Dari";
+"首次使用需设为“所有人可见”。" = "Pertama kali digunakan harus diatur menjadi \"terlihat oleh semua orang\".";
+"并保持亮屏。" = "Dan pertahankan layar terang.";
+"恢复默认" = "Kembalikan ke Pengaturan Awal";
+"无法访问相册，请检查设备权限设置。" = "Tidak dapat mengakses album foto, harap periksa pengaturan izin perangkat.";
+"修改成功" = "Pembaruan berhasil";
+"控制中心创建快捷入口" = "Membuat pintasan di pusat kendali";
+"﻿1.在控制中心的空白处长按，点击“添加控制”按钮；" = "1. Tekan lama pada area kosong di pusat kontrol, lalu klik tombol \"Tambah Kontrol\";";
+"2.下滑找到“快捷指令”栏，点击“打开APP”按钮；" = "2. Gulir ke bawah hingga menemukan kolom \"Kebiasaan\", klik tombol \"Buka Aplikasi\";";
+"3.选取“鸿蒙星河互联”app，即可创建快捷入口。" = "3. Pilih aplikasi \"HarmonyOS Star River Interconnection\", maka pintu masuk kebisaan akan tercipta.";
+"部分或全部格式不支持导入“照片”，已存入“文件-鸿蒙星河互联-image” 文件夹" = "Sebagian atau semua format tidak mendukung impor \"Foto\", telah disimpan dalam folder \"File-HarmonyOS Star River Interconnection-image\"";
+"好的" = "Baik";
+"去查看" = "Lihat lebih lanjut";
+"“最近存储”或“鸿蒙星河互联”相簿" = "Lokasi Terakhir atau album \"HarmonyOS Star River Interconnection\"";
+"查看时可以使用“通讯录”打开并导入" = "Dapat membuka dan mengimpor menggunakan \"Daftar Kontak\" saat melihat";
+"个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹" = "Berkas dengan format khusus
+Sudah disimpan ke folder file- HarmonyOS Star River Interconnection-image";
+"已取消接收" = "Menghentikan penerimaan";
+"想要分享" = "Ingin berbagi";
+//"个文件，是否接收？" = "";
+"对方暂不支持接收此类型内容" = "Pihak lain belum mendukung konten jenis ini";
+"正在处理文件..." = "Sedang memproses file...";
+"输入已达上限" = "umlah input telah mencapai batas maksimal";
+"，" = ",";
+"高速传输模式" = "Mode transmisi berkecepatan tinggi";
+//"开启后，每次传输都将直连华为设备 WLAN" = "";
+"iCloud照片下载失败" = "Unduhan foto iCloud gagal";
+"请连接好网络再试" = "Silakan koneksi internet terlebih dahulu sebelum mencoba lagi";
+"跳过云图" = "ompati peta awan";
+"类型文件暂不支持分享" = "Tipe file saat ini tidak didukung untuk dibagikan";
+// 互换记录
+// Localizable.strings (英文)
+//"transfer_records"           = "";
+//"search"                     = "";
+"received_from"              = "Menerima dari";
+"import_failed"              = "Impor gagal";
+"partial_import_failed"      = "Sebagian impor gagal";
+"import_no_complete"         = "Impor belum selesai";
+"retry"                      = "Coba lagi";
+"i_received"                 = "Aku menerima";
+"i_sent"                     = "Aku mengirimkan";
+"edit"                       = "Edit";
+"sort_by_time"               = "Urut berdasarkan waktu";
+"sort_by_type"               = "Urut berdasarkan tipe";
+"descending_order"           = "Turun secara urutan";
+"ascending_order"            = "Naik secara urutan";
+"confirm_delete_record"      = "Harap konfirmasi apakah ingin menghapus catatan";
+//"cancel"                     = "";
+//"confirm"                    = "";
+//"no_data_available"          = "";
+"can_not_find"               = "Tidak dapat menemukan file tersebut";
+//"select_all"                 = "";
+//"deselect_all"               = "";
+"source_file_corrupted"      = "File sumber telah rusak, tidak dapat diimpor";
+//"i_know"                     = "";
+"view"                       = "Lihat";
+"open_with"                  = "Cara membuka";
+"delete_record_and_file"     = "Hapus catatan dan file";
+"delete_record"              = "Hapus catatan";
+"file_moved_or_deleted"      = "File ini telah dipindahkan atau dihapus";
+"delete_record_confirmation" = "Apakah ingin menghapus catatan ini?";
+"file_moved_or_deleted_confirm_delete_record"      = "File ini telah dipindahkan atau dihapus, apakah ingin menghapus catatan ini?";
+"ignore"                     = "Lebih lanjut";
+"delete"                     = "Hapus";
+"image_imported_to_album"    = "Gambar telah diimpor ke album foto sistem  Silakan lihat di [Foto] > [Album] > [Harmony Star River Interconnect] pada ponsel";
+"imported_to_system_album"   = "Impor ke album foto sistem";
+//"importing"                  = "";
+
+
+
+
+//************** PhotoPicker
+"无法访问相册中照片" = "Tidak dapat mengakses foto dalam album";
+"当前无照片访问权限，建议前往系统设置，\n允许访问「照片」中的「所有照片」。" = "Saat ini tidak memiliki izin akses foto, disarankan pergi ke pengaturan sistem,  jinkan akses ke \"Foto\" di \"Semua Foto\".";
+"前往系统设置" = "Ke pengaturan sistem";
+"相册" = "Album";
+"原图" = "Gambar asli";
+"原片" = "Foto asli";
+"预览" = "Pratinjau";
+//"编辑" = "";
+"返回" = "Kembali";
+"还原" = "Mengembalikan";
+"自由" = "Kebebasan";
+"下一步" = "Bebas Langkah selanjutnya";
+"没有可选资源" = "Tidak ada sumber daya pilihan";
+"照片和视频不能同时选择" = "Tidak dapat memilih foto dan video secara bersamaan";
+"最多只能选择%d张照片" = "Hanya bisa memilih maksimal %d foto";
+"已达到最大选择数" = "Sudah mencapai jumlah maksimum pilihan";
+"视频最大时长为%d秒，无法选择" = "Durasi video maksimal adalah %d detik, tidak dapat dipilih";
+"视频最小时长为%d秒，无法选择" = "Durasi video minimum adalah %d detik, tidak dapat dipilih";
+"视频和照片不能同时选择" = "Tidak dapat memilih video dan foto secara bersamaan";
+"最多只能选择%d个视频" = "Hanya bisa memilih maksimal %d video";
+"正在下载" = "Sedang diunduh";
+"下载失败" = "Gagal mengunduh";
+"没有照片" = "Tidak ada foto";
+"你可以使用相机拍些照片" = "Anda bisa mengambil foto menggunakan kamera";
+"无法访问相册中所有照片，\n请允许访问「照片」中的「所有照片」" = "Tidak dapat mengakses semua foto di album, \nizinkan akses ke «Foto» → «Semua Foto»";
+"只能查看允许访问的照片和相关相册" = "Hanya bisa melihat foto yang telah diizinkan serta album terkait";
+"无法使用相机!" = "Tidak bisa menggunakan kamera!";
+"无法使用相机功能" = "Tidak dapat menggunakan fitur kamera";
+"请前往系统设置中，允许访问「相机」。" = "Harap pergi ke pengatur sistem dan izinkan akses ke «Kamera».";
+"照片大小超过最大限制" = "Ukuran foto melebihi batas maksimum";
+"视频大小超过最大限制" = "Ukuran video melebihi batas maksimum";
+"视频导出失败" = "Gagal mengekspor video";
+"保存失败" = "Gagal menyimpan";
+"所有照片" = "Semua foto";
+"正在处理..." = "Sedang diproses...";
+"处理失败" = "Gagal diproses";
+"导出失败" = "Gagal ekspor";
+"视频加载中" = "Memuat video";
+"视频加载失败!" = "Gagal memuat video!";
+"视频可编辑最大时长为%d秒，无法编辑" = "Durasi video yang dapat diedit maksimal adalah %d detik, tidak dapat diedit";
+"相机不可用!" = "Kamera tidak tersedia!";
+"图片获取失败!" = "Gagal mengambil gambar!";
+"视频获取失败!" = "Gagal mengambil video!";
+"图片下载中" = "Mengunduh foto";
+"视频下载中" = "Mengunduh video";
+"设置失败!" = "Gagal mengatur!";
+"唯美" = "Elegan";
+"梦幻" = "Magis";
+"老电影" = "Film lama";
+"怀旧" = "Nostalgia";
+"黑白" = "Hitam putih";
+"色调" = "Tone";
+"模糊" = "Blur";
+"岁月" = "Waktu";
+"单色" = "Monokrom";
+"褪色" = "Luntur warna";
+"冲印" = "Cetak";
+"铬黄" = "Chrome yellow";
+"暂无配乐" = "Belum ada musik pendamping";
+"配乐" = "Musik pendamping";
+"视频原声" = "Lagu asli video";
+"正在同步iCloud" = "Sedang sinkronisasi iCloud";
+"iCloud同步失败" = "Gagal sinkronisasi iCloud";
+"拖动到此处删除" = "Seret ke sini untuk menghapus";
+"松手即可删除" = "Tekan untuk menghapus";
+"背景音乐" = "Musik latar";
+"搜索歌名" = "Cari judul lagu";
+"此歌曲暂无歌词，请您欣赏" = "Lagu ini belum memiliki lirik, silakan dinikmati";
+"选择" = "Pilih";
+"取消选择" = "Batal pilih";
+"歌词" = "Lirik";
+"拍摄失败!" = "Gagal mengambil foto!";
+"摄像头切换失败!" = "Gagal beralih kamera!";
+"相机初始化失败!" = "Gagal inisialisasi kamera!";
+"轻触拍照" = "Sentuh ringan untuk mengambil foto";
+"按住摄像" = "Tahan kamera";
+"轻触拍照，按住摄像" = "Sentuh ringan untuk mengambil foto, tahan kamera";
+"拍摄时长不足%d秒" = "Durasi pengambilan foto kurang dari %d detik";
+"麦克风添加失败，录制视频会没有声音哦!" = "Gagal menambahkan mikrofon, rekaman video tidak akan ada suaranya!";
+"无法使用麦克风" = "Tidak dapat menggunakan mikrofon";
+"请在设置-隐私-相机中允许访问麦克风" = "Harap izinkan akses mikrofon di Pengaturan-Privasi-Kamera";
+"更多" = "Lebih banyak";
+"张照片" = "foto";
+"实况" = "Live streaming";
+"视频" = "Video";
+"点击摄像" = "Klik kamera";
+"音量" = "Volume";
+"明亮" = "Kecerahan";
+//"删除" = "";
+"原始比例" = "Rasio asli";
+"自由格式" = "Format bebas";
+"正方形" = "Persegi";
+"亮度" = "Kecerahan";
+"对比度" = "Kontras";
+"饱和度" = "Jenuh";
+"曝光度" = "Paparan";
+"色温" = "Suhu warna";
+"暗角" = "Sudut gelap";
+"锐化" = "Pemendek";
+"蒙版素材" = "Bahan masker";
+"筛选" = "Filter";
+"筛选条件" = "Syarat filter";
+"无筛选条件" = "Tidak ada syarat filter";
+"没有项目" = "Tidak ada item";
+"筛选结果" = "Hasil filter";
+"所有项目" = "Semua item";
+"已编辑" = "Telah diedit";
+"仅显示" = "Hanya tampil";
+//"筛选照片" = "";
+//"筛选视频" = "";
+"选择相册" = "Pilih album";
+"我的相册" = "Album saya";
+"媒体类型" = "Jenis media";
+"查看全部" = "Lihat semua";
+"全部" = "Semua";
+"清空已编辑的内容" = "Hapus konten yang telah diedit";
+"高光" = "Cahaya";
+"阴影" = "Bayangan";
+
+"HXAlbumCameraRoll" = "Semua foto";
+"HXAlbumPanoramas" = "Foto panorama";
+//"HXAlbumVideos" = "";
+"HXAlbumFavorites" = "Koleksi pribadi";
+"HXAlbumTimelapses" = "Fotografi berkecepatan tinggi";
+"HXAlbumRecents" = "Proyek terbaru";
+"HXAlbumRecentlyAdded" = "Baru ditambahkan";
+"HXAlbumBursts" = "Gambar otomatis";
+"HXAlbumSlomoVideos" = "Aksi lambat";
+"HXAlbumSelfPortraits" = "Selfie";
+"HXAlbumScreenshots" = "Screenshot layar";
+"HXAlbumDepthEffect" = "Potret";
+"HXAlbumLivePhotos" = "Foto langsung";
+"HXAlbumAnimated" = "Animasi";
+
+"下载" = "Unduh";
+
+"传输iCloud照片需先下载到本地，是否下载" = "Untuk mengirim foto ke iCloud, Anda harus terlebih dahulu mengunduh ke lokal. Apakah ingin mengunduh?";
+"非WiFi状态，下载将消耗流量" = "Tidak dalam mode WiFi, pengunduhan akan menggunakan data seluler";
+"所选内容为云图，请先连接网络下载后再分享" = "Isi yang dipilih adalah gambar di awan, silakan koneksi internet terlebih dahulu sebelum membagikan";
+
+//单数适配
+"receiveFileSuccess" = "Penerimaan file selesai";
+"receiveFileFailed" = "Penerimaan file gagal";
+//"file" = "";
+//"picture" = "";
+//"video" = "";
+//"contact" = "";
+"fileAdd" = "X file,";
+//"pictureAdd" = "";
+//"videoAdd" = "";
+//"specialFileSaved" = "";
+"isReceiveFile" = "X file, apakah ingin menerimanya?";
+
+//复数适配
+"receiveFilesSuccess" = "Penerimaan file selesai";
+"receiveFilesFailed" = "Penerimaan file gagal";
+//"files" = "";
+//"pictures" = "";
+//"videos" = "";
+//"contacts" = "";
+"filesAdd" = "X file,";
+"isReceiveFiles" = "X file, apakah ingin menerimanya?";
+
+"network_error" = "Koneksi jaringan tidak normal, silakan restart ponsel";
+//"network_permission_error_title" = "";
+//"network_permission_error_message" = "";
+
+
+
+"位置" = "Posisi";
+"个文件，是否接收？" = "Berapa file, menerima atau tidak?";
+"编辑" = "Sunting ";
+"删除" = "Menghapus";
+"筛选照片" = "Saring foto";
+"筛选视频" = "Saring video";
+"开启后，每次传输都将直连华为设备 WLAN" = "Setelah diaktifkan, setiap kali melakukan transmisi akan langsung terhubung ke perangkat Huawei melalui WLAN";
+//"network_permission_error_title" = "无线数据权限未开启";
+"network_permission_error_title" = "Akses data nirkabel belum diaktifkan";
+//"network_permission_error_message" = "无线数据权限未开启，会导致传输失败，请先开启无线数据权限。";
+"network_permission_error_message" = "Akses data nirkabel belum diaktifkan, yang dapat menyebabkan transmisi gagal. Silakan aktifkan akses data nirkabel terlebih dahulu.";
+
+
+"发送中" = "Dalam proses pengiriman";
+"个视频，" = "X video,";
+"个文件，" = "X buah file";
+//"transfer_records"           = "互传记录";
+"transfer_records"           = "Catatan Transmisi Saling";
+//"search"                     = "搜索";
+"search"                     = "Selesai";
+//"cancel"                     = "取消";
+"cancel"                     = "Batal";
+//"confirm"                    = "确定";
+"confirm"                    = "Konfirmasi";
+//"no_data_available"          = "暂无数据";
+"no_data_available"          = "Gagal berbagi";
+//"select_all"                 = "全选";
+"select_all"                 = "Batal pilih semua Cari";
+//"deselect_all"               = "取消全选";
+"deselect_all"               = "Belum ada data";
+//"i_know"                     = "我知道了";
+"i_know"                     = "Saya sudah tahu";
+//"importing"                  = "正在导入";
+"importing"                  = "Sedang memuat";
+
+//"HXAlbumVideos" = "视频";
+"HXAlbumVideos" = "Video";
+//"file" = "个文件";
+"file" = "X buah file";
+//"picture" = "张图片";
+"picture" = "X gambar";
+//"video" = "个视频";
+"video" = "X video";
+//"contact" = "个联系人";
+"contact" = "X kontak";
+//"pictureAdd" = "张图片，";
+"pictureAdd" = "X gambar";
+//"videoAdd" = "个视频，";
+"videoAdd" = "X video";
+//"specialFileSaved" = "个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹";
+"specialFileSaved" = "Berkas dengan format khusus
+Sudah disimpan ke folder file- HarmonyOS Star River Interconnection-image";
+//"files" = "个文件";
+"files" = "X buah file";
+//"pictures" = "张图片";
+"pictures" = "X gambar";
+//"videos" = "个视频";
+"videos" = "X video";
+//"contacts" = "个联系人";
+"contacts" = "X kontak";
+//"picturesAdd" = "张图片，"
+"picturesAdd" = "X gambar";
+//"videosAdd" = "个视频，";
+"videosAdd" = "X video";
+//"specialFilesSaved" = "个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹";
+"specialFilesSaved" = "Berkas dengan format khusus
+Sudah disimpan ke folder file- HarmonyOS Star River Interconnection-image";
+
+
+
+"注：如已和华为设备配对，和该华为设备传输时，请在双端设备“设置-蓝牙”中，取消配对连接。避免传输失败" = "Catatan: Jika sudah dipasangkan dengan perangkat Huawei, saat mentransfer data dengan perangkat Huawei tersebut, harap batalkan pasangan dan sambungan di \"Pengaturan - Bluetooth\" pada kedua perangkat untuk menghindari kegagalan transfer.
+Mengembalikan ke Pengaturan Awa";
+
+"如无法发现对方设备，请完成以下操作后再试：" = "Jika tidak dapat menemukan perangkat lawan, selesaikan langkah-langkah berikut sebelum mencoba lagi:";
+"1.如已和华为设备配对，和该华为设备传输时，请在双端设备“设置-蓝牙”中，取消配对连接。避免传输失败" = "1.Jika telah dipasangkan dengan perangkat Huawei, saat mentransfer ke perangkat Huawei tersebut, batalkan pemasangan di \"Pengaturan > Bluetooth\" pada kedua perangkat untuk menghindari kegagalan transfer.";
+"2.如已打开其他互传文件的应用，请关闭其他互传应用" = "2.Jika aplikasi transfer file lain terbuka, tutup aplikasi transfer lainnya.";
+"3.两端设备连接同一局域网，华为设备在控制中心将华为分享设为“所有人可见”。" = "3.Pastikan kedua perangkat terhubung ke jaringan lokal yang sama, dan pada perangkat Huawei, atur \"Huawei Share\" ke \"Terlihat oleh Semua\" di Pusat Kontrol.";
+"如上述操作依旧无法发现对方设备：" = "Jika setelah langkah-langkah di atas masih tidak dapat menemukan perangkat lawan:";
+"建议一端设备开启热点，另一端设备手动连接热点后再试。" = "Disarankan satu perangkat mengaktifkan hotspot, lalu perangkat lainnya menghubungi hotspot tersebut secara manual sebelum mencoba lagi.";
+
+
+// ***********  Mac相关  ****************
+//印尼语
+"欢迎使用鸿蒙星河互联" = "Selamat datang menggunakan Harmony Starry Internet";
+"\"鸿蒙星河互联\" 想要加入无线局域网" = "Harmony Starry Internet ingin bergabung dengan jaringan lokal nirkabel";
+"支持与HarmonyOS 6 及以上版本华为设备互传，\n对方需在控制中心将华为分享设为“所有人可见”，\n本端需在app右上角的“设置-系统权限管理”中打开位置和蓝牙" = "Dukungan untuk saling membagikan antara perangkat Huawei dengan HarmonyOS 6 atau versi terbaru.
+Pihak penerima harus mengaktifkan opsi \"Tersedia bagi semua orang\" di pusat kontrol.
+Pihak pengirim harus mengaktifkan lokasi dan Bluetooth di bagian \"Pengaturan - Manajemen Hak Sistem\" di sudut kanan atas aplikasi.";
+"已是最新版本" = "Sudah versi terbaru";
+"从手机相册选择" = "Pilih dari galeri foto ponsel";
+"使用过程中申请" = "Minta izin selama penggunaan";
+"用于互传时读取照片，视频等文件" = "Digunakan untuk membaca foto, video, dan file lainnya saat saling membagikan";
+"用于互传时读取通讯录" = "Digunakan untuk membaca daftar kontak saat saling membagikan";
+"该文件已被移动或删除，是否删除该项纪录。" = "File ini telah dipindahkan atau dihapus, apakah ingin menghapus catatan ini?";
+"删除后将无法恢复此记录。" = "Setelah dihapus, catatan ini tidak dapat dipulihkan lagi.";
+"无法获取本地应用版本" = "Tidak dapat mendapatkan versi aplikasi lokal";
+"无法获取App Store版本信息" = "Tidak dapat mendapatkan informasi versi App Store";
+"检查到新版本" = "Ditemukan versi baru";
+"当前版本" = "Versi saat ini";
+"立即更新" = "Pembaruan segera";
+"检查更新失败" = "Gagal memeriksa pembaruan";
+"可被其他设备发现" = "Dapat ditemukan oleh perangkat lain";
+"已取消" = "Telah dibatalkan";
+"确认要取消接收吗？" = "Yakin ingin membatalkan penerimaan?";
+"蓝牙权限被拒绝" = "Izin Bluetooth ditolak";
+"请在系统设置的\"隐私与安全性\"中启用蓝牙权限" = "Harap aktifkan izin Bluetooth di \"Privasi & Keamanan\" pada pengaturan sistem.";
+"打开设置" = "Buka Pengaturan";
+"稍后" = "Sedikit kemudian";
+"需要本地网络权限" = "Membutuhkan izin jaringan lokal";
+"此操作需要访问本地网络以发现设备。请授予本地网络权限后重试。" = "Operasi ini memerlukan akses jaringan lokal untuk menemukan perangkat. Harap beri izin jaringan lokal sebelum mencoba kembali.";
+"请求权限" = "Permintaan izin";
+"
+为了发现和连接本地网络中的设备，需要授予本地网络权限。
+
+请按以下步骤操作：
+1. 打开「系统设置」
+2. 进入「隐私与安全性」 
+3. 选择「本地网络」
+4. 找到此应用并开启权限
+5. 返回应用继续使用
+" = "Untuk menemukan dan terhubung dengan perangkat dalam jaringan lokal, diperlukan izin jaringan lokal. 
+Ikuti langkah-langkah berikut:
+1. Buka \"Pengaturan Sistem\"
+2. Pindah ke \"Privasi dan Keamanan\"
+3. Pilih \"Jaringan Lokal\"
+4. Temukan aplikasi ini dan aktifkan izinnya
+5. Kembali ke aplikasi untuk melanjutkan penggunaan";
+"打开系统设置" = "Buka pengaturan sistem";
+"显示菜单" = "Tampilkan menu";
+"确认要取消发送吗" = "Yakin ingin membatalkan pengiriman?";
+"设备已断开" = "Perangkat telah terputus";
+"链接的设备已丢失，文件选择已取消。" = "Perangkat yang terhubung hilang, pemilihan file dibatalkan.";
+"未知版本" = "Versi tidak dikenal";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“同意”，即表示您同意鸿蒙星河互联用户协议、权限使用说明、关于鸿蒙星河互联与隐私的声明。" = "Layanan ini memerlukan koneksi Bluetooth dan WLAN untuk mengirim/menerima data, membaca informasi seperti gambar, video, kontak, dan file, serta mengambil informasi jaringan. Kami hanya mengumpulkan informasi pribadi terkait ketika Anda menggunakan fitur layanan tertentu. Layanan ini menyediakan fungsi dasar dari HarmonyOS Interconnect. Dengan menekan \"Setuju\", Anda menyetujui Persyaratan Pengguna HarmonyOS Interconnect, panduan penggunaan izin, serta pernyataan privasi HarmonyOS Interconnect.";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“同意”，即表示您同意" = "Layanan ini memerlukan koneksi Bluetooth dan WLAN untuk mengirim/menerima data, membaca informasi seperti gambar, video, kontak, dan file, serta mengambil informasi jaringan. Kami hanya mengumpulkan informasi pribadi terkait ketika Anda menggunakan fitur layanan tertentu. Layanan ini menyediakan fungsi dasar dari HarmonyOS Interconnect. Dengan menekan \"Setuju\", Anda menyetujui";
+"选择新图片" = "Memilih gambar baru";
+"头像修改成功" = "Pemindaian foto berhasil";
+"请输入符合要求的文本（2-17位字符，可包含英文字母、数字、汉字）" = "Silakan masukkan teks yang sesuai (2-17 karakter, boleh mencakup huruf alfabet, angka, dan karakter Tionghoa)";
+"请输入设备名称" = "Silakan masukkan nama perangkat";
+"无效的URL" = "URL tidak valid";
+"连接断开" = "Koneksi terputus";
+"发送失败" = "Pengiriman gagal";
+"内存不足" = "Memori tidak cukup";
+"发送中，请不要退出当前页面" = "Sedang mengirim, harap jangan keluar dari halaman saat ini";
+"内存不足，分享失败" = "Memori tidak cukup, berbagi gagal";
+"与HarmonyOS设备自由连接，高效互传" = "Koneksi bebas dengan perangkat HarmonyOS, saluran transfer efisien";
+"当前版本：v%@" = "Versi saat ini: v%@";
+"蓝牙已关闭，可能会影响传输和接收，请在”设置“中允许新连接" = "Bluetooth telah dimatikan, mungkin memengaruhi pengiriman dan penerimaan, silakan aktifkan koneksi baru di \"Pengaturan\".";
+"1.对方开启华为分享，" = "1. Pihak lain mengaktifkan berbagi Huawei,";
+"连接失败" = "gagal terhubung";
+"加载失败" = "Muat ulang gagal";
+"一次最多只能拖拽100个，超出数量将无法捕获拖拽内容" = "Bisa menyeret maksimal 100 buah, melebihi jumlah ini tidak akan terdeteksi";
+"1.本设备打开“鸿蒙星河互联”app，" = "1. Perangkat ini membuka aplikasi \"HarmonyOS Interconnect\",";
+"commonQuestions" = "Tanya umum";
+"问题1：Mac端打开鸿蒙星河APP后无法发现设备？" = "Masalah 1: Setelah membuka aplikasi HarmonyOS Interconnect di Mac, perangkat tidak ditemukan?";
+"answerOne" = "Jawaban: Pastikan Bluetooth di kedua sisi sudah diaktifkan, sistem perangkat Huawei harus versi 6.0.0.112 atau lebih tinggi, serta aktifkan \"Huawei Share\" di \"Pusat Kontrol\" dan atur menjadi \"Terlihat oleh semua orang\". Jika masih tidak ditemukan perangkat, cek apakah Mac telah membuka aplikasi berbagi lainnya (seperti Kuaishou, Xiaomi Interconnect, dll.), pastikan aplikasi tersebut dimatikan sebelum mencoba lagi.";
+"问题2：Mac端总是提示连接失败/发送或接收不成功？" = "Masalah 2: Selalu muncul pesan gagal terhubung/berhasil mengirim/receive di Mac?";
+"answerTwo" = "Jawaban: Kemungkinan besar disebabkan oleh masalah jaringan di Mac. Langkah-langkah operasional adalah sebagai berikut: Preferensi Sistem -> Wi-Fi/Jaringan -> Lanjutan -> Tolak centang \"Ubah jaringan\" dan \"Buka/Tutup Wi-Fi\". Setelah melakukan langkah di atas, coba lagi untuk melakukan transfer.";
+"sendMethodsOneStepTwo" = "2. Perangkat ini memilih file yang ingin dikirim, seret ke profil pihak lain untuk mengirim. Atau pertama-tama klik profil pihak lain, lalu pilih file yang ingin dikirim.";
+"sendMethodsTwoStepTwo" = "2. Perangkat ini memilih file yang ingin dikirim, klik tombol \"Bagikan\" pilih aplikasi HarmonyOS Interconnect, lalu klik perangkat pihak lain untuk mengirim.";
+"commitTips" = "Dalam proses pengiriman, harap jangan keluar dari aplikasi";
+"maxUploadTips" = "Bisa mengirim maksimal 3 gambar";
+"前往\"下载\"查看" = "Kunjungi \"Unduh\" untuk melihat";
+"接收记录" = "Catatan penerimaan";
+"想向您发送" = "Ingin mengirim kepada Anda";
+"（" = "（";
+"）" = "）";
+"取消，分享失败" = "Batalkan, gagal berbagi";
+"请断开已连接的WIFI后重试" = "Harap putuskan koneksi WIFI yang terhubung dan coba lagi";
+"协议与声明" = "Protokol & Pernyataan";
+"同意" = "Setuju";
+"deviceNameComfirmBtn" = "Kirim";
+"不支持发送应用程序包" = "Tidak mendukung pengiriman paket aplikasi";
+"检测到应用程序(.app)、项目文件或其他包文件，这些文件类型暂不支持发送。" = "Ditemukan file aplikasi (.app), file proyek, atau file paket lainnya yang saat ini tidak didukung untuk dikirim.";
+"请选择普通文件或文件夹。" = "Silakan pilih file biasa atau folder.";
+"发送" = "Kirim";
+"查看文件" = "Lihat file";
+"正在加载..." = "Sedang dimuat...";
+"等" = "Tunggu";
+"未知大小" = "Ukuran tidak diketahui";
+"解析plist失败：" = "Gagal memproses plist:";
+"图片Data无效，无法转成图像" = "Data gambar tidak valid, tidak dapat diubah menjadi gambar";
+"plist提取数据转PNG成功！PNG大小：" = "Ekstraksi data dari plist ke PNG berhasil! Ukuran PNG:";
+"字节" = "Bайт";
+"截屏" = "Skrining layar";
+"CGImage编码PNG失败" = "Gagal mengkodekan CGImage ke PNG";
+"NSImage转PNG失败" = "Gagal mengonversi NSImage ke PNG";
+"加载实况图包失败" = "Gagal memuat paket gambar real-time";
+"确认" = "Konfirmasi";
+"该文件已被移动或删除，是否删除该项记录？" = "File ini telah dipindahkan atau dihapus, apakah Anda ingin menghapus catatan ini?";
+"请确认是否删除记录。" = "Harap konfirmasi apakah Anda ingin menghapus catatan.";
+"删除记录和文件" = "Hapus catatan dan file";
+"确定要删除记录和文件吗？" = "Apakah Anda yakin ingin menghapus catatan dan file?";
+"确定要删除记录吗？" = "Apakah Anda yakin ingin menghapus catatan?";
+"请到" = "Silakan ke";
+"“下载”" = "Unduh";
+"中查看" = "periksa di";
+"对方需在控制中心将华为分享设置成“所有人可见”，本端需在app右上角的“设置-系统管理权限”中打开位置和蓝牙" = "Pihak lain perlu mengatur Huawei Share di pusat kendali menjadi \"terlihat oleh semua orang\", sementara pihak ini perlu membuka lokasi dan Bluetooth di \"Pengaturan-Keamanan Sistem\" sudut kanan atas aplikasi";
+
+"发现新版本" = "Temukan versi terbaru";
+"最新版本:" = "Versi terbaru:";
+"是否前往 App Store 更新？" = "Apakah Anda ingin pergi ke App Store untuk memperbarui?";
+"前往更新" = "Pergi ke pembaruan";
+"非本地文件，请先存到本地后再重试" = "File tidak lokal. Harap simpan ke perangkat lokal terlebih dahulu lalu coba lagi";
+"检测到应用程序(.app)、项目文件或其他包文件，这些文件类型暂不支持发送。\n\n请选择普通文件或文件夹。" = "Aplikasi (.app), file proyek, atau file paket lainnya telah terdeteksi. Jenis file ini saat ini tidak didukung untuk dikirim.\n\nSilakan pilih file atau folder biasa.";
+"版本检测" = "Pemeriksaan Versi";
+"在“照片”中打开" = "Buka di \"Foto\"";
+"保存到“下载”" = "Simpan ke \"Unduhan\"";

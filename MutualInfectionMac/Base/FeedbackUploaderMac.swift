@@ -1,0 +1,82 @@
+//
+//  FeedbackUploaderMac.swift
+//  MutualInfection
+//
+//  Created by 1234 on 2025/11/8.
+//
+
+import Foundation
+
+class FeedbackUploaderMac {
+    let domainTocken : String = "iam.cn-east-3.myhuaweicloud.com"//Tocken域名
+    let domainName : String = "hw15332372630"//IAM所属账号名
+    let iamName : String = "A0271009"//IAM用户名
+    let iamPsd : String = "eO_8rw0f7UJUws$7MSPEqHd"//IAM密码
+    let region : String = "cn-east-3"//区域名
+    let domainLts : String = "lts-access.cn-east-3.myhuaweicloud.com"//LTS域名
+    let projectId : String = "32fc626687e44ee5a51a0885afb5ce32"//账号的项目ID
+    let groupId : String = "4dc3544f-5c09-4413-9be9-aa03b70a2cc6"//LTS的日志组ID
+    let streamId : String = "3e9c65c4-75e9-404e-9f4c-737e13b65226"//LTS的日志流ID
+    
+    func sendPostRequest(contact: String,des: String,pic: String,report: String,time: String,log: String,appleUserID: String) async throws {
+        guard let url = URL(string: "https://"+domainTocken+"/v3/auth/tokens") else {
+            throw URLError(.badURL)
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json;charset=utf8", forHTTPHeaderField: "Content-Type")
+        let postData: [String: Any] = [
+            "auth": [
+                "identity": [
+                    "methods": ["password"],
+                    "password": [
+                        "user": [
+                            "domain": [
+                                "name": domainName
+                            ],
+                            "name": iamName,
+                            "password": iamPsd
+                        ]
+                    ]
+                ],
+                "scope": [
+                    "project": [
+                        "name": region
+                    ]
+                ]
+            ]
+        ]
+        request.httpBody = try JSONSerialization.data(withJSONObject: postData, options: [])
+
+        // 使用await等待网络请求返回
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+
+        // 处理响应
+        if let httpResponse = response as? HTTPURLResponse {
+            if let authToken = httpResponse.allHeaderFields["X-Subject-Token"] as? String {
+                    let currentDate = Date()
+                    let timeUTC = Int(currentDate.timeIntervalSince1970)*1000000000
+                    guard let url = URL(string: "https://"+domainLts+"/v2/"+projectId+"/lts/groups/"+groupId+"/streams/"+streamId+"/tenant/contents") else {
+                        throw URLError(.badURL)
+                    }
+                    var request = URLRequest(url: url)
+                    request.httpMethod = "POST"
+                    request.setValue("application/json;charset=utf8", forHTTPHeaderField: "Content-Type")
+                    request.setValue(authToken, forHTTPHeaderField: "X-Auth-Token")
+                    let postData: [String: Any] = [
+                        "log_time_ns":timeUTC,
+                        "contents": "联系方式：\(contact) ｜ 问题描述: \(des) ｜ 发送错误报告：\(report) | 版本号：\(appVersion)(\(appBuildVersion)) | 发生时间：\(time) | 上传日志：\(log) | appleUserID：\(appleUserID) | 上传图片：\(pic)",
+                        "labels":[
+                            "contact": contact
+                        ]
+                    ]
+                    request.httpBody = try JSONSerialization.data(withJSONObject: postData, options: [])
+                    let (data, response) = try await URLSession.shared.data(for: request)
+                    if let responseString = String(data: data, encoding: .utf8) {
+                            print("响应数据: \(responseString)")
+                        }
+                }
+        }
+    }
+}

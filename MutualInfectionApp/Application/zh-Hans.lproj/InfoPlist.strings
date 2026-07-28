@@ -1,0 +1,22 @@
+/* 
+  InfoPlist.strings
+  MutualInfection
+
+  Created by delegate on 2025/9/8.
+  
+*/
+
+"CFBundleName" = "鸿蒙星河互联";
+"CFBundleDisplayName" = "鸿蒙星河互联";
+"NSCameraUsageDescription" = "用于获取照片进行传输与共享";
+"NSContactsUsageDescription" = "用于选择联系人进行传输与共享";
+"NSPhotoLibraryUsageDescription" = "用于选择照片和视频进行传输与共享";
+"NSBluetoothAlwaysUsageDescription" = "用于发现和连接附件设备";
+"NSBluetoothPeripheralUsageDescription" = "用于发现和连接附件设备";
+"UTGetWiFiSSID" = "用于获取准确的地理位置便于快速有有效的识别并建立热点连接进行分享";
+"NSLocationWhenInUseUsageDescription" = "用于获取准确的地理位置便于快速有有效的识别并建立热点连接进行分享";
+"NSLocationUsageDescription" = "用于获取准确的地理位置便于快速有有效的识别并建立热点连接进行分享";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "即使您未使用应用，我们也需要持续访问您的位置，以便在后台记录您的运动路径、在到达特定区域时向您发送提醒，或持续为您提供导航服务。";
+"NSLocalNetworkUsageDescription" = "我们需要访问您的网络信息以确保设备已成功连接到热点。";
+"NSLocationNetworkUsageDescription" = "我们需要访问您的网络信息以确保设备已成功连接到热点。";
+

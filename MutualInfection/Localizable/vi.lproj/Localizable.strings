@@ -1,0 +1,731 @@
+/*
+  Localizable.strings
+  MutualInfection
+
+  Created by Niko on 2025/8/31.
+ 
+*/
+// 越南语
+
+"账号名称最多输入 12 个字符" = "Tên tài khoản chỉ được nhập tối đa 12 ký tự.";
+"无法保存，需要12个字符以内" = "Không thể lưu, cần ít hơn hoặc bằng 12 ký tự.";
+"iPhone存储空间不足，你没有足够的存储空间将已接收的内容导入到\"照片\"。请释放空间后，再打开app重新导入。" = "Bộ nhớ iPhone đã đầy. Bạn không có đủ dung lượng lưu trữ để nhập nội dung đã nhận vào \"Ảnh\". Vui lòng giải phóng dung lượng, sau đó mở lại ứng dụng để nhập lại.";
+"以后" = "Để sau";
+"管理" = "Quản lý";
+"文件夹" = "thư mục";
+"个文件夹" = "một thư mục";
+"网络连接异常,请重启手机" = "Kết nối mạng bất thường, vui lòng khởi động lại điện thoại";
+"空文件夹不支持分享" = "Thư mục trống không thể được chia sẻ";
+"对方空间不足" = "Đối phương không đủ dung lượng lưu trữ";
+"文件预处理空间不足\n请预留%@以上空间再试，\n或分批发送" = "Không đủ dung lượng để xử lý trước tệp.\nVui lòng dành ra %@ dung lượng trở lên và thử lại,\nhoặc gửi theo từng đợt";
+
+"failed_to_obtain_resources" = "Thất bại khi truy cập tài nguyên";
+"sharing_not_allowed" = "Đang truyền tải, không thể chia sẻ";
+
+//-------底部引导页面------
+"version_requirements" = "Yêu cầu phiên bản của đối phương";
+"version_requirements_content" = "Yêu cầu HarmonyOS 6.0.0.112 trở lên";
+"device_not_found" = "Không tìm thấy thiết bị?";
+"found_huawei_devices" = "Hướng dẫn phát hiện thiết bị Huawei";
+"learn_more" = "Xem chi tiết";
+"对方需在控制中心将华为分享设置成\"所有人可见\"" = "Đối phương cần thiết lập cài đặt chia sẻ Huawei thành \"Công khai cho tất cả\" trong Trung tâm điều khiển";
+"visible to everyone" = "Tất cả mọi người đều có thể nhìn thấy";
+//--------------------
+
+"取消" = "Hủy bỏ";
+"确定" = "Xác định";
+"选择要发送的文件" = "Chọn tệp cần gửi";
+"照片或视频" = "Ảnh hoặc video Tài liệu";
+"文件" = "Tệp cần";
+"通讯录" = "Danh bạ";
+"我要发送" = "Tôi muốn gửi";
+"关于" = "Về";
+"连接中..." = "Đang kết nối...";
+"等待中..." = "Đang chờ...";
+"发送中..." = "Đang gửi...";
+"已发送" = "Đã gửi";
+"发送取消" = "Hủy gửi";
+"已连接" = "Đã kết nối";
+"已断开连接" = "Đã ngắt kết nối";
+"对方忙" = "Đối phương đang bận";
+"己方忙" = "Bản thân đang bận";
+"未识别用户" = "Người dùng không được nhận diện";
+"附近" = "Gần đây";
+"鸿蒙星河互联" = "Hồng Mông Tinh Hà Liên Kết";
+"设备名称" = "Tên thiết bị";
+"帮助与反馈" = "Hỗ trợ và phản hồi";
+"系统权限管理" = "Quản lý quyền hệ thống";
+"以此身份使用鸿蒙星河互联" = "Sử dụng Hồng Mông Tinh Hà Liên Kết với tư cách này";
+"拒绝" = "Từ chối";
+"接收" = "Nhận";
+"取消接收" = "Hủy nhận";
+//"发送中" = "";
+"取消发送" = "Hủy gửi";
+"欢迎使用" = "Chào mừng bạn sử dụng";
+"跨系统多设备文件随心流转" = "Tải file đa thiết bị, đa hệ thống một cách linh hoạt";
+"接受" = "Đồng ý";
+"关于鸿蒙星河互联与隐私的声明" = "Tuyên bố về kết nối HarmonyOS và quyền riêng tư";
+"鸿蒙星河互联隐私政策" = "Chính sách bảo mật của HarmonyOS";
+"鸿蒙星河互联用户服务协议" = "Thỏa thuận dịch vụ người dùng HarmonyOS";
+"互传记录" = "Lịch sử truyền tải";
+"权限使用说明" = "Hướng dẫn sử dụng quyền truy cập";
+"意见反馈" = "Phản hồi";
+"问题描述" = "Mô tả vấn đề";
+"请尽量详细描述您的问题（不少于10字）" = "Vui lòng mô tả chi tiết vấn đề của bạn (ít nhất 10 chữ)";
+"上传图片" = "Tải ảnh lên";
+"联系方式" = "Thông tin liên hệ";
+"请输入您的联系方式" = "Vui lòng nhập thông tin liên hệ của bạn";
+"发送错误报告" = "Gửi báo cáo lỗi";
+"版本号" = "Số phiên bản";
+"检查更新" = "Kiểm tra cập nhật";
+"个人信息收集清单" = "Danh sách thu thập thông tin cá nhân";
+"个人信息共享清单" = "Danh sách chia sẻ thông tin cá nhân";
+"访问位置" = "Truy cập vị trí";
+"用于判断是否处于同一局域网" = "Dùng để xác định xem có cùng mạng cục bộ hay không";
+"访问照片" = "Truy cập ảnh";
+"用于互传时读取照片、视频等文件" = "Dùng để đọc ảnh, video và các tệp khác khi truyền tải";
+"访问通讯录" = "Truy cập danh bạ";
+"用于互传时读通讯录" = "Dùng để đọc danh bạ khi truyền tải";
+"无线局域网" = "Mạng cục bộ không dây";
+"用于在相同局域网下连接设备，传输文件" = "Dùng để kết nối thiết bị cùng mạng cục bộ và truyền tải file";
+"蓝牙" = "Bluetooth";
+"用于使用蓝牙搜索附近的设备" = "Dùng để tìm kiếm thiết bị gần đó bằng Bluetooth";
+"存储权限" = "Quyền lưu trữ";
+"用于存储传输记录" = "Dùng để lưu các bản ghi truyền tải";
+"修改名称" = "Sửa đổi tên";
+"名称" = "Tên";
+"输入要修改的名称" = "Nhập tên cần sửa đổi";
+"2-12位字符，可包含英文字母、数字、汉字，该名称将在对方的搜索页面展示。" = "2-12 ký tự, có thể chứa chữ cái tiếng Anh, số và chữ Hán. Tên này sẽ hiển thị trên trang tìm kiếm của đối phương.";
+"接收中" = "Đang nhận";
+"接收完成" = "Nhận xong";
+"查看历史记录" = "Xem lịch sử";
+"加入" = "Thêm vào";
+"个文件接收完成" = "Số lượng tệp đã nhận thành công";
+"个文件接收失败" = "Số lượng tệp nhận thất bại";
+"个文件" = "Số lượng tệp";
+"\"鸿蒙星河互联\" 想要加入无线局域网" = "鸿蒙星河互联 muốn kết nối mạng không dây";
+"张图片" = "Số lượng hình ảnh";
+"个视频" = "Số lượng video";
+"共" = "Tổng cộng";
+"个联系人" = "Số lượng người liên hệ";
+"文件互传设备条件" = "Điều kiện thiết bị truyền tải tệp";
+"文件传输方式" = "Phương thức truyền tệp";
+"发送与接收文件" = "Gửi và nhận tệp";
+"正在搜索设备…" = "Đang tìm kiếm thiết bị…";
+"需要权限" = "Cần quyền truy cập";
+"请在设备的设置中允许应用删除照片" = "Vui lòng cho phép ứng dụng xóa ảnh trong cài đặt thiết bị";
+"对方暂不支持接收大众点评内容" = "Đối phương hiện chưa hỗ trợ nhận nội dung từ Dianping";
+"对方暂不支持接收备忘录等文本非文件内容" = "Đối phương hiện chưa hỗ trợ nhận các nội dung văn bản phi tệp như ghi chú";
+"导入中" = "Đang nhập liệu";
+"存储空间不足无法导入图库" = "Không đủ dung lượng lưu trữ để nhập thư viện ảnh";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“接受”，即表示您同意鸿蒙星河互联用户协议、权限使用说明、关于鸿蒙星河互联与隐私的声明。" = "Dịch vụ này cần kết nối Bluetooth và WLAN để truyền nhận dữ liệu, đọc hình ảnh, video, danh bạ và tệp tin, cũng như truy cập thông tin mạng. Chúng tôi chỉ thu thập các thông tin cá nhân liên quan khi bạn sử dụng các chức năng cụ thể của dịch vụ. Dịch vụ cung cấp cho bạn các chức năng cơ bản của HarmonyOS Star River Interconnection. Khi nhấn \"Đồng ý\", bạn đồng ý với Điều khoản người dùng HarmonyOS Star River Interconnection, Hướng dẫn sử dụng quyền hạn và tuyên bố về quyền riêng tư của HarmonyOS Star River Interconnection.";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“接受”，即表示您同意" = "Dịch vụ này cần kết nối Bluetooth, WLAN để truyền và nhận dữ liệu, đọc hình ảnh, video, liên hệ và tệp tin, cũng như truy cập thông tin mạng. Chúng tôi chỉ thu thập các thông tin cá nhân liên quan khi bạn sử dụng các chức năng cụ thể của dịch vụ. Dịch vụ này cung cấp cho bạn các chức năng cơ bản về kết nối HarmonyOS. Bấm \"Chấp thuận\" đồng nghĩa với việc bạn đồng ý.";
+"蓝牙、WLAN" = "Bluetooth, WLAN";
+"图片、视频、联系人" = "Hình ảnh, video, liên hệ";
+"网络信息" = "Thông tin mạng";
+"鸿蒙星河互联用户协议" = "Thỏa thuận người dùng kết nối HarmonyOS Star River";
+"支持与HarmonyOS 6 及以上版本华为设备互传，\n对方需在控制中心将华为分享设为“所有人可见”" = "Hỗ trợ truyền dữ liệu tương tác giữa thiết bị Huawei với HarmonyOS 6 trở lên, đối phương cần thiết lập chia sẻ Huawei thành \"Có thể xem bởi tất cả người\" trong Trung tâm điều khiển.";
+"正在导入“照片”，请勿退出应用" = "Đang tải \"Ảnh\", vui lòng không thoát khỏi ứng dụng";
+"正在导入“文件”，请勿退出应用" = "Đang tải \"Tệp\", vui lòng không thoát khỏi ứng dụng";
+"正在导入" = "Đang tải";
+"当前已是最新版本" = "Hiện đang là phiên bản mới nhất";
+"未监测到线上版本" = "Không tìm thấy phiên bản trực tuyến";
+"实时活动权限" = "Quyền hoạt động thời gian thực";
+"用于后台时通过灵动岛显示传输进度" = "Sử dụng hiển thị tiến độ truyền tải thông qua Đảo linh hoạt khi chạy nền";
+"发生时间*" = "Thời điểm xảy ra*";
+"请检查网络连接" = "Vui lòng kiểm tra kết nối mạng";
+"请填写10字以上的问题描述" = "Vui lòng nhập mô tả câu hỏi từ 10 chữ trở lên";
+"请填写联系方式" = "Vui lòng nhập thông tin liên hệ";
+"请选择发生时间" = "Vui lòng chọn thời điểm xảy ra";
+"提交成功" = "Gửi thành công";
+"选择要上传的文件" = "Chọn tệp muốn tải lên";
+"从相册选择" = "Từ thư viện ảnh";
+"拍照" = "Chụp ảnh";
+"无法访问相机" = "Không thể truy cập camera";
+"没有获得相机访问权限，请在设置中允许访问相机" = "Không có quyền truy cập camera, vui lòng cho phép truy cập camera trong cài đặt";
+"开启权限" = "Bật quyền truy cập";
+"无法访问相册" = "Không thể truy cập thư viện ảnh";
+"没有获得相册访问权限，请在设置中允许访问相册" = "Không có quyền truy cập thư viện ảnh, vui lòng cho phép truy cập thư viện ảnh trong cài đặt";
+"保存" = "Lưu";
+"使用过程中申请
+
+无线局域网
+用于在相同局域网下连接设备，传输文件
+
+蓝牙
+用于使用蓝牙搜索附近的设备
+
+位置
+用于判断是否处于同一局域网
+
+照片
+用于互传时读取照片，视频等文件
+
+通讯录
+用于互传时读取通讯录
+
+存储权限
+用于存储传输记录" = "Sử dụng trong quá trình yêu cầu
+Mạng không dây cục bộ:Dùng để kết nối thiết bị cùng mạng cục bộ, truyền tệp tin.
+Bluetooth:Dùng để tìm kiếm thiết bị gần nhất bằng Bluetooth.
+Vị trí:Dùng để xác định xem có đang nằm trong cùng một mạng cục bộ hay không.
+Ảnh:Dùng để đọc ảnh, video và các tệp khác khi trao đổi dữ liệu.
+Danh bạ:Dùng để đọc danh bạ khi trao đổi dữ liệu.
+Quyền lưu trữ:Dùng để lưu lại lịch sử truyền tải.";
+//"位置" = "";
+"照片" = "Ảnh";
+"对端设备：HarmonyOS软件版本6.0.0.112及以上的手机、平板、电脑。" = "Thiết bị đích: Điện thoại, máy tính bảng, máy tính chạy hệ điều hành HarmonyOS phiên bản 6.0.0.112 trở lên.";
+"本端设备：iOS 13及以上、iPad OS 13及以上、Mac OS 10.15及以上。" = "Thiết bị nguồn: iOS 13 trở lên, iPad OS 13 trở lên, Mac OS 10.15 trở lên.";
+"方式一：同WLAN传输" = "Cách 1: Truyền qua mạng WLAN";
+"当两台设备连接同一可用WLAN时，确认接收后将直接进行文件互传。" = "Khi hai thiết bị kết nối cùng một mạng WLAN có thể dùng được, sau khi xác nhận nhận được sẽ tự động truyền tệp sang nhau.";
+"方式二：热点传输" = "Cách 2: Truyền qua điểm truy cập WiFi (hotspot)";
+"当两台设备未连接同一可用WLAN时，确认接收后需连接对方设备热点以进行免流量文件互传。" = "Khi hai thiết bị không kết nối cùng một mạng WLAN, sau khi xác nhận nhận được cần kết nối với hotspot của đối phương để truyền tệp mà không sử dụng dữ liệu di động.";
+"注：大文件互传时，建议使用热点传输(速度较快)以快速完成传输任务。" = "Lưu ý: Khi truyền tệp lớn, nên sử dụng cách truyền qua hotspot (tốc độ nhanh hơn) để hoàn thành việc truyền nhanh chóng.";
+"接收文件" = "Nhận tệp";
+"1.本设备打开“鸿蒙星河互联”app，并保持亮屏。" = "1. Thiết bị này mở ứng dụng \"Hồng Mông Tinh Hà Liên Kết\", giữ màn hình sáng.";
+"2.对方选择要发送的文件，在华为分享界面选择本设备。" = "2. Đối phương chọn tệp muốn gửi đi, trong giao diện chia sẻ Huawei chọn thiết bị này.";
+"3.与对方处于同一WLAN或连接对方热点，开始传输。" = "3. Cùng thuộc cùng một mạng WLAN hoặc kết nối với hotspot của đối phương, bắt đầu quá trình truyền.";
+"发送文件" = "Gửi tệp";
+"方式一：鸿蒙星河互联app内发送" = "Cách 1: Gửi thông qua ứng dụng \"Hồng Mông Tinh Hà Liên Kết\"";
+"﻿1.对方开启华为分享，并保持亮屏。首次使用需设为“所有人可见”。" = "1. Đối phương bật tính năng chia sẻ Huawei và giữ màn hình sáng. Lần đầu sử dụng cần thiết lập cho \"Tất cả người dùng có thể thấy\".";
+"2.本设备选择要发送的文件，点击对方设备头像。或先点击对方设备头像，再选择要发送的文件。" = "2. Thiết bị này chọn tệp muốn gửi đi, nhấn vào ảnh đại diện thiết bị đối phương. Hoặc trước tiên nhấn vào ảnh đại diện, sau đó chọn tệp muốn gửi.";
+"方式二：通过“共享”选择鸿蒙星河互联app发送" = "Cách 2: Gửi thông qua mục \"Chia sẻ\" trong ứng dụng \"Hồng Mông Tinh Hà Liên Kết\"";
+"1.对方开启华为分享，并保持亮屏。" = "1. Đối phương bật tính năng chia sẻ Huawei và giữ màn hình sáng.";
+"2.本设备选择要发送的文件，点击“共享”按钮选择鸿蒙星河互联app。" = "2. Thiết bị này chọn tệp muốn gửi, nhấn nút \"Chia sẻ\" để chọn ứng dụng \"Hồng Mông Tinh Hà Liên Kết\".";
+"导入完成" = "Xong nhập tệp";
+"等待中" = "Đang chờ";
+"对方已取消接收" = "Đối phương đã hủy nhận";
+"接收中..." = "Đang nhận...";
+"张图片，" = "(Ảnh) tấm,";
+//"个视频，" = "";
+//"个文件，" = "";
+"连接中" = "Đang kết nối";
+"正在连接对方热点" = "Đang kết nối với hotspot đối phương";
+"确定要取消接收吗？" = "Bạn có chắc muốn hủy nhận không?";
+"继续接收" = "Tiếp tục nhận";
+"cancelReceivingAlertBtn" = "Hủy nhận";
+"接收取消" = "Hủy nhận";
+"知道了" = "Biết rồi";
+"对方取消发送，接收失败" = "Đối phương hủy gửi, nhận thất bại";
+"局域网连接中" = "Đang kết nối mạng cục bộ";
+"前往\"照片\"查看" = "Đi đến \"Ảnh\" để xem";
+"前往\"文件\"查看" = "Đi đến \"Tài liệu\" để xem";
+"文件还在导入中" = "Tài liệu vẫn đang tải";
+"可在互传记录中查看导入进度" = "Có thể xem tiến độ tải trong lịch sử truyền nhận";
+"退出应用会导致导入失败" = "Thoát khỏi ứng dụng sẽ khiến quá trình tải thất bại";
+"退出应用" = "Thoát khỏi ứng dụng";
+"继续导入" = "Tiếp tục tải";
+"蓝牙已关闭,请在“设置”中允许新连接" = "Bluetooth đã tắt, vui lòng cho phép kết nối mới trong \"Cài đặt\"";
+"设备不支持蓝牙" = "Thiết bị không hỗ trợ Bluetooth";
+"蓝牙正在重置" = "Bluetooth đang được reset";
+"蓝牙状态未知" = "Trạng thái Bluetooth chưa xác định";
+"蓝牙权限未打开" = "Quyền Bluetooth chưa được mở";
+"没有获得蓝牙权限，请在设置中打开蓝牙权限" = "Không có quyền Bluetooth, vui lòng mở quyền Bluetooth trong cài đặt";
+"去设置" = "Đi đến cài đặt";
+"位置权限未打开" = "Quyền vị trí chưa được mở";
+"没有获得位置权限，请在设置中打开位置权限" = "Không có quyền vị trí, vui lòng mở quyền vị trí trong cài đặt";
+"通讯录权限未打开" = "Quyền danh bạ chưa được mở";
+"没有获得通讯录访问权限，请在设置中允许访问通讯录" = "Không có quyền truy cập danh bạ, vui lòng cho phép truy cập danh bạ trong cài đặt";
+"照片权限未打开" = "Quyền ảnh chưa được mở";
+"没有获得照片访问权限，请在设置中允许访问照片" = "Không có quyền truy cập ảnh, vui lòng mở quyền truy cập ảnh trong cài đặt";
+"WIFI权限未打开" = "Quyền WIFI chưa được mở";
+"没有获得WIFI权限，请在设置中打开WIFI权限" = "Không có quyền WIFI, vui lòng mở quyền WIFI trong cài đặt";
+"正在导入至“照片”，请勿退出应用" = "Đang tải vào \"Ảnh\", vui lòng không thoát ứng dụng";
+"存储空间不足，导入失败，请清理空间后在接收记录中重新导入" = "Không đủ dung lượng lưu trữ, tải thất bại, vui lòng dọn dẹp dung lượng và tải lại trong lịch sử nhận";
+"去设置界面开启允许通讯录选择" = "Đi đến cài đặt để bật cho phép chọn danh bạ Thiết lập";
+"设置" = "Thiết lập";
+
+
+"发送过程中请不要退出当前界面" = "Vui lòng không thoát khỏi giao diện hiện tại trong quá trình gửi đi";
+"正在导入至“照片”，请不要退出当前页面" = "Đang nhập vào \"Ảnh\", vui lòng không thoát khỏi trang hiện tại";
+"请不要退出当前页面" = "Vui lòng không thoát khỏi trang hiện tại";
+"选择联系人" = "Chọn người liên hệ";
+"全选" = "Chọn tất cả";
+"取消全选" = "Hủy chọn tất cả";
+"搜索" = "Tìm kiếm";
+"暂无数据" = "Không có dữ liệu";
+"完成" = "Hoàn thành";
+
+"分享失败" = "Chia sẻ thất bại";
+"连接已超时，请重新点击对方设备后再连接" = "Kết nối đã hết thời hạn, vui lòng nhấp lại vào thiết bị của đối phương để kết nối lại";
+"内存不足,分享失败" = "Độ dung lượng bộ nhớ không đủ, chia sẻ thất bại";
+"请关闭热点后重试" = "Vui lòng tắt điểm truy cập Wi-Fi và thử lại";
+"接收失败" = "Nhận thất bại";
+"连接已超时，请对端重新点击设备发起连接" = "Kết nối đã hết thời hạn, vui lòng nhấn lại vào thiết bị bên kia để khởi tạo kết nối";
+"内存不足，接收失败" = "Độ dung lượng bộ nhớ không đủ, nhận thất bại";
+"本机内存不足，发送失败" = "Dung lượng bộ nhớ máy chủ không đủ, gửi thất bại";
+"点击上传" = "Nhấp để tải lên";
+"提交" = "Gửi";
+"与HarmonyOS设备自由连接，免流量高效互传" = "Kết nối tự do với thiết bị HarmonyOS, truyền dữ liệu hiệu quả không mất dung lượng";
+"待接收" = "Đang chờ nhận";
+"已拒绝" = "Đã từ chối";
+"文件还在发送中，是否终止发送？" = "Tệp đang trong quá trình gửi, bạn có muốn dừng không?";
+"终止发送" = "Dừng gửi";
+"继续发送" = "Tiếp tục gửi";
+"接收失败，请关闭热点后再试" = "Thất bại khi nhận, vui lòng đóng điểm nóng lại và thử lại";
+"发送失败，请关闭热点后再传输" = "Thất bại khi gửi, vui lòng đóng điểm nóng lại và truyền dữ liệu";
+"请关闭热点后再传输" = "Vui lòng đóng điểm nóng lại và truyền dữ liệu";
+"我知道了" = "Tôi hiểu rồi";
+"提示" = "Thông báo";
+"蓝牙已关闭，可能会影响传输和接收，请在“设置”中允许新连接" = "Bluetooth đã tắt, có thể ảnh hưởng đến việc truyền và nhận, vui lòng cho phép kết nối mới trong \"Cài đặt\"";
+"接收雷达" = "Nhận radar";
+"提交中，请保持在当前页面，不要退出后台" = "Đang gửi, vui lòng ở trang hiện tại và không thoát khỏi nền";
+"提交失败请重试" = "Lỗi khi gửi, vui lòng thử lại";
+"设备名称不能为空" = "Tên thiết bị không được để trống";
+"请输入符合要求的文本（2-12位字符，可包含英文字母、数字、汉字）" = "Vui lòng nhập văn bản phù hợp (2-12 ký tự, có thể chứa chữ cái Anh, số và chữ Hán)";
+"请输入你要修改的名称" = "Vui lòng nhập tên bạn muốn sửa đổi";
+"请求超时" = "Yêu cầu quá thời hạn";
+"确定要取消发送吗？" = "Bạn có chắc muốn hủy việc gửi không?";
+"取消失败" = "Lỗi khi hủy";
+"选择的文件" = "Tệp đã chọn";
+"未选择文件" = "Chưa chọn tệp";
+"0个文件" = "0 tệp";
+"选择日期时间" = "Chọn ngày và thời gian";
+"来自" = "Từ";
+"首次使用需设为“所有人可见”。" = "Lần đầu sử dụng cần thiết phải thiết lập thành \"Có thể nhìn thấy bởi tất cả người\".";
+"并保持亮屏。" = "Và giữ màn hình sáng.";
+"恢复默认" = "Khôi phục mặc định";
+"无法访问相册，请检查设备权限设置。" = "Không thể truy cập thư viện ảnh, vui lòng kiểm tra cài đặt quyền thiết bị.";
+"修改成功" = "Sửa đổi thành công";
+"控制中心创建快捷入口" = "Tạo nút bấm nhanh trong Trung tâm điều khiển";
+"﻿1.在控制中心的空白处长按，点击“添加控制”按钮；" = "1. Nhấn và kéo dài vào khoảng trống trong Trung tâm điều khiển, nhấn nút \"Thêm điều khiển\";";
+"2.下滑找到“快捷指令”栏，点击“打开APP”按钮；" = "2. Cuộn xuống tìm mục \"Tùy chỉnh\", nhấn nút \"Mở APP\";";
+"3.选取“鸿蒙星河互联”app，即可创建快捷入口。" = "3. Chọn ứng dụng \"Harmony Star River Interconnection\", có thể tạo nút bấm nhanh.";
+"部分或全部格式不支持导入“照片”，已存入“文件-鸿蒙星河互联-image” 文件夹" = "Một số định dạng không hỗ trợ nhập \"Ảnh\", các tệp đã lưu vào thư mục \"Tệp - Harmony Star River Interconnection-image\"";
+"好的" = "Tốt";
+"去查看" = "Xem album";
+"“最近存储”或“鸿蒙星河互联”相簿" = "\"Lưu trữ gần đây\" hoặc \"Hồng Mông Tinh Hà Liên kết\"";
+"查看时可以使用“通讯录”打开并导入" = "Khi xem có thể mở và chuyển tiếp bằng \"Danh bạ\"";
+"个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹" = "Đã lưu vào thư mục tệp - Hồng Mông Tinh Hà Liên Kết-image";
+"已取消接收" = "Đã hủy nhận";
+"想要分享" = "Muốn chia sẻ";
+//"个文件，是否接收？" = "";
+"对方暂不支持接收此类型内容" = "Đối phương hiện chưa hỗ trợ nhận nội dung loại này";
+"正在处理文件..." = "Đang xử lý tệp...";
+"输入已达上限" = "Số lượng đầu vào đã đạt giới hạn";
+"，" = ",";
+"高速传输模式" = "Chế độ truyền tải tốc độ cao";
+//"开启后，每次传输都将直连华为设备 WLAN" = "";
+"iCloud照片下载失败" = "Tải ảnh iCloud thất bại";
+"请连接好网络再试" = "Vui lòng kết nối mạng trước khi thử lại";
+"跳过云图" = "Bỏ qua bản đồ đám mây";
+"类型文件暂不支持分享" = "Loại tệp hiện chưa hỗ trợ chia sẻ";
+// 互换记录
+// Localizable.strings (英文)
+//"transfer_records"           = "";
+//"search"                     = "";
+"received_from"              = "Được nhận từ";
+"import_failed"              = "Xử lý nhập thất bại";
+"partial_import_failed"      = "Một số tệp đã nhập thất bại";
+"import_no_complete"         = "Đang tải về chưa hoàn tất";
+"retry"                      = "Thử lại";
+"i_received"                 = "Tôi nhận được";
+"i_sent"                     = "Tôi gửi đi";
+"edit"                       = "Chỉnh sửa";
+"sort_by_time"               = "Sắp xếp theo thời gian";
+"sort_by_type"               = "Sắp xếp theo loại";
+"descending_order"           = "Thứ tự giảm dần";
+"ascending_order"            = "Thứ tự tăng dần";
+"confirm_delete_record"      = "Vui lòng xác nhận có muốn xóa bản ghi không?";
+//"cancel"                     = "";
+//"confirm"                    = "";
+//"no_data_available"          = "";
+"can_not_find"               = "Không tìm thấy tệp này";
+//"select_all"                 = "";
+//"deselect_all"               = "";
+"source_file_corrupted"      = "Tệp nguồn đã bị hỏng, không thể nhập";
+//"i_know"                     = "";
+"view"                       = "Xem";
+"open_with"                  = "Cách mở";
+"delete_record_and_file"     = "Xóa bản ghi và tệp";
+"delete_record"              = "Xóa bản ghi";
+"file_moved_or_deleted"      = "Tệp này đã được di chuyển hoặc xóa";
+"delete_record_confirmation" = "Bạn có muốn xóa bản ghi này không?";
+"file_moved_or_deleted_confirm_delete_record"      = "Tệp này đã được di chuyển hoặc xóa, bạn có muốn xóa bản ghi này không?";
+"ignore"                     = "Bỏ qua";
+"delete"                     = "Xóa";
+"image_imported_to_album"    = "Hình ảnh đã được nhập vào thư viện ảnh hệ thốngVui lòng xem trong ứng dụng [Ảnh] > [Album] > [Hồng Minh Tinh Hà Liên Kết] trên điện thoại";
+"imported_to_system_album"   = "Nhập vào thư viện ảnh hệ thống";
+//"importing"                  = "";
+
+
+
+
+//************** PhotoPicker
+"无法访问相册中照片" = "Không thể truy cập ảnh trong album";
+"当前无照片访问权限，建议前往系统设置，\n允许访问「照片」中的「所有照片」。" = "Hiện chưa có quyền truy cập ảnh, đề nghị vào cài đặt hệ thống,\ncho phép truy cập \"Ảnh\" trong mục \"Tất cả ảnh\".";
+"前往系统设置" = "Vào cài đặt hệ thống";
+"相册" = "Album";
+"原图" = "Tệp gốc";
+"原片" = "Ảnh gốc";
+"预览" = "Xem trước";
+//"编辑" = "";
+"返回" = "Trở lại";
+"还原" = "Trả lại";
+"自由" = "Tự do";
+"下一步" = "Bước tiếp theo";
+"没有可选资源" = "Không có tài nguyên để chọn";
+"照片和视频不能同时选择" = "Không thể chọn đồng thời cả ảnh và video";
+"最多只能选择%d张照片" = "Chỉ có thể chọn tối đa %d bức ảnh";
+"已达到最大选择数" = "Đã đạt số lượng tối đa";
+"视频最大时长为%d秒，无法选择" = "Độ dài video tối đa là %d giây, không thể chọn";
+"视频最小时长为%d秒，无法选择" = "Độ dài video tối thiểu là %d giây, không thể chọn";
+"视频和照片不能同时选择" = "Không thể chọn đồng thời cả ảnh và video";
+"最多只能选择%d个视频" = "Chỉ có thể chọn tối đa %d video";
+"正在下载" = "Đang tải xuống";
+"下载失败" = "Tải xuống thất bại";
+"没有照片" = "Không có ảnh";
+"你可以使用相机拍些照片" = "Bạn có thể dùng máy ảnh chụp một vài bức ảnh";
+"无法访问相册中所有照片，\n请允许访问「照片」中的「所有照片」" = "Vui lòng cho phép truy cập \"Tất cả ảnh\" trong mục \"Ảnh\"";
+"只能查看允许访问的照片和相关相册" = "Chỉ có thể xem những ảnh đã được cấp quyền truy cập và các thư ảnh liên quan";
+"无法使用相机!" = "Không thể sử dụng camera!";
+"无法使用相机功能" = "Không thể sử dụng tính năng camera";
+"请前往系统设置中，允许访问「相机」。" = "Vui lòng vào cài đặt hệ thống để cho phép truy cập \"Camera\".";
+"照片大小超过最大限制" = "Kích thước ảnh vượt quá giới hạn tối đa";
+"视频大小超过最大限制" = "Kích thước video vượt quá giới hạn tối đa";
+"视频导出失败" = "Xuất video thất bại";
+"保存失败" = "Lưu thất bại";
+"所有照片" = "Tất cả ảnh";
+"正在处理..." = "Đang xử lý...";
+"处理失败" = "Xử lý thất bại";
+"导出失败" = "Xuất thất bại";
+"视频加载中" = "Đang tải video";
+"视频加载失败!" = "Làm việc với video thất bại!";
+"视频可编辑最大时长为%d秒，无法编辑" = "Thời lượng video có thể chỉnh sửa tối đa là %d giây, không thể chỉnh sửa";
+"相机不可用!" = "Máy ảnh không khả dụng!";
+"图片获取失败!" = "Truy vấn ảnh thất bại!";
+"视频获取失败!" = "Truy vấn video thất bại!";
+"图片下载中" = "Đang tải ảnh";
+"视频下载中" = "Đang tải video";
+"设置失败!" = "Cài đặt thất bại!";
+"唯美" = "Thẩm mỹ";
+"梦幻" = "Huyền ảo";
+"老电影" = "Phim cổ điển";
+"怀旧" = "Nhắc lại";
+"黑白" = "Sắc đen trắng";
+"色调" = "Tông màu";
+"模糊" = "Mờ";
+"岁月" = "Thời gian";
+"单色" = "Màu đơn";
+"褪色" = "Mùa mọt";
+"冲印" = "In ấn";
+"铬黄" = "Chromium vàng";
+"暂无配乐" = "Hiện chưa có nhạc nền";
+"配乐" = "Nhạc nền";
+"视频原声" = "Âm nhạc gốc video";
+"正在同步iCloud" = "Đang đồng bộ hóa iCloud";
+"iCloud同步失败" = "Đồng bộ hóa iCloud thất bại";
+"拖动到此处删除" = "Drag vào đây để xóa";
+"松手即可删除" = "Liberate để xóa";
+"背景音乐" = "Âm nhạc nền";
+"搜索歌名" = "Tìm kiếm tên bài hát";
+"此歌曲暂无歌词，请您欣赏" = "Bài hát này hiện chưa có lời, vui lòng thưởng thức";
+"选择" = "Chọn";
+"取消选择" = "Hủy chọn";
+"歌词" = "Chữ ca";
+"拍摄失败!" = "Ghi hình thất bại!";
+"摄像头切换失败!" = "Chuyển đổi camera thất bại!";
+"相机初始化失败!" = "Khởi tạo máy ảnh thất bại!";
+"轻触拍照" = "Nhấn nhẹ để chụp ảnh";
+"按住摄像" = "Giữ nút quay video";
+"轻触拍照，按住摄像" = "Nhấn nhẹ để chụp ảnh, giữ nút quay video";
+"拍摄时长不足%d秒" = "Thời lượng ghi hình không đủ %d giây";
+"麦克风添加失败，录制视频会没有声音哦!" = "Thêm microphone thất bại, video sẽ không có âm thanh!";
+"无法使用麦克风" = "Không thể sử dụng microphone";
+"请在设置-隐私-相机中允许访问麦克风" = "Vui lòng cho phép truy cập microphone trong Cài đặt - Quyền riêng tư - Camera";
+"更多" = "Thêm nhiều hơn";
+"张照片" = "Xem ảnh";
+"实况" = "Sự kiện trực tiếp";
+"视频" = "Video";
+"点击摄像" = "Nhấn camera";
+"音量" = "Giá trị âm thanh";
+"明亮" = "Độ sáng";
+//"删除" = "";
+"原始比例" = "Tỷ lệ gốc";
+"自由格式" = "Định dạng tự do";
+"正方形" = "Hình vuông";
+"亮度" = "Độ sáng";
+"对比度" = "Độ tương phản";
+"饱和度" = "Độ bão hòa";
+"曝光度" = "Độ phơi sáng";
+"色温" = "Xuất nhiệt độ màu";
+"暗角" = "Góc tối";
+"锐化" = "Cải thiện nét";
+"蒙版素材" = "Vật liệu che phủ";
+"筛选" = "Lọc";
+"筛选条件" = "Điều kiện lọc";
+"无筛选条件" = "Không có điều kiện lọc";
+"没有项目" = "Không có mục nào";
+"筛选结果" = "Kết quả lọc";
+"所有项目" = "Tất cả mục";
+"已编辑" = "Đã chỉnh sửa";
+"仅显示" = "Chỉ hiển thị";
+//"筛选照片" = "";
+//"筛选视频" = "";
+"选择相册" = "Chọn album";
+"我的相册" = "Album của tôi";
+"媒体类型" = "Loại phương tiện";
+"查看全部" = "Xem tất cả";
+"全部" = "Tất cả";
+"清空已编辑的内容" = "Xóa tất cả nội dung đã chỉnh sửa";
+"高光" = "Cao quang";
+"阴影" = "Tối ảo";
+
+"HXAlbumCameraRoll" = "Tất cả ảnh";
+"HXAlbumPanoramas" = "Ảnh toàn cảnh";
+//"HXAlbumVideos" = "";
+"HXAlbumFavorites" = "Tích trữ cá nhân";
+"HXAlbumTimelapses" = "Chụp ảnh theo thời gian thực";
+"HXAlbumRecents" = "Dự án gần đây";
+"HXAlbumRecentlyAdded" = "Thêm mới gần đây";
+"HXAlbumBursts" = "Nhiếp phong liên tục";
+"HXAlbumSlomoVideos" = "Chuyển động chậm";
+"HXAlbumSelfPortraits" = "Tự chụp ảnh";
+"HXAlbumScreenshots" = "Lấy màn hình";
+"HXAlbumDepthEffect" = "Ảnh chân dung";
+"HXAlbumLivePhotos" = "Ảnh hiện trường";
+"HXAlbumAnimated" = "Video hoạt hình";
+
+"下载" = "Tải xuống";
+
+"传输iCloud照片需先下载到本地，是否下载" = "Trước khi truyền ảnh iCloud, cần tải về máy chủ. Bạn có muốn tải xuống không?";
+"非WiFi状态，下载将消耗流量" = "Khi không kết nối WiFi, việc tải xuống sẽ tiêu tốn dữ liệu di động.";
+"所选内容为云图，请先连接网络下载后再分享" = "Nội dung bạn chọn là ảnh đám mây, vui lòng kết nối mạng trước khi chia sẻ.";
+
+//单数适配
+"receiveFileSuccess" = "Đã nhận được số lượng file";
+"receiveFileFailed" = "Số lượng file nhận thất bại";
+//"file" = "";
+//"picture" = "";
+//"video" = "";
+//"contact" = "";
+"fileAdd" = "Số lượng file,";
+//"pictureAdd" = "";
+//"videoAdd" = "";
+//"specialFileSaved" = "";
+"isReceiveFile" = "Số lượng file, có muốn nhận không?";
+
+//复数适配
+"receiveFilesSuccess" = "Đã nhận được số lượng file";
+"receiveFilesFailed" = "Số lượng file nhận thất bại";
+//"files" = "";
+//"pictures" = "";
+//"videos" = "";
+//"contacts" = "";
+"filesAdd" = "Số lượng file,";
+//"picturesAdd" = "";
+//"videosAdd" = "";
+//"specialFilesSaved" = "";
+"isReceiveFiles" = "Số lượng file, có muốn nhận không?";
+
+"network_error" = "Kết nối mạng bất thường, vui lòng khởi động lại điện thoại";
+//"network_permission_error_title" = "";
+//"network_permission_error_message" = "";
+
+
+"位置" = "Vị trí";
+"个文件，是否接收？" = "Tệp này có được chấp nhận không? ";
+"编辑" = "Biên tập";
+"删除" = "Xóa";
+"筛选照片" = "Lọc ảnh";
+"筛选视频" = "Lọc video";
+"开启后，每次传输都将直连华为设备 WLAN" = "Sau khi bật, mỗi lần truyền tải sẽ kết nối trực tiếp với thiết bị Huawei qua WLAN";
+//"network_permission_error_title" = "无线数据权限未开启";
+"network_permission_error_title" = "Quyền truy cập dữ liệu không dây chưa được bật";
+//"network_permission_error_message" = "无线数据权限未开启，会导致传输失败，请先开启无线数据权限。";
+"network_permission_error_message" = "Quyền truy cập dữ liệu không dây chưa được bật sẽ dẫn đến việc truyền tải thất bại, vui lòng bật quyền truy cập trước.";
+
+
+"发送中" = "Đang gửi";
+"个视频，" = "Số lượng video,";
+"个文件，" = "Số lượng tệp,";
+//"transfer_records"           = "互传记录";
+"transfer_records"           = "Lịch sử truyền tải";
+//"search"                     = "搜索";
+"search"                     = "Tìm kiếm";
+//"cancel"                     = "取消";
+"cancel"                     = "Hủy bỏ";
+//"confirm"                    = "确定";
+"confirm"                    = "Xác định";
+//"no_data_available"          = "暂无数据";
+"no_data_available"          = "Không có dữ liệu";
+//"select_all"                 = "全选";
+"select_all"                 = "Chọn tất cả";
+//"deselect_all"               = "取消全选";
+"deselect_all"               = "Hủy chọn tất cả";
+//"i_know"                     = "我知道了";
+"i_know"                     = "Tôi hiểu rồi";
+//"importing"                  = "正在导入";
+"importing"                  = "Đang tải";
+
+//"HXAlbumVideos" = "视频";
+"HXAlbumVideos" = "Video";
+//"file" = "个文件";
+"file" = "Số lượng tệp";
+//"picture" = "张图片";
+"picture" = "Số lượng hình ảnh";
+//"video" = "个视频";
+"video" = "Số lượng video";
+//"contact" = "个联系人";
+"contact" = "Số lượng người liên hệ";
+//"pictureAdd" = "张图片，";
+"pictureAdd" = "Số lượng hình ảnh,";
+//"videoAdd" = "个视频，";
+"videoAdd" = "Số lượng video,";
+//"specialFileSaved" = "个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹";
+"specialFileSaved" = "Đã lưu vào thư mục tệp - Hồng Mông Tinh Hà Liên Kết-image";
+//"files" = "个文件";
+"files" = "Số lượng tệp";
+//"pictures" = "张图片";
+"pictures" = "Số lượng hình ảnh";
+//"videos" = "个视频";
+"videos" = "Số lượng video";
+//"contacts" = "个联系人";
+"contacts" = "Số lượng người liên hệ";
+//"picturesAdd" = "张图片，"
+"picturesAdd" = "Số lượng hình ảnh,";
+//"videosAdd" = "个视频，";
+"videosAdd" = "Số lượng video,";
+//"specialFilesSaved" = "个特殊格式文件\n已存至文件-鸿蒙星河互联-image文件夹";
+"specialFilesSaved" = "Đã lưu vào thư mục tệp - Hồng Mông Tinh Hà Liên Kết-image";
+
+
+
+
+
+
+"注：如已和华为设备配对，和该华为设备传输时，请在双端设备“设置-蓝牙”中，取消配对连接。避免传输失败" = "Lưu ý: Nếu đã ghép nối với thiết bị Huawei, khi truyền dữ liệu với thiết bị Huawei đó, vui lòng hủy ghép nối và ngắt kết nối trong \"Cài đặt - Bluetooth\" trên cả hai thiết bị để tránh truyền thất bại.Khôi phục mặc định";
+
+"如无法发现对方设备，请完成以下操作后再试：" = "Nếu không thể phát hiện thiết bị của người khác, vui lòng hoàn thành các thao tác sau trước khi thử lại:";
+"1.如已和华为设备配对，和该华为设备传输时，请在双端设备“设置-蓝牙”中，取消配对连接。避免传输失败" = "1.Nếu đã ghép nối với thiết bị Huawei, khi truyền dữ liệu với thiết bị Huawei đó, vui lòng hủy kết nối ghép nối trong \"Cài đặt > Bluetooth\" trên cả hai thiết bị để tránh truyền thất bại.";
+"2.如已打开其他互传文件的应用，请关闭其他互传应用" = "2.Nếu đã mở ứng dụng truyền tệp khác, vui lòng đóng các ứng dụng truyền khác.";
+"3.两端设备连接同一局域网，华为设备在控制中心将华为分享设为“所有人可见”。" = "3.Cả hai thiết bị kết nối cùng mạng cục bộ, trên thiết bị Huawei, hãy đặt \"Chia sẻ Huawei\" thành \"Hiển thị với mọi người\" trong Trung tâm điều khiển.";
+"如上述操作依旧无法发现对方设备：" = "Nếu vẫn không thể phát hiện thiết bị của người khác sau các thao tác trên:";
+"建议一端设备开启热点，另一端设备手动连接热点后再试。" = "Đề xuất một thiết bị bật điểm phát sóng, thiết bị còn lại kết nối thủ công với điểm phát sóng đó rồi thử lại.";
+
+
+// ***********  Mac相关  ****************
+//越南语
+"欢迎使用鸿蒙星河互联" = "Chào mừng bạn sử dụng HarmonyOS Star River Interconnection";
+"\"鸿蒙星河互联\" 想要加入无线局域网" = "HarmonyOS Star River Interconnection muốn tham gia mạng LAN không dây";
+"支持与HarmonyOS 6 及以上版本华为设备互传，\n对方需在控制中心将华为分享设为“所有人可见”，\n本端需在app右上角的“设置-系统权限管理”中打开位置和蓝牙" = "Hỗ trợ trao đổi tệp với thiết bị Huawei chạy HarmonyOS 6 trở lên,\nđối phương cần thiết lập \"Chia sẻ Huawei hiển thị cho tất cả người dùng\" trong Trung tâm điều khiển,\nphía mình cần mở quyền vị trí và Bluetooth ở góc trên bên phải ứng dụng, mục \"Cài đặt - Quản lý quyền hệ thống\".";
+"已是最新版本" = "Đã là phiên bản mới nhất";
+"从手机相册选择" = "Chọn từ thư viện ảnh điện thoại";
+"使用过程中申请" = "Yêu cầu trong quá trình sử dụng";
+"用于互传时读取照片，视频等文件" = "Dùng để đọc ảnh, video và các tệp khác khi trao đổi tệp";
+"用于互传时读取通讯录" = "Dùng để đọc danh bạ liên lạc khi trao đổi tệp";
+"该文件已被移动或删除，是否删除该项纪录。" = "Tệp này đã bị di chuyển hoặc xóa, bạn có muốn xóa mục này không?";
+"删除后将无法恢复此记录。" = "Sau khi xóa, bản ghi này sẽ không thể khôi phục.";
+"无法获取本地应用版本" = "Không thể lấy phiên bản ứng dụng cục bộ";
+"无法获取App Store版本信息" = "Không thể lấy thông tin phiên bản App Store";
+"检查到新版本" = "Xem được phiên bản mới";
+"当前版本" = "Phiên bản hiện tại";
+"立即更新" = "Cập nhật ngay";
+"检查更新失败" = "Kiểm tra cập nhật thất bại";
+"可被其他设备发现" = "Có thể được thiết bị khác phát hiện";
+"已取消" = "Đã hủy";
+"确认要取消接收吗？" = "Xác nhận hủy việc nhận chưa?";
+"蓝牙权限被拒绝" = "Quyền Bluetooth bị từ chối";
+"请在系统设置的\"隐私与安全性\"中启用蓝牙权限" = "Vui lòng bật quyền Bluetooth trong cài đặt hệ thống mục \"Bảo mật và riêng tư\"";
+"打开设置" = "Mở Cài đặt";
+"稍后" = "Sau này";
+"需要本地网络权限" = "Cần quyền truy cập mạng cục bộ";
+"此操作需要访问本地网络以发现设备。请授予本地网络权限后重试。" = "Thao tác này yêu cầu truy cập mạng cục bộ để phát hiện thiết bị. Vui lòng cấp quyền mạng cục bộ rồi thử lại.";
+"请求权限" = "Yêu cầu quyền";
+"
+为了发现和连接本地网络中的设备，需要授予本地网络权限。
+
+请按以下步骤操作：
+1. 打开「系统设置」
+2. 进入「隐私与安全性」 
+3. 选择「本地网络」
+4. 找到此应用并开启权限
+5. 返回应用继续使用
+" = "Để phát hiện và kết nối các thiết bị trong mạng cục bộ, cần cấp quyền truy cập cho mạng cục bộ. 
+Hãy thực hiện theo các bước sau:
+1. Mở \"Cài đặt hệ thống\"
+2. Chuyển đến mục \"Bảo mật và quyền riêng tư\"
+3. Chọn \"Mạng cục bộ\"
+4. Tìm ứng dụng này và cấp quyền
+5. Quay lại ứng dụng để tiếp tục sử dụng";
+"打开系统设置" = "Mở cài đặt hệ thống";
+"显示菜单" = "Menù hiển thị";
+"确认要取消发送吗" = "Xác nhận hủy gửi tin nhắn không?";
+"设备已断开" = "Thiết bị đã ngắt kết nối";
+"链接的设备已丢失，文件选择已取消。" = "Thiết bị liên kết đã mất, việc chọn tệp đã bị hủy.";
+"未知版本" = "Phiên bản không xác định";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“同意”，即表示您同意鸿蒙星河互联用户协议、权限使用说明、关于鸿蒙星河互联与隐私的声明。" = "Dịch vụ này cần kết nối Bluetooth và WLAN để truyền nhận dữ liệu, đọc hình ảnh, video, danh bạ và tệp tin, cũng như truy cập thông tin mạng. Chúng tôi chỉ thu thập các thông tin cá nhân liên quan khi bạn sử dụng các chức năng cụ thể của dịch vụ. Dịch vụ cung cấp cho bạn các chức năng cơ bản của HarmonyOS Star River Interconnection. Khi nhấp vào \"Đồng ý\", bạn đồng ý với Điều khoản người dùng của HarmonyOS Star River Interconnection, Hướng dẫn sử dụng quyền hạn và tuyên bố về quyền riêng tư của HarmonyOS Star River Interconnection.";
+"本服务需使用蓝牙、WLAN连接并收发数据，读取图片、视频、联系人和文件等信息，获取网络信息，我们仅在使用具体业务功能时才触发上述行为收集使用相关的个人信息。本服务为您提供鸿蒙星河互联的基本业务功能。点击“同意”，即表示您同意" = "Dịch vụ này cần kết nối Bluetooth và WLAN để truyền nhận dữ liệu, đọc hình ảnh, video, danh bạ và tệp tin, cũng như truy cập thông tin mạng. Chúng tôi chỉ thu thập các thông tin cá nhân liên quan khi bạn sử dụng các chức năng cụ thể của dịch vụ. Dịch vụ cung cấp cho bạn các chức năng cơ bản của hệ thống kết nối HarmonyOS. Khi nhấn \"Đồng ý\", tức là bạn đồng ý với việc thu thập thông tin cá nhân này.";
+"选择新图片" = "Chọn hình ảnh mới";
+"头像修改成功" = "Sửa đổi ảnh đại diện thành công";
+"请输入符合要求的文本（2-17位字符，可包含英文字母、数字、汉字）" = "Vui lòng nhập văn bản phù hợp (2-17 ký tự, có thể chứa chữ cái Anh, số và chữ Hán)";
+"请输入设备名称" = "Vui lòng nhập tên thiết bị";
+"无效的URL" = "URL không hợp lệ";
+"连接断开" = "Kết nối bị ngắt";
+"发送失败" = "Gửi thất bại";
+"内存不足" = "Bộ nhớ không đủ";
+"发送中，请不要退出当前页面" = "Đang gửi, vui lòng không thoát khỏi trang hiện tại";
+"内存不足，分享失败" = "Bộ nhớ không đủ, chia sẻ thất bại";
+"与HarmonyOS设备自由连接，高效互传" = "Kết nối tự do với thiết bị HarmonyOS, truyền dữ liệu hiệu quả";
+"当前版本：v%@" = "Phiên bản hiện tại: v%@";
+"蓝牙已关闭，可能会影响传输和接收，请在”设置“中允许新连接" = "Bluetooth đã tắt, có thể ảnh hưởng đến việc truyền và nhận dữ liệu, vui lòng cho phép kết nối mới trong \"Cài đặt\".";
+"1.对方开启华为分享，" = "1. Đối phương bật tính năng chia sẻ Huawei,";
+"连接失败" = "Kết nối thất bại";
+"加载失败" = "Tải xuống thất bại";
+"一次最多只能拖拽100个，超出数量将无法捕获拖拽内容" = "Lượng kéo tối đa chỉ có thể kéo 100 tệp, vượt quá số lượng sẽ không thể thu nhận nội dung kéo";
+"1.本设备打开“鸿蒙星河互联”app，" = "1. Thiết bị này mở ứng dụng \"HarmonyOS Interconnect\",";
+"commonQuestions" = "Các vấn đề thường gặp";
+"问题1：Mac端打开鸿蒙星河APP后无法发现设备？" = "Vấn đề 1: Sau khi mở ứng dụng HarmonyOS Interconnect trên Mac, không thể phát hiện thiết bị?";
+"answerOne" = "Trả lời: Vui lòng đảm bảo Bluetooth ở cả hai thiết bị đều đã bật, hệ điều hành của thiết bị Huawei phải là phiên bản 6.0.0.112 trở lên, đồng thời mở \"Huawei Share\" trong \"Trung tâm điều khiển\" và thiết lập thành \"Có thể nhìn thấy bởi tất cả người dùng\". Nếu vẫn không thể phát hiện thiết bị, hãy kiểm tra xem Mac có đang chạy các ứng dụng khác hỗ trợ truyền dữ liệu (như KuaYi, Xiaomi Interconnect) hay không, hãy đảm bảo tắt các ứng dụng đó trước khi thử lại.";
+"问题2：Mac端总是提示连接失败/发送或接收不成功？" = "Vấn đề 2: Mac luôn báo lỗi kết nối thất bại/ gửi hoặc nhận không thành công?";
+"answerTwo" = "Trả lời: Có thể do mạng máy tính khiến việc gửi thất bại. Các bước cụ thể như sau: Cài đặt hệ thống -> Wi-Fi/Mạng -> Nâng cao -> Loại bỏ tích chọn \"Thay đổi mạng\" và \"Mở/tắt Wi-Fi\". Sau khi hoàn thành các thao tác trên, hãy thử truyền dữ liệu lại.";
+"sendMethodsOneStepTwo" = "2. Thiết bị này chọn tệp cần gửi, kéo vào ảnh đại diện thiết bị đối phương để gửi. Hoặc trước tiên nhấn vào ảnh đại diện thiết bị đối phương, sau đó chọn tệp cần gửi.";
+"sendMethodsTwoStepTwo" = "2. Thiết bị này chọn tệp cần gửi, nhấn nút \"Chia sẻ\", chọn ứng dụng HarmonyOS Interconnect, nhấn vào thiết bị đối phương để gửi.";
+"commitTips" = "Đang nộp, vui lòng không thoát khỏi nền tảng";
+"maxUploadTips" = "Lấy được tối đa 3 hình ảnh";
+"前往\"下载\"查看" = "Đi đến \"Tải xuống\" để xem";
+"接收记录" = "Ghi nhận nhận được";
+"想向您发送" = "Bạn muốn gửi cho người dùng";
+"（" = "（";
+"）" = "）";
+"取消，分享失败" = "Hủy bỏ, chia sẻ thất bại";
+"请断开已连接的WIFI后重试" = "Vui lòng ngắt kết nối WiFi đã kết nối và thử lại";
+"协议与声明" = "Điều khoản và tuyên bố";
+"同意" = "Tin dùng";
+"deviceNameComfirmBtn" = "Gửi";
+"不支持发送应用程序包" = "Không hỗ trợ gửi gói ứng dụng";
+"检测到应用程序(.app)、项目文件或其他包文件，这些文件类型暂不支持发送。" = "Đã phát hiện tệp ứng dụng (.app), tệp dự án hoặc các tệp gói khác, loại tệp này hiện chưa được hỗ trợ để gửi.";
+"请选择普通文件或文件夹。" = "Vui lòng chọn tệp thông thường hoặc thư mục.";
+"发送" = "Gửi";
+"查看文件" = "Xem tệp";
+"正在加载..." = "Đang tải...";
+"等" = "đợi";
+"未知大小" = "Kích thước không xác định";
+"解析plist失败：" = "Thất bại khi phân tích plist:";
+"图片Data无效，无法转成图像" = "Dữ liệu hình ảnh không hợp lệ, không thể chuyển đổi thành hình ảnh";
+"plist提取数据转PNG成功！PNG大小：" = "Trích xuất dữ liệu từ plist và chuyển đổi sang PNG thành công! Kích thước PNG:";
+"字节" = "Bайt";
+"截屏" = "Chụp màn hình";
+"CGImage编码PNG失败" = "Thất bại khi mã hóa CGImage sang PNG";
+"NSImage转PNG失败" = "Thất bại khi chuyển đổi NSImage sang PNG";
+"加载实况图包失败" = "Tải xuống gói hình ảnh hiện trường thất bại";
+"确认" = "Xác nhận";
+"该文件已被移动或删除，是否删除该项记录？" = "Tệp này đã được di chuyển hoặc xóa, bạn có muốn xóa mục này không?";
+"请确认是否删除记录。" = "Vui lòng xác nhận việc xóa mục.";
+"删除记录和文件" = "Xóa mục và tệp";
+"确定要删除记录和文件吗？" = "Bạn có chắc chắn muốn xóa mục và tệp không?";
+"确定要删除记录吗？" = "Bạn có chắc chắn muốn xóa mục không?";
+"请到" = "Vui lòng truy cập";
+"“下载”" = "Tải xuống";
+"中查看" = "để kiểm tra";
+"对方需在控制中心将华为分享设置成“所有人可见”，本端需在app右上角的“设置-系统管理权限”中打开位置和蓝牙" = "Người dùng bên kia cần thiết lập chia sẻ Huawei trong Trung tâm điều khiển thành \"Có thể nhìn thấy bởi tất cả\", máy chủ cần bật vị trí và Bluetooth ở mục \"Cài đặt - Quyền quản lý hệ thống\" góc trên bên phải ứng dụng";
+
+"发现新版本" = "Phát hiện phiên bản mới";
+"最新版本:" = "Phiên bản mới nhất:";
+"是否前往 App Store 更新？" = "Bạn có muốn cập nhật trên App Store không?";
+"前往更新" = "Đi cập nhật";
+"非本地文件，请先存到本地后再重试" = "Đây không phải là tập tin cục bộ. Vui lòng lưu tập tin vào thiết bị cục bộ trước, sau đó thử lại";
+"检测到应用程序(.app)、项目文件或其他包文件，这些文件类型暂不支持发送。\n\n请选择普通文件或文件夹。" = "Đã phát hiện ứng dụng (.app), tệp dự án hoặc các tệp gói khác. Các loại tệp này hiện không được hỗ trợ để gửi.\n\nVui lòng chọn tệp hoặc thư mục thông thường.";
+"版本检测" = "Kiểm tra phiên bản";
+"在“照片”中打开" = "Mở trong \"Ảnh\"";
+"保存到“下载”" = "Lưu vào \"Tải xuống\"";

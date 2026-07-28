@@ -1,0 +1,21 @@
+/*
+  InfoPlist.strings
+  MutualInfection
+
+  Created by delegate on 2025/9/8.
+  
+*/
+
+"CFBundleName" = "HarmonyOS Interconnect";
+"CFBundleDisplayName" = "HarmonyOS Interconnect";
+"NSCameraUsageDescription" = "ဓာတ်ပုံများကို ပို့လွှတ်ခြင်းနှင့် မျှဝေခြင်းအတွက်";
+"NSContactsUsageDescription" = "ဆက်သွယ်ရေးအမှတ်များကို ရွေးချယ်ပြီး ပို့လွှတ်ခြင်းနှင့် မျှဝေခြင်းအတွက်";
+"NSPhotoLibraryUsageDescription" = "ဓာတ်ပုံများနှင့် ဗီဒီယိုများကို ရွေးချယ်ပြီး ပို့လွှတ်ခြင်းနှင့် မျှဝေခြင်းအတွက်";
+"NSBluetoothAlwaysUsageDescription" = "ဖိုင်များကို ရှာဖွေခြင်းနှင့် ချိတ်ဆက်ခြင်းအတွက်";
+"NSBluetoothPeripheralUsageDescription" = "ဖိုင်များကို ရှာဖွေခြင်းနှင့် ချိတ်ဆက်ခြင်းအတွက်";
+"UTGetWiFiSSID" = "တိကျသော တည်နေရာကို ရယူခြင်းဖြင့် အမြန်နှင့် ထိရောက်စွာ အမှတ်အသားပြုကာ ဟိုတ်တ်ချိတ်ဆက်မှုဖြင့် မျှဝေခြင်းအတွက်";
+"NSLocationWhenInUseUsageDescription" = "တိကျသော တည်နေရာကို ရယူခြင်းဖြင့် အမြန်နှင့် ထိရောက်စွာ အမှတ်အသားပြုကာ ဟိုတ်တ်ချိတ်ဆက်မှုဖြင့် မျှဝေခြင်းအတွက်";
+"NSLocationUsageDescription" = "တိကျသော တည်နေရာကို ရယူခြင်းဖြင့် အမြန်နှင့် ထိရောက်စွာ အမှတ်အသားပြုကာ ဟိုတ်တ်ချိတ်ဆက်မှုဖြင့် မျှဝေခြင်းအတွက်";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "သင်သည် အက်ပ်ကို အသုံးမပြုသော်လည်း သင့်၏ တည်နေရာကို နောက်ခံတွင် မှတ်တမ်းတင်ရန်၊ သင့်အား သတိပေးရန် သို့မဟုတ် လမ်းညွှန်ဝန်ဆောင်မှုများကို ဆက်လက်ပေးစွမ်းရန် လိုအပ်ပါသည်။";
+"NSLocalNetworkUsageDescription" = "ကျွန်ုပ်တို့သည် သင့်၏ ဟိုတ်တ်ချိတ်ဆက်မှုသို့ အောင်မ";
+"NSLocationNetworkUsageDescription" = "ကျွန်ုပ်တို့သည် သင့်၏ ဟိုတ်တ်ချိတ်ဆက်မှုသို့ အောင်မ";
