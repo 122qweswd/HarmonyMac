@@ -33,8 +33,6 @@ const heartbeat = setInterval(() => {
   log(`[node-runtime] heartbeat pid=${process.pid}`);
 }, runtimeConfig.heartbeatIntervalMs);
 
-heartbeat.unref();
-
 let shuttingDown = false;
 
 function shutdown(signal) {

@@ -98,7 +98,7 @@
 		18E619312F1DD2F900CCEC8D /* NSButton+MIMacMarqueeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6192E2F1DD2F900CCEC8D /* NSButton+MIMacMarqueeTextField.swift */; };
 		18F4D06C2EA7324E001AB99C /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F4D06B2EA7324E001AB99C /* CoreWLAN.framework */; };
 		230AEE2B2EA22BE60057872B /* WCDBSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CEB5DC2E83864B00B58D9F /* WCDBSwift.framework */; };
-		230AEE2D2EA22BF40057872B /* WCDBSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23CEB5DC2E83864B00B58D9F /* WCDBSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		230AEE2D2EA22BF40057872B /* WCDBSwift.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 23CEB5DC2E83864B00B58D9F /* WCDBSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2327685E2E641A5E00031E8D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2327685D2E641A5E00031E8D /* README.md */; };
 		2327685F2E641A5E00031E8D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2327685D2E641A5E00031E8D /* README.md */; };
 		23296E632E653AEE00E10D70 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 23296E622E653AEE00E10D70 /* SnapKit */; };
@@ -137,6 +137,7 @@
 		7CFDF92A2E97D220009FF92E /* LTSSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFDF9292E97D220009FF92E /* LTSSDK.xcframework */; };
 		A11262D42EBCCE6E004D2CBE /* SharedFilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11262D32EBCCE6E004D2CBE /* SharedFilesManager.swift */; };
 		A1FC4F6A2EBCBE5F007A959B /* MacShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1FC4F5D2EBCBE5F007A959B /* MacShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0D3A0013073000000019260 /* NodeRuntimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3A0003073000000019260 /* NodeRuntimeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,14 +190,15 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		230AEE2C2EA22BEC0057872B /* CopyFiles */ = {
+		230AEE2C2EA22BEC0057872B /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				230AEE2D2EA22BF40057872B /* WCDBSwift.framework in CopyFiles */,
+				230AEE2D2EA22BF40057872B /* WCDBSwift.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		230F96012E823499001DDC72 /* Embed Frameworks */ = {
@@ -346,6 +348,7 @@
 		7CFDF9292E97D220009FF92E /* LTSSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LTSSDK.xcframework; sourceTree = "<group>"; };
 		A11262D32EBCCE6E004D2CBE /* SharedFilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFilesManager.swift; sourceTree = "<group>"; };
 		A1FC4F5D2EBCBE5F007A959B /* MacShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MacShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0D3A0003073000000019260 /* NodeRuntimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeRuntimeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -867,6 +870,7 @@
 			isa = PBXGroup;
 			children = (
 				1820806A2EAB019900764119 /* MacConfig.swift */,
+				C0D3A0003073000000019260 /* NodeRuntimeManager.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1152,8 +1156,9 @@
 			buildPhases = (
 				2361C94F2E62F03800F5A3A4 /* Sources */,
 				2361C9502E62F03800F5A3A4 /* Frameworks */,
+				C0D3A0023073000000019260 /* Prepare Node Runtime Bundle */,
 				2361C9512E62F03800F5A3A4 /* Resources */,
-				230AEE2C2EA22BEC0057872B /* CopyFiles */,
+				230AEE2C2EA22BEC0057872B /* Copy Files */,
 				A1FC4F6F2EBCBE5F007A959B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -1331,6 +1336,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C0D3A0023073000000019260 /* Prepare Node Runtime Bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/scripts/prepare_node_runtime_bundle.sh",
+				"$(PROJECT_DIR)/NodeRuntimeHost/dist/index.js",
+				"$(PROJECT_DIR)/NodeRuntimeHost/package.json",
+				"$(PROJECT_DIR)/NodeRuntimeHost/config/runtime-config.template.json",
+			);
+			name = "Prepare Node Runtime Bundle";
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/node/bin/node",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/host/dist/index.js",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/config/runtime-config.template.json",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"${PROJECT_DIR}/scripts/prepare_node_runtime_bundle.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04A443262E67D7B1007F5AFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1423,6 +1453,7 @@
 				51586EF02EB619410069EC2F /* MIMACDownloadFolderManager.swift in Sources */,
 				182080CC2EAB019900764119 /* AppDelegate.swift in Sources */,
 				182080CD2EAB019900764119 /* ViewController.swift in Sources */,
+				C0D3A0013073000000019260 /* NodeRuntimeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

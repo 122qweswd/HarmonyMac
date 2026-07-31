@@ -8,7 +8,24 @@ OFFICIAL_NODE_DIR="${PROJECT_ROOT}/record/node-official/v26.5.0"
 HOST_ROOT="${PROJECT_ROOT}/NodeRuntimeHost"
 STAGING_ROOT="${DERIVED_FILE_DIR}/NodeRuntimeStaging"
 
-CURRENT_ARCH_NAME="${CURRENT_ARCH:-${NATIVE_ARCH_ACTUAL:-}}"
+CURRENT_ARCH_NAME="${CURRENT_ARCH:-}"
+case "${CURRENT_ARCH_NAME}" in
+  ""|undefined_arch)
+    CURRENT_ARCH_NAME="${NATIVE_ARCH_ACTUAL:-}"
+    ;;
+esac
+
+case "${CURRENT_ARCH_NAME}" in
+  ""|undefined_arch)
+    CURRENT_ARCH_NAME="${ARCHS:-}"
+    ;;
+esac
+
+case "${CURRENT_ARCH_NAME}" in
+  ""|undefined_arch)
+    CURRENT_ARCH_NAME="$(uname -m)"
+    ;;
+esac
 
 case "${CURRENT_ARCH_NAME}" in
   arm64)

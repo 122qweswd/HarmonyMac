@@ -189,12 +189,10 @@ final class NodeRuntimeManager {
     private func appendLogLine(_ line: String, isError: Bool) {
         guard let data = "\(line)\n".data(using: .utf8) else { return }
         let handle = isError ? stderrLogHandle : runtimeLogHandle
-        do {
-            try handle?.seekToEnd()
-            try handle?.write(contentsOf: data)
-        } catch {
-            log("写入 NodeRuntime 日志失败: \(error.localizedDescription)")
-        }
+        guard let handle else { return }
+
+        handle.seekToEndOfFile()
+        handle.write(data)
     }
 
     private func prepareWritableDirectories(with layout: Layout) throws {
