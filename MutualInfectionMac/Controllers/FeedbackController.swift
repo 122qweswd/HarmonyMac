@@ -613,7 +613,7 @@ class FeedbackController: NSViewController, NSTextFieldDelegate {
                         var uuid=UUID().uuidString
                         let response = try await upLoader.uploadFile(
                             objectKey: uuid+".zip",
-                            filePath: String(filePath!)
+                            filePath: String(filePath!),
                         )
                         if(response == 200)
                         {
@@ -625,7 +625,7 @@ class FeedbackController: NSViewController, NSTextFieldDelegate {
                         var uuid=UUID().uuidString
                         let response = try await upLoader.uploadFile(
                             objectKey: uuid+".jpg",
-                            uiImageData: item
+                            uiImageData: item,
                         )
                         if(response == 200)
                         {

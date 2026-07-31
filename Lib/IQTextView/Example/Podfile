@@ -1,0 +1,14 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'IQTextView_Example' do
+  pod 'IQTextView', :path => '../'
+  pod "SwiftLint"
+end
+
+target 'IQTextView_ObjcExample' do
+  pod 'IQTextView', :path => '../'
+end
+
+

@@ -1,0 +1,12 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'IQKeyboardToolbar_Example' do
+  pod 'IQKeyboardToolbar', :path => '../'
+  pod "SwiftLint"
+end
+
+target 'IQKeyboardToolbar_ObjcExample' do
+  pod 'IQKeyboardToolbar', :path => '../'
+end
