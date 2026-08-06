@@ -54,8 +54,12 @@ cat > "$STAGING/.npmrc" <<'EOF'
 node-linker=hoisted
 # 仅保留 macOS arm64 平台可选包（注意：koffi/node-llama-cpp 等单包内自带多平台
 # prebuilt，supported-architectures 过滤不了它们，需阶段 5 手动清理）
-supported-architectures.os[]=darwin
-supported-architectures.cpu[]=arm64
+supportedArchitectures:
+  cpu:
+    - x64
+    - arm64
+  os:
+    - darwin
 EOF
 
 # 3. 装生产依赖（扁平 + 仅 arm64 + 跳过原生编译）
