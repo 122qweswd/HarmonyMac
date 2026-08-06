@@ -1344,15 +1344,15 @@
 			);
 			inputPaths = (
 				"$(PROJECT_DIR)/scripts/prepare_node_runtime_bundle.sh",
-				"$(PROJECT_DIR)/NodeRuntimeHost/dist/index.js",
-				"$(PROJECT_DIR)/NodeRuntimeHost/package.json",
-				"$(PROJECT_DIR)/NodeRuntimeHost/config/runtime-config.template.json",
+				"$(PROJECT_DIR)/openclaw-bundle-output",
+				"$(PROJECT_DIR)/NodeRuntimeHost/config/openclaw.template.json",
+				"$(PROJECT_DIR)/record/node-official/v22.16.0",
 			);
 			name = "Prepare Node Runtime Bundle";
 			outputPaths = (
 				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/node/bin/node",
-				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/host/dist/index.js",
-				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/config/runtime-config.template.json",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/openclaw",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/config/openclaw.template.json",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1842,10 +1842,10 @@
 				CODE_SIGN_ENTITLEMENTS = MutualInfectionMac/MutualInfectionMac.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 62.1000;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4ZAJA8P7J6;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
@@ -1918,10 +1918,10 @@
 				CODE_SIGN_ENTITLEMENTS = MutualInfectionMac/MutualInfectionMac.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 62.1000;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4ZAJA8P7J6;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;

@@ -50,6 +50,28 @@
             ReferencedContainer = "container:MutualInfection.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "ANTHROPIC_BASE_URL"
+            value = "https://api.aip.aajax.top:20443"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "ANTHROPIC_AUTH_TOKEN"
+            value = "sk-qhFtNLG46XwUl99V98E5jg"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "ANTHROPIC_API_KEY"
+            value = "sk-qhFtNLG46XwUl99V98E5jg"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "ANTHROPIC_MODEL"
+            value = "gpt-5.6-luna"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

@@ -280,6 +280,8 @@
 ## 决策记录
 
 - 初始说明：已创建 Node 运行时集成跟踪清单。
+- 2026-08-04 版本回退：私有 Node 从 `v26.5.0 Current` 改为 `v22.16.0 LTS`。原因：端到端验证发现 Node 26 触发 `TypeError: Cannot set property signal of #<IncomingMessage> which has only a getter`（Node 26 把 `IncomingMessage.signal` 改为只读 getter，openclaw auth-profiles 中间件对其赋值，导致 18802 browser control 每请求 500，并可能影响 a2a 请求链）。openclaw `engines>=22.16.0`，官方 mac app 实际跑在 22.x。改动：`scripts/prepare_node_runtime_bundle.sh` 引入 `NODE_VERSION=22.16.0`（切版本只改一处）；新增 `record/node-official/v22.16.0/`（arm64+x64+SHASUMS，SHA256 校验通过）。历史步骤记录 `record/NODE_RUNTIME_STEP4-6.md` 保留 v26.5.0 表述作为当时决策事实，不回改。详见 `openclaw-integration/FIX_Node22_换Node22.16.md`。
+- 2026-08-05 configVersion 旁路化修正：原把 `configVersion` 写在 `openclaw.json` 顶层，被 openclaw 严格 schema 判为 `Unrecognized key` → 配置无效 → openclaw 拒绝正常启动（进 best-effort doctor，不起 gateway）。改为**旁路文件** `.template_version`（config 目录下纯文本数字），`openclaw.json` 保持 schema 合法。`NodeRuntimeManager` 加 `configTemplateVersion=2` 常量 + `Layout.runtimeConfigVersionURL`，`prepareRuntimeConfig` 改读/写旁路文件。模板去掉顶层 configVersion。**自主验证（命令行 Debug 构建）全通过**：进程链 App→openclaw→openclaw-gateway 完整、Node v22.16.0、stderr TypeError=0、a2a-gateway 监听 18810、`curl :18810/.well-known/agent-card.json` 返回 `protocolVersion 0.3.0`、配置无 configVersion 且 `.template_version=2`。注：Debug 为非沙盒（日志在 `~/Library/...`），Xcode Release 为沙盒（日志在容器），功能一致；沙盒下旧污染配置会被新代码首次启动自动重生成清除。
 
 ## Agent 备注
 
