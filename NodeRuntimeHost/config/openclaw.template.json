@@ -2,19 +2,16 @@
   "gateway": { "mode": "local", "port": 18800, "auth": { "mode": "none" } },
   "agents": {
     "defaults": {
-      "model": { "primary": "aajax/gpt-5.6-luna" },
-      "models": {
-        "aajax/gpt-5.6-luna": { "params": { "streaming": false } }
-      }
+      "model": { "primary": "aajax/gpt-5.6-luna" }
     }
   },
   "models": {
     "mode": "merge",
     "providers": {
       "aajax": {
-        "baseUrl": "https://api.aip.aajax.top:20443",
+        "baseUrl": "https://api.aip.aajax.top:20443/v1",
         "apiKey": "${ANTHROPIC_AUTH_TOKEN}",
-        "api": "anthropic-messages",
+        "api": "openai-completions",
         "models": [
           {
             "id": "gpt-5.6-luna",

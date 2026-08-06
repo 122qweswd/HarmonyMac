@@ -3,7 +3,7 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## remove libs to avoid strange problems
-Lib/
+/Lib/
 
 ## User settings
 xcuserdata/
@@ -95,5 +95,3 @@ iOSInjectionProject/
 Carthage/Checkouts
 .vscode/settings.json
 
-# openclaw 集成产物（scripts/prepare_openclaw_bundle.sh 生成，1.2G+，不入库）
-openclaw-bundle-output/

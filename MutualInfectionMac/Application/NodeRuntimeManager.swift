@@ -181,7 +181,7 @@ final class NodeRuntimeManager {
         try fileManager.createDirectory(at: layout.tmpDirectoryURL, withIntermediateDirectories: true)
     }
 
-    private static let configTemplateVersion = 10
+    private static let configTemplateVersion = 11
 
     private func prepareRuntimeConfig(with layout: Layout) throws {
         let configURL = layout.runtimeConfigURL
