@@ -12,6 +12,12 @@
 	<true/>
 	<key>com.apple.security.files.user-selected.read-only</key>
 	<true/>
+	<key>com.apple.security.temporary-exception.files.absolute-path.read-write</key>
+	<array>
+		<string>/Users/jiahaoli/project/harmonymac/</string>
+		<string>/Users/jiahaoli/Agent_Workspace/</string>
+		<string>/Users/jiahaoli/Desktop/</string>
+	</array>
 	<key>com.apple.security.network.client</key>
 	<true/>
 	<key>com.apple.security.network.server</key>

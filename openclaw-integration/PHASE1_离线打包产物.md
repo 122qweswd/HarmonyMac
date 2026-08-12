@@ -6,7 +6,7 @@
 
 ## 目标
 
-从 `openclaw-custom` 产出一个**干净、扁平、可随包分发**的 openclaw 运行时子集：仅 macOS arm64、仅生产依赖、`node_modules` 扁平化（hoisted）。并用**私有 node** 验证该产物能离线自包含跑起 a2a-gateway，不依赖项目其余文件。
+从 `openclaw-source` 产出一个**干净、扁平、可随包分发**的 openclaw 运行时子集：仅 macOS arm64、仅生产依赖、`node_modules` 扁平化（hoisted）。并用**私有 node** 验证该产物能离线自包含跑起 a2a-gateway，不依赖项目其余文件。
 
 ## 执行的操作（可复制）
 
@@ -16,7 +16,7 @@
 
 STAGING=/tmp/openclaw-bundle
 rm -rf "$STAGING" && mkdir -p "$STAGING"
-cd openclaw-custom
+cd openclaw-source
 # 1. 拷运行所需文件（排除 node_modules/src/test/docs）
 cp package.json pnpm-workspace.yaml pnpm-lock.yaml openclaw.mjs "$STAGING/"
 rsync -a --exclude='node_modules' dist/   "$STAGING/dist/"
@@ -62,7 +62,7 @@ curl -s http://127.0.0.1:18801/health             # → 200
 | hoisted 扁平结构 | ✅ | 顶层 663 包，chalk/express 直接可达；`.pnpm` 仅 388K 空壳（无重复） |
 | 私有 node v22.16.0 + staging `--version` | ✅ | `OpenClaw 2026.3.13` |
 | 离线自包含 gateway 启动 | ✅ | 日志 `a2a-gateway: HTTP listening on 18801` + `gRPC listening on 18802` |
-| `/health` 200 | ✅ | 私有 node + staging 产物，不依赖 `openclaw-custom` 原目录 |
+| `/health` 200 | ✅ | 私有 node + staging 产物，不依赖 `openclaw-source` 原目录 |
 | `gateway.mode=local` 配置注入 | ✅ | config 写 `gateway.mode=local` 即无需 `--allow-unconfigured`（阶段 3 采纳） |
 
 **阶段 1 判定目标达成**：私有 node + 产物离线自包含跑通 a2a-gateway。

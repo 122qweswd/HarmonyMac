@@ -1,4 +1,4 @@
-# 阶段 0 — openclaw-custom 本地基线跑通
+# 阶段 0 — openclaw-source 本地基线跑通
 
 > 状态：✅ 完成（跑通标准达成，含 1 个已记录的已知问题）
 > 日期：2026-08-04
@@ -6,7 +6,7 @@
 
 ## 目标
 
-在动打包之前，证明 `openclaw-custom/` 能在本机跑起来、a2a-gateway 能作为常驻进程监听端口并响应。定义"跑通标准"。
+在动打包之前，证明 `openclaw-source/` 能在本机跑起来、a2a-gateway 能作为常驻进程监听端口并响应。定义"跑通标准"。
 
 ## 执行的操作（可复制）
 
@@ -17,7 +17,7 @@ corepack prepare pnpm@10.23.0 --activate
 pnpm -v   # → 10.23.0
 
 # 2. 补全依赖（见下方"问题与决策"为何要重建）
-cd openclaw-custom
+cd openclaw-source
 CI=true pnpm install --ignore-scripts --prefer-offline
 # → Done in 2m 1.1s
 
@@ -49,7 +49,7 @@ curl -s http://127.0.0.1:18800/.well-known/agent-card.json   # → 404（已知�
 
 | 路径 | 变更 | 说明 |
 |------|------|------|
-| `openclaw-custom/node_modules/` | 重建 | 见下"问题与决策①"。1.9G → 1.1G |
+| `openclaw-source/node_modules/` | 重建 | 见下"问题与决策①"。1.9G → 1.1G |
 | `~/Library/pnpm/store/v10/` | 新增 1.1G | pnpm 全局 store（重建时填充，后续阶段复用） |
 | `/tmp/oc-test/` | 新增（临时） | 阶段 0 验证用的运行时目录，**不进仓库** |
 
@@ -74,7 +74,7 @@ curl -s http://127.0.0.1:18800/.well-known/agent-card.json   # → 404（已知�
 
 ### ① 现有 node_modules 不可用，pnpm 触发重建
 - **现象**：首次 `node openclaw.mjs` 报 `Cannot find package 'chalk'`；`pnpm install` 报 `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`。
-- **根因**：`openclaw-custom/` 是从别处拷贝进本仓库的，`node_modules`（1.9G）随之拷来，但 pnpm 全局 store 路径变了（本机 `~/Library/pnpm/store/v10` 为空）→ 顶层符号链接（如 `node_modules/chalk`）断链 → ESM `import "chalk"` 解析失败。pnpm 检测到 `.modules.yaml` 与当前 store 不一致，要求重建。
+- **根因**：`openclaw-source/` 是从别处拷贝进本仓库的，`node_modules`（1.9G）随之拷来，但 pnpm 全局 store 路径变了（本机 `~/Library/pnpm/store/v10` 为空）→ 顶层符号链接（如 `node_modules/chalk`）断链 → ESM `import "chalk"` 解析失败。pnpm 检测到 `.modules.yaml` 与当前 store 不一致，要求重建。
 - **决策**：设 `CI=true` 让 pnpm 非交互重建（`pnpm install --ignore-scripts` 跳过原生编译，先验证纯 JS 主链路）。重建耗时 2m1s，store 填充 1.1G，此后可复用。
 - **对后续阶段的影响**：阶段 1 打包时，store 已有缓存，重新 `pnpm install --prod --node-linker=hoisted` 会快很多。
 

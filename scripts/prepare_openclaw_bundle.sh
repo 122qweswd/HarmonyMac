@@ -14,7 +14,7 @@
 set -eu
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-OPENCLAW_SRC="${1:-$REPO_ROOT/openclaw-custom}"
+OPENCLAW_SRC="${1:-$REPO_ROOT/openclaw-source}"
 OUTPUT_DIR="${2:-$REPO_ROOT/openclaw-bundle-output}"
 PNPM="${PNPM:-pnpm}"
 
@@ -37,6 +37,23 @@ if [ -f "$OUTPUT_DIR/openclaw.mjs" ] && [ -d "$OUTPUT_DIR/node_modules" ]; then
   exit 0
 fi
 
+# 0. 确保 dist/ 存在：openclaw-source 是纯源码（dist/node_modules 被其 .gitignore 忽略），
+#    首次或清理后需在源目录原地跑完整 install + build 生成 dist/（耗时、需联网）。
+#    用 --ignore-scripts：与下方 staging install 一致，且避免 openclaw-source 的 prepare 脚本
+#    改动外层仓库的 core.hooksPath。dist/node_modules 落在 openclaw-source/ 下作为缓存。
+if [ ! -d "$OPENCLAW_SRC/dist" ]; then
+  if ! command -v "$PNPM" >/dev/null 2>&1; then
+    echo "error: 找不到 $PNPM，无法构建 dist。请先 'npm i -g pnpm'，或在装好 pnpm 的终端手动跑一次本脚本。" >&2
+    exit 1
+  fi
+  echo "==> dist/ 缺失，在 $OPENCLAW_SRC 执行 $PNPM install + build（首次较慢，需联网）"
+  ( cd "$OPENCLAW_SRC" && CI=true "$PNPM" install --ignore-scripts && "$PNPM" run build )
+  if [ ! -d "$OPENCLAW_SRC/dist" ]; then
+    echo "error: build 完成后仍未生成 $OPENCLAW_SRC/dist，请检查 openclaw-source 构建。" >&2
+    exit 1
+  fi
+fi
+
 # 1. 拷运行所需文件到 staging（排除 node_modules / src / test / docs）
 echo "==> 拷贝源码与构建产物到 staging"
 (
@@ -47,6 +64,15 @@ rsync -a --exclude='node_modules' "$OPENCLAW_SRC/dist/" "$STAGING/dist/"
 rsync -a --exclude='node_modules' "$OPENCLAW_SRC/extensions/" "$STAGING/extensions/"
 [ -d "$OPENCLAW_SRC/ui" ] && rsync -a --exclude='node_modules' "$OPENCLAW_SRC/ui/" "$STAGING/ui/"
 [ -d "$OPENCLAW_SRC/packages" ] && rsync -a --exclude='node_modules' "$OPENCLAW_SRC/packages/" "$STAGING/packages/"
+# agent workspace bootstrap 模板（dispatch 时需要 docs/reference/templates/AGENTS.md 等，否则 workspace 创建失败）
+[ -d "$OPENCLAW_SRC/docs/reference/templates" ] && { mkdir -p "$STAGING/docs/reference"; rsync -a "$OPENCLAW_SRC/docs/reference/templates/" "$STAGING/docs/reference/templates/"; }
+# 源只提供 *.dev.md（dev gateway 专用）；生产 bootstrap（ensureBootstrapFiles）需非 dev 版，
+# 从 .dev.md 去 frontmatter 生成缺失的 IDENTITY.md / USER.md
+for _f in IDENTITY USER; do
+  if [ ! -f "$STAGING/docs/reference/templates/$_f.md" ] && [ -f "$STAGING/docs/reference/templates/$_f.dev.md" ]; then
+    awk 'BEGIN{s=0} /^---[[:space:]]*$/{s++; next} s>=2{print}' "$STAGING/docs/reference/templates/$_f.dev.md" > "$STAGING/docs/reference/templates/$_f.md"
+  fi
+done
 
 # 2. 写打包专用 .npmrc：扁平 + 仅 darwin/arm64
 cat > "$STAGING/.npmrc" <<'EOF'
@@ -79,6 +105,7 @@ cp -R "$STAGING/node_modules" "$OUTPUT_DIR/node_modules"
 cp -R "$STAGING/extensions" "$OUTPUT_DIR/extensions"
 [ -d "$STAGING/ui" ] && cp -R "$STAGING/ui" "$OUTPUT_DIR/ui"
 [ -d "$STAGING/packages" ] && cp -R "$STAGING/packages" "$OUTPUT_DIR/packages"
+[ -d "$STAGING/docs/reference/templates" ] && { mkdir -p "$OUTPUT_DIR/docs/reference"; cp -R "$STAGING/docs/reference/templates" "$OUTPUT_DIR/docs/reference/"; }
 
 # 5. 体积报告
 echo "==> 完成"

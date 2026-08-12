@@ -22,7 +22,7 @@ TypeError: Cannot set property signal of #<IncomingMessage> which has only a get
 
 ## 操作过程
 
-1. `grep -rn "26\.5\.0"` 摸清仓库内所有引用（排除 openclaw-custom/node_modules/.git），确认**代码层只有 `scripts/prepare_node_runtime_bundle.sh`**，其余均为文档。
+1. `grep -rn "26\.5\.0"` 摸清仓库内所有引用（排除 openclaw-source/node_modules/.git），确认**代码层只有 `scripts/prepare_node_runtime_bundle.sh`**，其余均为文档。
 2. 后台下载 Node v22.16.0 三件套到 `record/node-official/v22.16.0/`：
    - `node-v22.16.0-darwin-arm64.tar.gz`
    - `node-v22.16.0-darwin-x64.tar.gz`
@@ -74,5 +74,5 @@ TypeError: Cannot set property signal of #<IncomingMessage> which has only a get
 ## 风险 / 已知限制
 
 - `record/node-official/` 现同时存有 v26.5.0（~115M）和 v22.16.0（~93M）。确认 22.16 稳定后可删除 v26.5.0 节省仓库体积（需同步 `.gitignore` 与构建机缓存策略）。
-- `openclaw-custom/dist` 是编译后产物，运行用 22.16 应无碍；若后续出现 22.16 不支持的语法（22.16 支持到 ES2024），需重新评估。
+- `openclaw-source/dist` 是编译后产物，运行用 22.16 应无碍；若后续出现 22.16 不支持的语法（22.16 支持到 ES2024），需重新评估。
 - 旧 v26.5.0 的 `SHASUMS256.txt`、tar 包未删除，仍占用仓库空间。

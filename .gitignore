@@ -40,7 +40,7 @@ playground.xcworkspace
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-Packages/
+# Packages/   # 已禁用：macOS core.ignorecase 下会误伤 openclaw-source/packages/（扩展源码）
 Package.pins
 Package.resolved
 #
@@ -94,4 +94,18 @@ iOSInjectionProject/
 .DS_Store
 Carthage/Checkouts
 .vscode/settings.json
+
+# openclaw 自包含运行时中间产物（由 scripts/prepare_openclaw_bundle.sh 随构建生成，不入库）
+openclaw-bundle-output/
+
+# openclaw-source 构建产物（pnpm install / build 在源目录生成，不入库；原 openclaw-source/.gitignore 已删，规则收敛至此）
+openclaw-source/**/node_modules/
+openclaw-source/dist/
+openclaw-source/vendor/
+openclaw-source/**/.bundle.hash
+
+MutualInfection.xcodeproj/xcshareddata/xcschemes/MutualInfectionMac.xcscheme
+
+# 本机 OpenClaw 模型配置含 API 密钥，不入库
+/NodeRuntimeHost/config/openclaw.template.json
 

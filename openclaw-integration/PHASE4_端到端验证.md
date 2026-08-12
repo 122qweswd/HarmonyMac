@@ -69,7 +69,7 @@ open MutualInfection.xcodeproj
 
 | 阶段 | 产出 | 状态 |
 |------|------|------|
-| 0 | openclaw-custom 本地跑通（pnpm install + gateway 验证） | ✅ |
+| 0 | openclaw-source 本地跑通（pnpm install + gateway 验证） | ✅ |
 | 1 | 离线打包产物（arm64/prod/hoisted）+ `prepare_openclaw_bundle.sh` | ✅ |
 | 2 | Xcode build phase 接入（`prepare_node_runtime_bundle.sh` 重写 + config 模板） | ✅ 模拟验证 |
 | 3 | `NodeRuntimeManager` 改造拉起 openclaw | ✅ 逻辑验证 |
