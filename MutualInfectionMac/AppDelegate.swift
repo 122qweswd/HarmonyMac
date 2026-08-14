@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // 存储所有正在处理的 UDID
     private var processingUDIDs: Set<String> = []
     private var loadingWindows: [String: NSWindow] = [:]
+    private let nodeRuntimeManager = NodeRuntimeManager()
     // MARK: - 单例访问
     static let shared: AppDelegate = {
         return NSApplication.shared.delegate as! AppDelegate
@@ -37,6 +38,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // 初始化主窗口或协议窗口
         setupInitialWindow()
+
+        nodeRuntimeManager.startIfNeeded()
         
         MIThumbImageDataFileManager.shared.requestThumbnailImageDataAgain()
         
@@ -109,6 +112,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
         ShareAPI.shared().log(1, "applicationWillTerminate:aNotification \(String(describing: aNotification.description))")
+        nodeRuntimeManager.stop()
     }
     
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
@@ -455,6 +459,7 @@ extension AppDelegate{
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         // 先安全关闭所有Window，再退出
         mainWindowCall?.safeCloseWindow()
+        nodeRuntimeManager.stop()
         cleanupLogHelper()
         return .terminateNow
     }
@@ -540,6 +545,5 @@ extension NSWindowController {
         }
     }
 }
-
 
 

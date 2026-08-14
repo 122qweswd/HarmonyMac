@@ -1,0 +1,31 @@
+PODS:
+  - IQKeyboardCore (1.0.5)
+  - IQKeyboardToolbar (1.1.2):
+    - IQKeyboardToolbar/Core (= 1.1.2)
+  - IQKeyboardToolbar/Core (1.1.2):
+    - IQKeyboardCore
+    - IQKeyboardToolbar/Placeholderable
+  - IQKeyboardToolbar/Placeholderable (1.1.2)
+  - SwiftLint (0.56.1)
+
+DEPENDENCIES:
+  - IQKeyboardToolbar (from `../`)
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardCore
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  IQKeyboardToolbar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
+  IQKeyboardToolbar: 0c272d2c47314f6e77c5df52e33b5829f205fd6e
+  SwiftLint: c5fa0b7eece474d43d2178b581a1242a16267347
+
+PODFILE CHECKSUM: 573a472c693dd95223e387a527e70828b875f5aa
+
+COCOAPODS: 1.16.0

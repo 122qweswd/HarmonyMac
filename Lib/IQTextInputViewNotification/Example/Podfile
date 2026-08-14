@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'IQTextInputViewNotification_Example' do
+  pod 'IQTextInputViewNotification', :path => '../'
+  pod "SwiftLint"
+end
+
+
+target 'IQTextInputViewNotification_ObjcExample' do
+  pod 'IQTextInputViewNotification', :path => '../'
+end

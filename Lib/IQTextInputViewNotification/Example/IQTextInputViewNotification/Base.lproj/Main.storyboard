@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lAQ-Qk-ufg">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--IQTextInputViewNotification-->
+        <scene sceneID="26r-fE-5a1">
+            <objects>
+                <viewController id="Jgy-sp-SC5" customClass="ViewController" customModule="IQTextInputViewNotification_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xKw-nE-1iQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SzU-VK-J5o">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="T5A-D3-M5Q">
+                                        <rect key="frame" x="20" y="0.0" width="353" height="212"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UITextField 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wmk-v8-18u">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
+                                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Jgy-sp-SC5" id="QZh-jx-qEN"/>
+                                                </connections>
+                                            </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="flV-cl-kLX">
+                                                <rect key="frame" x="0.0" y="42" width="353" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="NDP-CM-0bD"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Jgy-sp-SC5" id="EE7-mV-pBH"/>
+                                                </connections>
+                                            </textView>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UITextField 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z5P-6d-PQr">
+                                                <rect key="frame" x="0.0" y="110" width="353" height="34"/>
+                                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Jgy-sp-SC5" id="wKH-EG-lIu"/>
+                                                </connections>
+                                            </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4lz-c5-ztm">
+                                                <rect key="frame" x="0.0" y="152" width="353" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="ogY-lY-W7n"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Jgy-sp-SC5" id="Omq-Ng-BKc"/>
+                                                </connections>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="T5A-D3-M5Q" firstAttribute="width" secondItem="SzU-VK-J5o" secondAttribute="width" constant="-40" id="5k1-9Q-mZ8"/>
+                                    <constraint firstAttribute="bottom" secondItem="T5A-D3-M5Q" secondAttribute="bottom" id="FDW-xF-EfX"/>
+                                    <constraint firstItem="T5A-D3-M5Q" firstAttribute="leading" secondItem="SzU-VK-J5o" secondAttribute="leading" constant="20" id="OZJ-d6-SpC"/>
+                                    <constraint firstItem="T5A-D3-M5Q" firstAttribute="top" secondItem="SzU-VK-J5o" secondAttribute="top" id="aYt-sN-KDB"/>
+                                    <constraint firstAttribute="trailing" secondItem="T5A-D3-M5Q" secondAttribute="trailing" id="ufX-KH-HdK"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RV2-by-djK"/>
+                        <color key="backgroundColor" name="34A853"/>
+                        <constraints>
+                            <constraint firstItem="SzU-VK-J5o" firstAttribute="trailing" secondItem="RV2-by-djK" secondAttribute="trailing" id="F5Q-8o-bgU"/>
+                            <constraint firstItem="SzU-VK-J5o" firstAttribute="leading" secondItem="RV2-by-djK" secondAttribute="leading" id="R6Q-Hq-bHM"/>
+                            <constraint firstItem="SzU-VK-J5o" firstAttribute="top" secondItem="RV2-by-djK" secondAttribute="top" id="SFO-Tv-FHG"/>
+                            <constraint firstAttribute="bottom" secondItem="SzU-VK-J5o" secondAttribute="bottom" id="mP8-Z1-DeH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="IQTextInputViewNotification" id="qsW-wy-zx4">
+                        <barButtonItem key="rightBarButtonItem" title="Subscribe" id="yrJ-bU-jX1">
+                            <connections>
+                                <action selector="subscribeAction:" destination="Jgy-sp-SC5" id="Kiu-4x-HWU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4e1-ej-12C" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.58778625954199" y="-69.014084507042256"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zqr-o6-O3D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lAQ-Qk-ufg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Bj8-Zi-AcU">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jgy-sp-SC5" kind="relationship" relationship="rootViewController" id="h48-Fj-fVV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yss-UW-IDW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6.8702290076335872" y="-69.014084507042256"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="34A853">
+            <color red="0.20392156862745098" green="0.6588235294117647" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
