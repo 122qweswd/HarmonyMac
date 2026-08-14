@@ -1,0 +1,21 @@
+{
+  "id": "fuzzy-search",
+  "name": "Fuzzy Search",
+  "description": "Controlled local fuzzy file search backed by Myers bit-parallel Swift search",
+  "version": "0.1.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": { "type": "boolean", "default": false },
+      "toolPath": {
+        "type": "string",
+        "description": "Absolute path to MyersBitParallelFuzzySearch.swift or its compiled executable"
+      },
+      "rootPath": { "type": "string", "description": "Absolute user-authorized directory root" },
+      "timeoutMs": { "type": "number", "default": 20000, "minimum": 1000, "maximum": 120000 },
+      "maxLimit": { "type": "number", "default": 50, "minimum": 1, "maximum": 200 }
+    },
+    "required": ["enabled", "toolPath", "rootPath"]
+  }
+}
