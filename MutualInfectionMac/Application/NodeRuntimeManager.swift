@@ -328,6 +328,7 @@ final class NodeRuntimeManager {
         let rendered = raw
             .replacingOccurrences(of: "${OPENCLAW_STATE_DIR}", with: layout.stateDirectoryURL.path)
             .replacingOccurrences(of: "${OPENCLAW_HOME}", with: layout.applicationSupportRootURL.path)
+            .replacingOccurrences(of: "${FUZZY_SEARCH_TOOL_PATH}", with: layout.fuzzySearchToolURL.path)
             .replacingOccurrences(of: "${A2A_LAN_IP}", with: preferredLANIPv4Address() ?? "127.0.0.1")
         try rendered.write(to: configURL, atomically: true, encoding: .utf8)
         // 预创建 a2a 运行时目录，避免插件首次写入失败
@@ -403,7 +404,7 @@ final class NodeRuntimeManager {
         let appSupport = support.appendingPathComponent("MutualInfectionMac/NodeRuntime", isDirectory: true)
         let logs = library.appendingPathComponent("Logs/MutualInfectionMac/NodeRuntime", isDirectory: true)
         let configDir = appSupport.appendingPathComponent("config", isDirectory: true)
-        return Layout(nodeBinaryURL: node, openclawRootURL: openclaw, openclawEntryURL: openclaw.appendingPathComponent("openclaw.mjs"), openclawTemplateURL: template, applicationSupportRootURL: appSupport, logsRootURL: logs, runtimeConfigDirectoryURL: configDir, runtimeConfigURL: configDir.appendingPathComponent("openclaw.json"), runtimeConfigVersionURL: configDir.appendingPathComponent(".template_version"), stateDirectoryURL: appSupport.appendingPathComponent("state"), cacheDirectoryURL: appSupport.appendingPathComponent("cache"), tmpDirectoryURL: appSupport.appendingPathComponent("tmp"), runtimeLogURL: logs.appendingPathComponent("runtime.log"), stderrLogURL: logs.appendingPathComponent("stderr.log"))
+        return Layout(nodeBinaryURL: node, openclawRootURL: openclaw, openclawEntryURL: openclaw.appendingPathComponent("openclaw.mjs"), openclawTemplateURL: template, fuzzySearchToolURL: root.appendingPathComponent("tools/myers-bit-parallel-fuzzy-search"), applicationSupportRootURL: appSupport, logsRootURL: logs, runtimeConfigDirectoryURL: configDir, runtimeConfigURL: configDir.appendingPathComponent("openclaw.json"), runtimeConfigVersionURL: configDir.appendingPathComponent(".template_version"), stateDirectoryURL: appSupport.appendingPathComponent("state"), cacheDirectoryURL: appSupport.appendingPathComponent("cache"), tmpDirectoryURL: appSupport.appendingPathComponent("tmp"), runtimeLogURL: logs.appendingPathComponent("runtime.log"), stderrLogURL: logs.appendingPathComponent("stderr.log"))
     }
 
     private func log(_ message: String) { ShareAPI.shared().log(1, "[NodeRuntimeManager] \(message)") }
@@ -415,6 +416,7 @@ private extension NodeRuntimeManager {
         let openclawRootURL: URL
         let openclawEntryURL: URL
         let openclawTemplateURL: URL
+        let fuzzySearchToolURL: URL
         let applicationSupportRootURL: URL
         let logsRootURL: URL
         let runtimeConfigDirectoryURL: URL

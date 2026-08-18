@@ -1,7 +1,7 @@
 {
   "id": "fuzzy-search",
   "name": "Fuzzy Search",
-  "description": "Controlled local fuzzy file search backed by Myers bit-parallel Swift search",
+  "description": "All-results tiered fuzzy filename search within an agent-specified authorized directory",
   "version": "0.1.0",
   "configSchema": {
     "type": "object",
@@ -12,9 +12,11 @@
         "type": "string",
         "description": "Absolute path to MyersBitParallelFuzzySearch.swift or its compiled executable"
       },
-      "rootPath": { "type": "string", "description": "Absolute user-authorized directory root" },
-      "timeoutMs": { "type": "number", "default": 20000, "minimum": 1000, "maximum": 120000 },
-      "maxLimit": { "type": "number", "default": 50, "minimum": 1, "maximum": 200 }
+      "rootPath": {
+        "type": "string",
+        "description": "Absolute authorized-root boundary; agent-supplied directories must be inside it"
+      },
+      "timeoutMs": { "type": "number", "default": 20000, "minimum": 1000, "maximum": 300000 }
     },
     "required": ["enabled", "toolPath", "rootPath"]
   }

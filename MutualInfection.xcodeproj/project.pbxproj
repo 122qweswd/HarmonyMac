@@ -1346,6 +1346,10 @@
 				"$(PROJECT_DIR)/scripts/prepare_node_runtime_bundle.sh",
 				"$(PROJECT_DIR)/openclaw-bundle-output",
 				"$(PROJECT_DIR)/NodeRuntimeHost/config/openclaw.template.json",
+				"$(PROJECT_DIR)/qol/MyersBitParallelFuzzySearch.swift",
+				"$(PROJECT_DIR)/openclaw-source/extensions/fuzzy-search/index.ts",
+				"$(PROJECT_DIR)/openclaw-source/extensions/fuzzy-search/openclaw.plugin.json",
+				"$(PROJECT_DIR)/openclaw-source/extensions/fuzzy-search/package.json",
 				"$(PROJECT_DIR)/record/node-official/v22.16.0",
 			);
 			name = "Prepare Node Runtime Bundle";
@@ -1353,6 +1357,8 @@
 				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/node/bin/node",
 				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/openclaw",
 				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/config/openclaw.template.json",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/tools/myers-bit-parallel-fuzzy-search",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/NodeRuntime/openclaw/extensions/fuzzy-search/openclaw.plugin.json",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

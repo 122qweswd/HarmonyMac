@@ -11,6 +11,16 @@ public enum FuzzyMatchTier: Int, Comparable, Codable {
     public static func < (lhs: FuzzyMatchTier, rhs: FuzzyMatchTier) -> Bool {
         lhs.rawValue < rhs.rawValue
     }
+
+    public var score: String {
+        switch self {
+        case .exact: return "exact"
+        case .sameLengthOneError: return "same_length_one_error"
+        case .oneCharacterShorter: return "one_character_shorter"
+        case .containsQuery: return "contains_query"
+        case .containsOneError: return "contains_one_error"
+        }
+    }
 }
 
 public struct FuzzyCandidate: Equatable {
@@ -279,7 +289,8 @@ public struct DirectoryFuzzySearchResult: Codable {
     public let fileExtension: String
     public let size: Int64?
     public let modifiedAt: Date?
-    public let score: Int
+    /// Ordered textual category. Results are grouped in this order.
+    public let score: String
 }
 
 public enum DirectoryFuzzySearchError: LocalizedError {
@@ -303,11 +314,9 @@ public enum DirectoryFuzzySearch {
         let modifiedAt: Date?
     }
 
-    public static func search(root: URL, query: String, limit: Int = 50) throws -> [DirectoryFuzzySearchResult] {
+    public static func search(root: URL, query: String) throws -> [DirectoryFuzzySearchResult] {
         let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedQuery.isEmpty else { throw DirectoryFuzzySearchError.emptyQuery }
-        let boundedLimit = min(max(limit, 0), 200)
-        guard boundedLimit > 0 else { return [] }
 
         let root = root.standardizedFileURL
         var isDirectory: ObjCBool = false
@@ -328,7 +337,7 @@ public enum DirectoryFuzzySearch {
         let recordByRelativePath = Dictionary(uniqueKeysWithValues: records.map { ($0.relativePath, $0) })
         let search = MyersBitParallelFuzzySearch(candidates: candidates)
 
-        return search.search(.init(query: trimmedQuery, limit: boundedLimit)).compactMap { match in
+        return search.search(.init(query: trimmedQuery, limit: .max)).compactMap { match in
             guard let record = recordByRelativePath[match.candidate.id] else { return nil }
             return DirectoryFuzzySearchResult(
                 relativePath: record.relativePath,
@@ -336,7 +345,7 @@ public enum DirectoryFuzzySearch {
                 fileExtension: record.fileExtension,
                 size: record.size,
                 modifiedAt: record.modifiedAt,
-                score: match.tier.rawValue
+                score: match.tier.score
             )
         }
     }
@@ -403,6 +412,7 @@ private extension JSONEncoder {
     }
 }
 
+#if FUZZY_SEARCH_CLI
 @main
 struct MyersBitParallelFuzzySearchCLI {
     static func main() {
@@ -422,8 +432,7 @@ struct MyersBitParallelFuzzySearchCLI {
         args.removeFirst()
 
         guard let root = option(&args, "--root") else { throw Usage.error }
-        let limit = Int(option(&args, "--limit") ?? "50") ?? 50
-        let results = try DirectoryFuzzySearch.search(root: URL(fileURLWithPath: root), query: query, limit: limit)
+        let results = try DirectoryFuzzySearch.search(root: URL(fileURLWithPath: root), query: query)
         let data = try JSONEncoder.fuzzySearchOutput.encode(results)
         print(String(data: data, encoding: .utf8)!)
     }
@@ -438,7 +447,8 @@ struct MyersBitParallelFuzzySearchCLI {
         case error
 
         var errorDescription: String? {
-            "usage: MyersBitParallelFuzzySearch search <query> --root <directory> [--limit <count>]"
+            "usage: MyersBitParallelFuzzySearch search <query> --root <directory>"
         }
     }
 }
+#endif

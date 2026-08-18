@@ -12,8 +12,14 @@ type FuzzySearchConfig = {
   toolPath: string;
   rootPath: string;
   timeoutMs: number;
-  maxLimit: number;
 };
+
+type Score =
+  | "exact"
+  | "same_length_one_error"
+  | "one_character_shorter"
+  | "contains_query"
+  | "contains_one_error";
 
 type Result = {
   relativePath: string;
@@ -21,7 +27,7 @@ type Result = {
   fileExtension: string;
   size: number | null;
   modifiedAt: string | null;
-  score: number;
+  score: Score;
 };
 
 function object(value: unknown): Record<string, unknown> {
@@ -48,10 +54,9 @@ function config(raw: unknown, resolvePath: (input: string) => string): FuzzySear
   };
   return {
     enabled: boolean(value.enabled),
-    toolPath: resolve(value.toolPath ?? value.executablePath),
+    toolPath: resolve(value.toolPath),
     rootPath: resolve(value.rootPath),
-    timeoutMs: Math.max(1_000, Math.min(120_000, number(value.timeoutMs, 20_000))),
-    maxLimit: Math.max(1, Math.min(200, Math.floor(number(value.maxLimit, 50)))),
+    timeoutMs: Math.max(1_000, Math.min(300_000, number(value.timeoutMs, 20_000))),
   };
 }
 
@@ -60,14 +65,14 @@ function resultFrom(value: unknown): Result | null {
   const relativePath = string(candidate.relativePath);
   const fileName = string(candidate.fileName);
   const fileExtension = string(candidate.fileExtension);
-  const score = number(candidate.score, Number.NaN);
+  const score = string(candidate.score);
   // Only relative paths are ever exposed to the model. This also rejects traversal.
   if (
     !relativePath ||
     path.isAbsolute(relativePath) ||
     relativePath.split(path.sep).includes("..") ||
     !fileName ||
-    !Number.isFinite(score)
+    !isScore(score)
   ) {
     return null;
   }
@@ -80,6 +85,16 @@ function resultFrom(value: unknown): Result | null {
     modifiedAt: typeof candidate.modifiedAt === "string" ? candidate.modifiedAt : null,
     score,
   };
+}
+
+function isScore(value: string): value is Score {
+  return [
+    "exact",
+    "same_length_one_error",
+    "one_character_shorter",
+    "contains_query",
+    "contains_one_error",
+  ].includes(value);
 }
 
 async function validateRuntime(cfg: FuzzySearchConfig): Promise<string | null> {
@@ -108,10 +123,33 @@ async function validateRuntime(cfg: FuzzySearchConfig): Promise<string | null> {
   return null;
 }
 
+async function resolveDirectory(cfg: FuzzySearchConfig, input: string): Promise<string | null> {
+  if (!input || !path.isAbsolute(input)) return null;
+  try {
+    const [authorizedRoot, directory] = await Promise.all([
+      fs.realpath(cfg.rootPath),
+      fs.realpath(input),
+    ]);
+    const relative = path.relative(authorizedRoot, directory);
+    if (
+      relative === ".." ||
+      relative.startsWith(`..${path.sep}`) ||
+      path.isAbsolute(relative) ||
+      !(await fs.stat(directory)).isDirectory()
+    ) {
+      return null;
+    }
+    return directory;
+  } catch {
+    return null;
+  }
+}
+
 const plugin = {
   id: "fuzzy-search",
   name: "Fuzzy Search",
-  description: "Controlled local fuzzy file search backed by Myers bit-parallel Swift search",
+  description:
+    "All-results tiered fuzzy filename search within an agent-specified authorized directory, backed by Myers bit-parallel Swift search",
 
   register(api: OpenClawPluginApi) {
     const cfg = config(api.pluginConfig, api.resolvePath);
@@ -119,84 +157,135 @@ const plugin = {
       name: "fuzzy_search",
       label: "Fuzzy Search",
       description:
-        "Fuzzy-search the configured user-authorized directory. The search root is fixed by host configuration. " +
-        "The Swift tool enumerates files directly and returns metadata plus relative paths only.",
+        "When you know both a filename query and its directory, call this tool before broader exploration. " +
+        "directory is required, must be an absolute path, and is the only directory searched recursively. " +
+        "When you know a directory only broadly, first use directory exploration to determine the precise absolute directory, then call this tool. " +
+        "The directory must be inside the host-authorized root. This is a tiered fuzzy filename search: " +
+        "exact matches first; then same-length names with one substitution or adjacent character exchange; " +
+        "then names one character shorter; then longer names containing the query; and finally longer names " +
+        "containing a one-error query window. All matches are returned, grouped in that order. " +
+        "score is the textual match category: exact, same_length_one_error, one_character_shorter, contains_query, or contains_one_error. " +
+        "Returns file metadata and paths relative to directory only.",
       parameters: {
         type: "object" as const,
-        required: ["query"],
+        required: ["query", "directory"],
         properties: {
-          query: { type: "string" as const, description: "Filename or relative-path query" },
-          limit: {
-            type: "number" as const,
-            description: "Result cap, bounded by host configuration",
+          query: { type: "string" as const, description: "Known filename stem query; omit the extension" },
+          directory: {
+            type: "string" as const,
+            description:
+              "Required absolute directory path to search recursively; must be inside the host-authorized root",
           },
         },
       },
       async execute(_toolCallId, params) {
         if (!cfg.enabled) {
           return {
-            content: [
-              { type: "text" as const, text: "Fuzzy search is disabled by plugin configuration." },
-            ],
-            details: { ok: false, reason: "disabled" },
+            content: [],
+            details: { ok: false, result: { reason: "disabled" } },
           };
         }
         const query = string(params.query);
         if (!query)
           return {
-            content: [{ type: "text" as const, text: "query must not be empty" }],
-            details: { ok: false, reason: "empty_query" },
+            content: [],
+            details: { ok: false, result: { reason: "empty_query", message: "query must not be empty" } },
+          };
+        const requestedDirectory = string(params.directory);
+        if (!requestedDirectory || !path.isAbsolute(requestedDirectory))
+          return {
+            content: [],
+            details: {
+              ok: false,
+              result: { reason: "invalid_directory", message: "directory must be an absolute path" },
+            },
           };
         const runtimeError = await validateRuntime(cfg);
         if (runtimeError)
           return {
-            content: [{ type: "text" as const, text: `Fuzzy search unavailable: ${runtimeError}` }],
-            details: { ok: false, reason: "invalid_runtime" },
+            content: [],
+            details: { ok: false, result: { reason: "invalid_runtime", message: runtimeError } },
           };
-        const mode = string(params.mode) === "fuzzy" ? "fuzzy" : "indexed";
-        const limit = Math.max(
-          1,
-          Math.min(cfg.maxLimit, Math.floor(number(params.limit, cfg.maxLimit))),
-        );
+        const directory = await resolveDirectory(cfg, requestedDirectory);
+        if (!directory)
+          return {
+            content: [],
+            details: {
+              ok: false,
+              result: {
+                reason: "unauthorized_directory",
+                message:
+                  "directory must exist, be a directory, and remain inside the host-authorized root",
+              },
+            },
+          };
         const swiftModuleCachePath = path.join(os.tmpdir(), "openclaw-fuzzy-search-module-cache");
         const useSwiftSource = cfg.toolPath.endsWith(".swift");
-        if (useSwiftSource) {
-          await fs.mkdir(swiftModuleCachePath, { recursive: true });
-        }
-        const toolCommand = useSwiftSource ? "/usr/bin/swift" : cfg.toolPath;
-        const args = useSwiftSource ? ["-module-cache-path", swiftModuleCachePath, cfg.toolPath] : [];
-        args.push(
-          "search",
-          query,
-          "--limit",
-          String(limit),
-          "--root",
-          cfg.rootPath,
-        );
+        let temporaryToolDirectory = "";
+        let toolCommand = cfg.toolPath;
+        let args: string[] = [];
         try {
+          if (useSwiftSource) {
+            await fs.mkdir(swiftModuleCachePath, { recursive: true });
+            temporaryToolDirectory = await fs.mkdtemp(
+              path.join(os.tmpdir(), "openclaw-fuzzy-search-"),
+            );
+            const compiledToolPath = path.join(
+              temporaryToolDirectory,
+              "myers-bit-parallel-fuzzy-search",
+            );
+            await execFileAsync(
+              "/usr/bin/swiftc",
+              [
+                "-D",
+                "FUZZY_SEARCH_CLI",
+                "-parse-as-library",
+                "-module-cache-path",
+                swiftModuleCachePath,
+                cfg.toolPath,
+                "-o",
+                compiledToolPath,
+              ],
+              {
+                timeout: cfg.timeoutMs,
+                maxBuffer: 1024 * 1024,
+                encoding: "utf8",
+                env: { ...process.env, CLANG_MODULE_CACHE_PATH: swiftModuleCachePath },
+              },
+            );
+            toolCommand = compiledToolPath;
+          }
+          args.push("search", query, "--root", directory);
           const output = await execFileAsync(toolCommand, args, {
             timeout: cfg.timeoutMs,
-            maxBuffer: 1024 * 1024,
+            maxBuffer: 64 * 1024 * 1024,
             encoding: "utf8",
-            env: useSwiftSource
-              ? { ...process.env, CLANG_MODULE_CACHE_PATH: swiftModuleCachePath }
-              : process.env,
           });
           const parsed: unknown = JSON.parse(output.stdout);
           const results = Array.isArray(parsed)
             ? parsed.map(resultFrom).filter((entry): entry is Result => entry !== null)
             : [];
           return {
-            content: [{ type: "text" as const, text: JSON.stringify(results) }],
-            details: { ok: true, mode: "fuzzy", results },
+            content: [],
+            details: {
+              ok: true,
+              result: {
+                directory,
+                results,
+              },
+            },
           };
         } catch (error: unknown) {
           const message = error instanceof Error ? error.message : String(error);
           api.logger.warn(`fuzzy-search: Swift search failed: ${message}`);
           return {
-            content: [{ type: "text" as const, text: `Fuzzy search failed: ${message}` }],
-            details: { ok: false, error: message },
+            content: [],
+            details: { ok: false, result: { reason: "search_failed", message } },
           };
+        } finally {
+          if (temporaryToolDirectory) {
+            await fs.rm(temporaryToolDirectory, { recursive: true, force: true });
+          }
         }
       },
     });
