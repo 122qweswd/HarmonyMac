@@ -1,13 +1,42 @@
-# Fuzzy Search
+# Fuzzy Search（模糊文件名检索）
 
-独立 OpenClaw 插件，注册 `fuzzy_search`。它使用
-`qol/MyersBitParallelFuzzySearch.swift` 的 Myers bit-parallel fuzzy 模式，直接遍历
-agent 指定的目录；不建立或读取 JSON 索引。
+`fuzzy-search` 是一个独立的 OpenClaw 插件，注册工具 `fuzzy_search`。它在调用时直接递归遍历指定目录，以 `qol/MyersBitParallelFuzzySearch.swift` 提供的 Myers bit-parallel 算法对**文件名主体**进行分层模糊匹配；不建立、不读取 JSON 索引。
 
-每次调用都必须提供 `directory` 绝对路径。该路径必须位于宿主配置的 `rootPath`
-授权边界内，Swift 只会递归搜索该目录。
+本文将当前代码已经实现的行为与后续需求分开说明。后续需求来自 [NOTE.md](./NOTE.md)，除非在“当前行为”中明确列出，否则尚未实现。
 
-配置：
+## 当前行为
+
+### 调用边界与目录访问
+
+- `query` 和 `directory` 都是必填参数。`directory` 必须是存在的绝对路径，且其真实路径必须位于配置的 `rootPath` 之内；不能通过 `..` 或符号链接绕过授权根目录。
+- 只递归检索这一次传入的 `directory`，不会替调用方猜测目录，也不会检索 `rootPath` 的其他目录。
+- 搜索每次都会重新枚举目录，因此新建、删除和修改文件会在下一次搜索中反映出来。
+- 只纳入普通文件；隐藏文件、符号链接、目录以及 macOS package 内部文件不会被纳入结果。无法读取的枚举项会跳过。
+- 返回的每条结果路径均相对于本次 `directory`；但成功响应中的 `details.result.directory` 是实际搜索目录的绝对路径。
+- 在 App Sandbox 中，`rootPath` 应来自 `NSOpenPanel` 或 security-scoped bookmark，宿主需要在检索期间恢复其访问权限。Swift 搜索器也会为搜索根目录尝试开启和结束 security-scoped 访问。
+
+### 匹配对象与规范化
+
+- 只匹配文件名去掉扩展名后的主体。例如 `年度计划.docx` 的匹配对象是 `年度计划`，扩展名会原样作为 `fileExtension` 返回，但不参与匹配。
+- 查询首尾空白会被去除；比较忽略英文大小写与变音符号。
+- 算法基于 Unicode scalar，不依赖预定义字母表或中文词典，支持中文及长于 64 个 Unicode scalar 的查询。
+- 目前不会按 `.` 分词，不会忽略标点或数字，也不会将多个词拆开检索。
+
+### 分层规则与排序
+
+对非空查询 `q`，结果按下列层级分组返回；同一层内按文件名的本地化标准顺序排序。目录搜索请求没有结果上限，因此会返回所有符合当前规则的结果。
+
+| `score` | 当前匹配规则 | 示例（查询 `plan`） |
+| --- | --- | --- |
+| `exact` | 文件名主体与查询规范化后完全相同。 | `plan.md` |
+| `same_length_one_error` | 等长，Levenshtein 距离不超过 1，或恰有一组相邻字符交换。 | `plon.md`、`plna.md` |
+| `one_character_shorter` | 候选比查询短一个 Unicode scalar，且距离不超过 1。 | `pla.md` |
+| `contains_query` | 候选更长，某个受触发的、与查询等长的连续窗口完全相同。 | `release-plan-2026.md` |
+| `contains_one_error` | 候选更长，某个受触发连续窗口与查询距离为 1，或为一组相邻字符交换。 | `release-plon-2026.md` |
+
+长文件名的窗口不是全量扫描：实现仅在候选中的字符与查询前 3 个字符之一相等时触发窗口，并同时尝试该对齐位置及向前偏移 1 位的窗口。该剪枝用于控制检索开销，也意味着某些本应距离为 1 的长文件名窗口不会被找到；它是当前实现的已知行为。
+
+### 工具配置与执行
 
 ```json
 "plugins": {
@@ -16,24 +45,115 @@ agent 指定的目录；不建立或读取 JSON 索引。
       "enabled": true,
       "config": {
         "enabled": true,
-        "toolPath": "/ABS/PATH/myers-bit-parallel-fuzzy-search",
+        "toolPath": "/ABS/PATH/qol/MyersBitParallelFuzzySearch.swift",
         "rootPath": "/AUTHORIZED/ROOT",
-        "timeoutMs": 300000
+        "timeoutMs": 20000
       }
     }
   }
 }
 ```
 
-调用：
+- `enabled` 必须为 `true`，否则调用返回 `disabled`。
+- `toolPath` 与 `rootPath` 必须为绝对路径。`toolPath` 的文件名只能是 `MyersBitParallelFuzzySearch.swift`，或编译产物 `myers-bit-parallel-fuzzy-search`。
+- 当 `toolPath` 是 Swift 源文件时，插件会使用 `/usr/bin/swiftc` 临时编译后再执行；因此运行环境需要 Swift 编译器。临时可执行文件会在本次调用结束时删除，Swift 模块缓存位于系统临时目录。
+- `timeoutMs` 默认 20,000，配置值会限制在 1,000 至 300,000 毫秒。编译和搜索分别使用该超时值。
+- 无效配置、空查询、无效/越权目录和 Swift 编译或执行失败都会返回 `details.ok: false` 以及相应 `reason`，分别为 `invalid_runtime`、`empty_query`、`invalid_directory`、`unauthorized_directory` 或 `search_failed`。
+
+### 使用例
+
+在已授权目录中搜索“plan”：
 
 ```json
-{ "query": "plan", "directory": "/AUTHORIZED/ROOT/project" }
+{
+  "query": "plan",
+  "directory": "/AUTHORIZED/ROOT/project"
+}
 ```
 
-所有结果通过结构化 `details.result.results` 返回，而不是 text。结果按 `score`
-分组且不截断，顺序是：`exact`、`same_length_one_error`、
-`one_character_shorter`、`contains_query`、`contains_one_error`。
+成功时，结构化结果位于 `details.result`，而不是文本 `content`：
 
-在 App Sandbox 中，`rootPath` 必须来自 `NSOpenPanel`/security-scoped bookmark，且由
-宿主在检索期间恢复访问权限。每次检索都会重新遍历 `directory`，因此目录更新会立即反映在结果中。
+```json
+{
+  "ok": true,
+  "result": {
+    "directory": "/AUTHORIZED/ROOT/project",
+    "results": [
+      {
+        "relativePath": "docs/plan.md",
+        "fileName": "plan.md",
+        "fileExtension": "md",
+        "size": 4096,
+        "modifiedAt": "2026-08-18T12:00:00Z",
+        "score": "exact"
+      },
+      {
+        "relativePath": "archive/release-plon-2026.md",
+        "fileName": "release-plon-2026.md",
+        "fileExtension": "md",
+        "size": 8192,
+        "modifiedAt": "2026-08-17T12:00:00Z",
+        "score": "contains_one_error"
+      }
+    ]
+  }
+}
+```
+
+调用方应基于 `results` 向用户至少报告一个候选和总结果数；当前插件本身不会生成自然语言提示或纠错选项。
+
+## 用户故事与待完成需求
+
+### 完整用户故事
+
+用户记得一份本地文件的大致名字，却可能错拼、漏字、记错扩展名或只记得名称中的一部分。例如，用户说“帮我找桌面项目里的 `plna` 计划文档”。Agent 先根据用户上下文或目录浏览确定准确、已授权的绝对目录，再以原始词 `plna` 调用 `fuzzy_search`。若存在 `plan.md`，当前规则将其作为相邻字符交换的候选返回；Agent 应告诉用户找到的候选和候选总数，并在存在多个可能结果时请用户确认。
+
+当原始查询没有命中或结果不可信时，Agent 还应利用语言理解推断可能的实际名称，例如将“年度规化”推断为“年度规划”，同时分别检索原始词和推断词。用户不应因为不记得扩展名、大小写、变音或中文名称而失去找到文件的机会；但 Agent 也不能在未经授权的目录中自行搜索。
+
+### 待完成的详细需求
+
+1. 查询纠错与兜底交互
+
+   Agent 应先检索原始 `query`；无结果或结果不足以确认时，再生成有限数量的可能纠错查询并逐一检索。回复必须包含至少一个候选（若有）和结果总数；有多个合理候选时，应给出可选文件名而非擅自选定文件。需要定义“无结果”“结果不可信”和候选查询数量的阈值，防止无边界重试。
+
+   例：用户输入 `plna`，先检索 `plna`；若返回 `plan.md`，回复“找到 1 个候选：`plan.md`（相邻字符交换匹配）”。若用户输入 `季度规化`，可并行或依次检索 `季度规化` 与推断的 `季度规划`，并明确说明实际命中的是哪一个查询。
+
+2. 标点、数字与双错误容忍
+
+   在保留原始文件名和可解释匹配结果的前提下，增加可配置的规范化层，处理用户遗漏或误写的标点和数字；将容错从当前的一次编辑/一次相邻交换扩展到最多两次编辑。必须明确不同字符类别的处理策略，不能以仅适用于有限英文字母表的优化牺牲中文支持。
+
+   例：查询 `2026年度计划` 应可匹配 `2026-年度计划.pdf`；查询 `项目总结` 应能在允许两次编辑的模式下匹配合理的两处错拼候选，同时避免将大量无关文件列为高优先级结果。
+
+3. 词法解析、多个检索词与目录名匹配
+
+   支持按分隔符和自然语言分词，将多个词作为组合查询；支持“任一词”与“全部词”语义，并允许一部分词命中文件名、另一部分词命中相对目录路径。查询含扩展名或点号时，应定义按点分词后的文件名主体和扩展名匹配规则。
+
+   例：`预算 2026` 的“全部词”查询可匹配 `财务/2026/预算草案.xlsx`；`会议纪要/周报` 的“任一词”查询可返回两类结果；`report.pdf` 可将 `report` 与 `pdf` 分别用于主体和扩展名的匹配。
+
+4. 按任务意图排序
+
+   在保持匹配层级可解释的前提下，按用户需求加入排序信号，例如精确度、所有词覆盖度、目录相关性、修改时间、文件类型或用户指定的排序方式。需要为默认排序和每个排序信号规定稳定的并列规则，避免同一目录的结果顺序抖动。
+
+   例：用户说“找最新的预算表”时，`预算` 相关候选先按匹配层级过滤，再在相同层级中优先显示最近修改的 `.xlsx` 文件；用户说“找 PDF”时，文件类型应影响排序。
+
+5. 目录发现与授权流程
+
+   目前 `directory` 必填且插件不会自行寻找目录。需要与目录浏览能力协作：当用户只说“桌面里的项目文档”时，Agent 先在已授权根目录内定位精确目录，再调用模糊搜索；若目录不在授权范围，向用户说明并请求通过宿主授权，而不是越界搜索。
+
+   例：用户说“找桌面项目里的计划”，Agent 先定位 `/AUTHORIZED/ROOT/Desktop/项目`，再调用 `fuzzy_search`；若 `/Users/name/Desktop` 未授权，则提示用户在宿主中选择该目录。
+
+6. 低占用的图片要素逐步识别
+
+   为图片文件增加按需、渐进且资源受控的要素识别，用于用户只记得画面内容而不记得文件名的场景。该能力应在文件名检索不足时才启动，支持取消、缓存、并发和资源预算，并清楚标注结果来自图像内容而非文件名。
+
+   例：用户说“找有白板和路线图的截图”且文件名检索无有效结果时，系统可先对少量高相关图片生成或读取特征，再逐步扩大范围，而不是一次性分析整个磁盘。
+
+### 验收示例
+
+| 场景 | 期望行为 |
+| --- | --- |
+| 用户已给出精确授权目录和 `plna` | 返回 `plan.md` 等相邻交换候选，说明候选数及匹配层级。 |
+| 用户只给出“桌面项目里的计划” | 先在授权范围内发现目录，再以精确绝对目录调用搜索；无法授权时请求授权。 |
+| 用户遗漏连字符或数字 | 新的规范化/两错误模式匹配合理候选，并保留原始文件名以供确认。 |
+| 用户输入多个词“预算 2026” | 支持明确的全部词或任一词语义，并可跨目录名和文件名命中。 |
+| 文件名无帮助、用户描述图片内容 | 文件名检索不足后才按预算逐步触发图像要素识别，结果标注来源。 |

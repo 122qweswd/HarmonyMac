@@ -27,16 +27,22 @@ struct MyersFuzzyBenchmark {
         )
         precondition(fixture.files.count == 10_000)
 
-        let candidates = fixture.files.map {
+        let myersCandidates = fixture.files.map {
             FuzzyCandidate(
                 id: $0.id,
                 name: URL(fileURLWithPath: $0.fileName).deletingPathExtension().lastPathComponent
             )
         }
-        let baseline = FuzzyCandidateIndex(candidates: candidates)
-        let optimized = MyersBitParallelFuzzySearch(candidates: candidates)
+        let baselineCandidates = fixture.files.map {
+            BaselineFuzzyCandidate(
+                id: $0.id,
+                name: URL(fileURLWithPath: $0.fileName).deletingPathExtension().lastPathComponent
+            )
+        }
+        let baseline = BaselineFuzzyCandidateIndex(candidates: baselineCandidates)
+        let optimized = MyersBitParallelFuzzySearch(candidates: myersCandidates)
 
-        print("fixtureEntries=\(candidates.count) iterationsPerQuery=\(iterations)")
+        print("fixtureEntries=\(myersCandidates.count) iterationsPerQuery=\(iterations)")
         for query in fixture.queries {
             let expected = Set(query.expectedIds)
             let baselineResult = baseline.search(query.query, limit: 50)

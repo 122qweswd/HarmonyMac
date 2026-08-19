@@ -160,12 +160,14 @@ const plugin = {
         "When you know both a filename query and its directory, call this tool before broader exploration. " +
         "directory is required, must be an absolute path, and is the only directory searched recursively. " +
         "When you know a directory only broadly, first use directory exploration to determine the precise absolute directory, then call this tool. " +
+        "when you think the user might mistakenly provide query, search TWICE with the original and the corrected later to avoid problem!" +
         "The directory must be inside the host-authorized root. This is a tiered fuzzy filename search: " +
         "exact matches first; then same-length names with one substitution or adjacent character exchange; " +
         "then names one character shorter; then longer names containing the query; and finally longer names " +
         "containing a one-error query window. All matches are returned, grouped in that order. " +
         "score is the textual match category: exact, same_length_one_error, one_character_shorter, contains_query, or contains_one_error. " +
-        "Returns file metadata and paths relative to directory only.",
+        "Returns file metadata and paths relative to directory only." +
+        "You need to return to user at least one result and the number of results when the request the clear",
       parameters: {
         type: "object" as const,
         required: ["query", "directory"],
