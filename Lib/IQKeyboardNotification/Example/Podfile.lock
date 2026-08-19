@@ -1,0 +1,23 @@
+PODS:
+  - IQKeyboardNotification (1.0.3)
+  - SwiftLint (0.56.1)
+
+DEPENDENCIES:
+  - IQKeyboardNotification (from `../`)
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  IQKeyboardNotification:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IQKeyboardNotification: d7382c4466c5a5adef92c7452ebf861b36050088
+  SwiftLint: c5fa0b7eece474d43d2178b581a1242a16267347
+
+PODFILE CHECKSUM: 02f94ed20114e4fa1282e6d0039e9189fcb8b627
+
+COCOAPODS: 1.15.2
