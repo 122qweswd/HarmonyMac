@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "hostEntry": "index.js",
+  "logLevel": "info",
+  "heartbeatIntervalMs": 30000
+}

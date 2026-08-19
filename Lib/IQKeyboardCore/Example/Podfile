@@ -1,0 +1,12 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'IQKeyboardCore_Example' do
+  pod 'IQKeyboardCore', :path => '../'
+  pod "SwiftLint"
+
+  target 'IQKeyboardCore_Tests' do
+    inherit! :search_paths
+  end
+end

@@ -1,0 +1,13 @@
+{
+  "name": "@openclaw/fuzzy-search",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Controlled Myers fuzzy local file search for OpenClaw agents",
+  "license": "MIT",
+  "type": "module",
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

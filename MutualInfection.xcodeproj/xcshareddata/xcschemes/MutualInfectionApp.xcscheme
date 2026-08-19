@@ -52,13 +52,13 @@
       </BuildableProductRunnable>
       <AdditionalOptions>
          <AdditionalOption
-            key = "NSZombieEnabled"
-            value = "YES"
+            key = "MallocGuardEdges"
+            value = ""
             isEnabled = "YES">
          </AdditionalOption>
          <AdditionalOption
-            key = "MallocGuardEdges"
-            value = ""
+            key = "NSZombieEnabled"
+            value = "YES"
             isEnabled = "YES">
          </AdditionalOption>
       </AdditionalOptions>
