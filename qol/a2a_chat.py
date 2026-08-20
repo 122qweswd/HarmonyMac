@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """Minimal interactive client for the local OpenClaw A2A JSON-RPC endpoint."""
 """该文件可以用于在Openclaw启动后进行本地多轮对话尝试。提示：重新编译时如果Openclaw提示无法绑定端口，则是Openclaw没有自动退出，需要手动pkill -9 openclaw等"""
-
-from __future__ import annotations
 
 import argparse
 import json
