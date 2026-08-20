@@ -1156,6 +1156,7 @@
 			buildPhases = (
 				2361C94F2E62F03800F5A3A4 /* Sources */,
 				2361C9502E62F03800F5A3A4 /* Frameworks */,
+				C0D3A0033073000000019260 /* Prepare Openclaw Bundle */,
 				C0D3A0023073000000019260 /* Prepare Node Runtime Bundle */,
 				2361C9512E62F03800F5A3A4 /* Resources */,
 				230AEE2C2EA22BEC0057872B /* Copy Files */,
@@ -1337,6 +1338,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C0D3A0033073000000019260 /* Prepare Openclaw Bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(PROJECT_DIR)/scripts/prepare_openclaw_bundle.sh",
+				"$(PROJECT_DIR)/openclaw-source/package.json",
+				"$(PROJECT_DIR)/openclaw-source/pnpm-lock.yaml",
+			);
+			name = "Prepare Openclaw Bundle";
+			outputPaths = (
+				"$(PROJECT_DIR)/openclaw-bundle-output/openclaw.mjs",
+				"$(PROJECT_DIR)/openclaw-bundle-output/package.json",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"${PROJECT_DIR}/scripts/prepare_openclaw_bundle.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C0D3A0023073000000019260 /* Prepare Node Runtime Bundle */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

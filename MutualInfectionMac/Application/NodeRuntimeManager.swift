@@ -198,7 +198,7 @@ final class NodeRuntimeManager {
         // 覆盖写入 AGENTS.md：授权目录清单由项目控制（与 .entitlements 同步）
         let dirs = Self.authorizedWorkDirs
         let list = dirs.map { "- \($0)" }.joined(separator: "\n")
-        let inboxDir = layout.stateDirectoryURL.appendingPathComponent("a2a-files").path
+        let inboxDir = "/Users/jiahaoli/Desktop/A2A-Files"
         let content = """
 # 授权工作目录
 
@@ -212,11 +212,11 @@ final class NodeRuntimeManager {
 
 # 接收对端文件后的搬运
 
-对端（手机等）通过 a2a-gateway 发来的入站文件，会先由网关自动落到临时收件目录：
+对端（手机等）通过 a2a-gateway 发来的入站文件，会先由网关自动落到收件目录：
 
 - \(inboxDir)/
 
-此目录在 App 沙盒容器内，用户在 Finder 里看不到。系统随后会给你一段以「【A2A 文件接收成功】」开头的文本，其中含「保存路径」字段（临时收件目录中的绝对路径）。你必须按以下策略处理：
+此目录位于用户桌面（~/Desktop/A2A-Files），用户在 Finder 中可见。系统随后会给你一段以「【A2A 文件接收成功】」开头的文本，其中含「保存路径」字段（该收件目录中的绝对路径）。你必须按以下策略处理：
 
 1. 若用户没有指定目的地：如实汇报「保存路径」的绝对路径，不要改写。
 2. 若用户指定的目的地位于上面「授权工作目录」清单内（例如“存到桌面”→ /Users/jiahaoli/Desktop/）：
@@ -236,7 +236,7 @@ final class NodeRuntimeManager {
     /// 身份信息由项目控制（与 openclaw.template.json 的 agentCard / registry 保持一致）。
     private func prepareWorkspaceIdentityFiles(at workspaceURL: URL, with layout: Layout) {
         let deviceName = Self.localDeviceName
-        let filesDir = layout.stateDirectoryURL.appendingPathComponent("a2a-files").path
+        let filesDir = "/Users/jiahaoli/Desktop/A2A-Files"
         let memory = """
         # 本机与对端
 
@@ -333,7 +333,7 @@ final class NodeRuntimeManager {
         try rendered.write(to: configURL, atomically: true, encoding: .utf8)
         // 预创建 a2a 运行时目录，避免插件首次写入失败
         try? fileManager.createDirectory(at: layout.stateDirectoryURL.appendingPathComponent("a2a-tasks", isDirectory: true), withIntermediateDirectories: true)
-        try? fileManager.createDirectory(at: layout.stateDirectoryURL.appendingPathComponent("a2a-files", isDirectory: true), withIntermediateDirectories: true)
+        try? fileManager.createDirectory(at: URL(fileURLWithPath: "/Users/jiahaoli/Desktop/A2A-Files", isDirectory: true), withIntermediateDirectories: true)
     }
 
     /// 优先选择物理网络接口，避开 loopback、VPN 与 Apple 点对点虚拟接口。

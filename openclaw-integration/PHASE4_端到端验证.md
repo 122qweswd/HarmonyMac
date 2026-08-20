@@ -1,90 +1,182 @@
 # 阶段 4 — 端到端验证
 
-> 状态：✅ 本机逻辑预检通过（精确复现 `NodeRuntimeManager` 启动链路）；⚠️ 真实 `.app` 构建/运行验证需用户在 Xcode 环境完成（本机仅 Command Line Tools）
-> 日期：2026-08-04
+> 状态：✅ App 集成与跨端 A2A 已完成阶段性验证
+> 原执行日期：2026-08-04
+> 最后同步：2026-08-20
+> 当前范围：Mac App 内 OpenClaw 运行、模型/文件能力、Mac ↔ HarmonyOS 双向消息与文件。
 
 ## 目标
 
-验证完整链路：App 启动 → `NodeRuntimeManager` 拉起私有 node + openclaw gateway → ready → a2a 服务可用 → App 退出时进程清理。
+验证完整链路：
 
-## 本机逻辑预检（已完成 ✅）
+```text
+Xcode Build
+  → .app 内私有 Node + OpenClaw + 配置模板
+  → App 启动自动生成 workspace/config
+  → OpenClaw 主 gateway / a2a-gateway ready
+  → TargetMac 注册、发现 HW-Phone1
+  → 双向消息
+  → 双向本地文件
+  → App 退出清理进程组
+```
 
-本机无 Xcode，无法 `xcodebuild`。改为**精确复现 `NodeRuntimeManager.launchProcess` 的启动逻辑**（同一 `arguments` / `environment` / config 实例化流程），在阶段 2 模拟 `.app` 上验证：
+## 第一阶段：历史本机逻辑预检
+
+最初因执行环境只有 Command Line Tools，使用模拟 App bundle 精确复现 `NodeRuntimeManager` 的启动参数与环境变量：
 
 ```bash
-# 等效于 NodeRuntimeManager.startIfNeeded 的内部流程
-APPSUPPORT=/tmp/.../MutualInfectionMac/NodeRuntime
-mkdir -p "$APPSUPPORT"/{config,state,cache,tmp}
-cp "$APPROOT/config/openclaw.template.json" "$APPSUPPORT/config/openclaw.json"  # prepareRuntimeConfig
-export OPENCLAW_HOME="$APPSUPPORT" OPENCLAW_STATE_DIR="$APPSUPPORT/state" OPENCLAW_CONFIG_PATH="$APPSUPPORT/config/openclaw.json"
+export OPENCLAW_HOME="$APPSUPPORT"
+export OPENCLAW_STATE_DIR="$APPSUPPORT/state"
+export OPENCLAW_CONFIG_PATH="$APPSUPPORT/config/openclaw.json"
 cd "$APPROOT/openclaw"
-"$NODE" openclaw.mjs gateway run --force --port 18800   # launchProcess arguments
+"$NODE" openclaw.mjs gateway run --force --port 18800
 ```
 
-| 检查项 | 结果 |
-|--------|------|
-| ready 标记 `a2a-gateway: HTTP listening` 命中 | ✅ 4s 内 |
-| `/health` 200 | ✅ 4s 内 |
-| 运行时数据全在 App Application Support（`config/state/cache/tmp`） | ✅ |
-| 用户 home（`~/.openclaw`）未被污染 | ✅ 干净 |
+当时验证：
 
-**结论**：阶段 3 的 Swift 改造逻辑（arguments / environment / config 路径）经验证有效——`NodeRuntimeManager` 启动后约 4s 会观察到 ready，且不污染用户目录。
+| 项目 | 结果 |
+|---|---|
+| ready marker | ✅ 约 4 秒内出现 |
+| 主 gateway `/health` | ✅ |
+| 运行状态写入 App Application Support | ✅ |
+| 基础启动未污染默认 `~/.openclaw` | ✅ |
 
-## 用户 Xcode 验证清单（待执行）
+这证明 Swift 参数、环境与路径设计成立。
 
-在装有完整 Xcode 的机器上：
+## 第二阶段：Xcode App 实际运行验证
+
+后续已在完整 Xcode 环境完成真实 `.app` 构建与运行，并验证：
+
+- Build Phase 将 NodeRuntime 打进 `鸿蒙星河互联.app`；
+- 私有 Node 版本为 v22.16.0；
+- OpenClaw 主 gateway 18800 正常；
+- a2a-gateway 在 18810 独立监听；
+- `/.well-known/agent-card.json` 可返回 Agent Card；
+- Node 26 `IncomingMessage.signal` TypeError 不再出现；
+- `.template_version` 配置自愈有效；
+- OpenClaw 可以调用模型和文件工具；
+- App 正常退出时清理 Node/OpenClaw 进程组。
+
+## 第三阶段：T8 文件权限与 Agent 上下文
+
+为让 Agent 真正操作用户工作目录，完成了以下闭环：
+
+1. Release/Debug entitlements 加入项目目录、`Agent_Workspace` 与 Desktop 绝对路径读写例外；
+2. `NodeRuntimeManager.authorizedWorkDirs` 维护同一清单；
+3. 每次启动生成 `AGENTS.md`，让 Agent 知道授权范围；
+4. 生成 `MEMORY.md` / `TOOLS.md`，写入本机/对端身份及 A2A 用法；
+5. `A2A_LOCAL_FILE_ROOTS` 将授权根传给 a2a 插件，使 `send_local_file` 不再只接受 HarmonyOS 默认目录。
+
+当前 Mac 文件能力：
+
+| 路径 | 用途 |
+|---|---|
+| `~/project/harmonymac/` | 项目读取/编辑 |
+| `~/Agent_Workspace/` | Agent 工作与 Mac→手机发送文件 |
+| `~/Desktop/` | 用户可见文件与入站收件目录 |
+| `~/Desktop/A2A-Files/` | 手机→Mac 文件最终落盘目录 |
+
+## 第四阶段：Mac ↔ HarmonyOS 双端联调
+
+当前测试身份：
+
+| 端 | 身份 | A2A HTTP |
+|---|---|---:|
+| Mac | `TargetMac` | 18810 |
+| HarmonyOS 手机 | `HW-Phone1` | 18800 |
+
+发现与跨网配置：
+
+- registry：`http://124.71.140.180:8000`
+- tunnel relay：`ws://124.71.140.180:8000`
+- 双端共享 A2A bearer token
+- Mac 本机 gateway 另使用 gateway token
+
+### 双向消息
+
+`verify.sh` 当前覆盖：
+
+1. Mac 直接向手机 `/a2a/jsonrpc` 发送 `message/send`；
+2. 测试端直接向 Mac 18810 发送 `message/send`；
+3. 请求携带 bearer token；
+4. 结果接受 `completed` / `taskId` / 测试标记作为成功证据。
+
+### Mac → 手机文件
+
+- 在 `~/Agent_Workspace/mac-to-phone.txt` 创建测试文件；
+- 使用 App bundle 内私有 Node/OpenClaw CLI；
+- 调本机 gateway method：
 
 ```bash
-# 0. 一次性生成 openclaw 产物（已加缓存，二次跳过）
-cd /Users/jiahaoli/project/harmonymac
-scripts/prepare_openclaw_bundle.sh
-# → 产物在 openclaw-bundle-output/
-
-# 1. 用 Xcode 打开并构建
-open MutualInfection.xcodeproj
-# 选 MutualInfectionMac scheme，Build（build phase 会调用 prepare_node_runtime_bundle.sh，
-# 把 openclaw 产物拷进 .app/Contents/Resources/NodeRuntime/）
+openclaw gateway call a2a.send_local_file \
+  --url=ws://127.0.0.1:18800 \
+  --token=<GATEWAY_TOKEN> \
+  --params='{"peer":"HW-Phone1","path":"/Users/jiahaoli/Agent_Workspace/mac-to-phone.txt"}'
 ```
 
-构建成功后运行 App，逐项验证：
+- `A2A_LOCAL_FILE_ROOTS` 使插件允许发送 Mac entitlement 授权目录中的文件；
+- 手机目标目录由手机端配置决定，当前测试检查 `Docs/OPENCLAW`。
 
-| # | 检查 | 期望 | 命令/位置 |
-|---|------|------|-----------|
-| 1 | App 启动后 openclaw 起来 | 日志 `[NodeRuntimeManager] openclaw ready 信号已收到（a2a-gateway HTTP listening）` | Console / `~/Library/Logs/MutualInfectionMac/NodeRuntime/runtime.log` |
-| 2 | gateway 监听 | `curl -s http://127.0.0.1:18800/health` → 200 | 终端 |
-| 3 | a2a 服务 | `curl -s http://127.0.0.1:18800/a2a/jsonrpc` → 200 | 终端 |
-| 4 | 运行配置生成 | `~/Library/Application Support/MutualInfectionMac/NodeRuntime/config/openclaw.json` 存在 | Finder |
-| 5 | 不依赖系统 Node | `which node`（系统） vs App 内私有 node 各自版本 | App 应不依赖系统 node |
-| 6 | App 退出清理 | node/openclaw 进程随 App 退出消失 | 活动监视器搜 `node` |
-| 7 | home 不被污染 | `~/.openclaw` 不出现 a2a 数据 | 终端 |
+### 手机 → Mac 文件
+
+- 通过 HDC 在手机执行其 OpenClaw CLI；
+- 对端 peer 为 `TargetMac`；
+- 手机 fixture 为 `/data/local/.openclaw/workspace/a2a-fixtures/phone-to-pc-test.txt`；
+- Mac a2a executor 将 inline bytes 解码并写入：
+
+```text
+/Users/jiahaoli/Desktop/A2A-Files/
+```
+
+- Agent 收到以 `【A2A 文件接收成功】` 开头的内部文本，并被要求向用户原样报告真实保存路径。
+
+## 一键验证脚本
+
+```bash
+openclaw-integration/verify.sh
+```
+
+脚本当前步骤：
+
+1. 自动寻找最新 DerivedData `.app`，确认私有 Node/OpenClaw；
+2. 检查双方 Agent Card；
+3. Mac → 手机文本；
+4. 手机 → Mac 文本；
+5. Mac → 手机文件；
+6. 手机 → Mac 文件（HDC）；
+7. 检查双方收件目录。
+
+## 验证前置条件
+
+- Mac App 已在 Xcode 中运行；
+- Mac/手机 IP 与脚本匹配；
+- 手机在线且 HDC 能看到 target；
+- 双端 A2A token 一致；
+- 本机 gateway token 正确；
+- registry/tunnel 服务可达；
+- Desktop TCC 已允许；
+- `NodeRuntimeHost/config/openclaw.template.json` 已安全配置；
+- `openclaw-bundle-output/` 与 `.app` 已包含最新 a2a 源码修改。
+
+## 当前无法声明的内容
+
+本次文档同步时，`hdc list targets` 返回 `[Empty]`，所以**没有重新执行手机在线回归**。这不否定此前已完成的联调记录，但表示当前工作区最新的 `A2A_LOCAL_FILE_ROOTS`、桌面收件目录与重写后的 `verify.sh` 仍应在手机在线时再跑一次最终全绿回归。
 
 ## 已知限制
 
-1. **agent-card 端点 404**（阶段 0 发现）：`/.well-known/agent-card.json` 在定制版未路由到 a2a app。A2A 外部 peer 发现本节点暂不可用；a2a jsonrpc 通信正常。后续排查 gateway 框架路由代理。
-2. **a2a `storage.tasksDir` 默认 `~/.openclaw/a2a-tasks`**：逻辑预检中 home 未被污染（可能因 `OPENCLAW_HOME` 重定向），但若跑实际 a2a 任务，建议在 config 显式设 `storage.tasksDir` 指向 App 目录（阶段 0 记录的路径泄漏项）。
-3. **体积 1.3G**：全量产物，App 包体大。阶段 5 裁剪。
-4. **pbxproj input/output paths 未更新**：仍引用旧 host 路径，不影响构建功能（见 PHASE2 问题①）。
+1. `verify.sh` 写死当前实验环境的 IP、peer、token、HDC 路径，尚不是通用 CI 脚本。
+2. 手机离线、IP 变化、registry 未刷新或 token 不一致都会导致真机项失败。
+3. Desktop 文件访问受 TCC 控制；只配置 entitlement 不保证用户已允许。
+4. `fileStorage.tempDir`、授权目录和测试路径硬编码个人 Home。
+5. 测试脚本当前把“请求接受”作为部分异步场景的成功条件；若要证明业务最终完成，应增加 task polling 和内容校验。
+6. `.app` 若复用旧的 `openclaw-bundle-output/`，可能没有最新插件代码；强制回归前应删除并重建中间产物。
 
-## 整体集成总结（阶段 0–4）
+## 最终判定标准
 
-| 阶段 | 产出 | 状态 |
-|------|------|------|
-| 0 | openclaw-source 本地跑通（pnpm install + gateway 验证） | ✅ |
-| 1 | 离线打包产物（arm64/prod/hoisted）+ `prepare_openclaw_bundle.sh` | ✅ |
-| 2 | Xcode build phase 接入（`prepare_node_runtime_bundle.sh` 重写 + config 模板） | ✅ 模拟验证 |
-| 3 | `NodeRuntimeManager` 改造拉起 openclaw | ✅ 逻辑验证 |
-| 4 | 端到端验证 | ✅ 逻辑预检；真实构建待用户 Xcode |
-
-**新增/修改的文件（入库）**：
-- `scripts/prepare_openclaw_bundle.sh`（新）
-- `scripts/prepare_node_runtime_bundle.sh`（重写）
-- `NodeRuntimeHost/config/openclaw.template.json`（新）
-- `MutualInfectionMac/Application/NodeRuntimeManager.swift`（重写）
-- `.gitignore`（加 `openclaw-bundle-output/`）
-- `openclaw-integration/`（新目录：README + PHASE0–4 文档）
-
-**核心成果**：openclaw agent runtime 可作为**离线自包含**组件嵌入 `MutualInfectionMac.app`——私有 node（arm64）+ openclaw 代码 + 扁平依赖全部打包，App 启动即拉起 a2a-gateway，不依赖用户本地 Node/网络，运行时数据隔离在 App 私有目录。
-
-## 下一步（阶段 5，后续）
-
-体积裁剪：剔除 a2a-gateway 不需要的模块（discord/telegram/whatsapp 等 ~40 渠道插件、`playwright-core`、`node-llama-cpp`、`pdfjs-dist`、`@aws-sdk`、`@lancedb`、`koffi` 多平台 prebuilt 等，详见 PHASE1 体积表），目标把 1.3G 压到 ~300–400M。
+| 级别 | 判据 |
+|---|---|
+| App 集成通过 | Build、Node22、主 gateway、Mac A2A、配置自愈、退出清理通过 |
+| Agent 功能通过 | 模型调用与授权目录文件工具通过 |
+| 双端消息通过 | TargetMac ↔ HW-Phone1 双向 `message/send` 返回完成/接受 |
+| 双端文件通过 | 两端 `send_local_file` 成功，且目标目录真实出现内容一致的文件 |
+| 当前最终状态 | 前三层已有历史实测；最新工作区需在手机重新上线后执行一次 `verify.sh` 全绿回归 |

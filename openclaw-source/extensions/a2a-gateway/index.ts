@@ -974,6 +974,9 @@ const plugin = {
         "/mnt/user/",
         "/mnt/hmdfs/",
         "/home/",
+        // 运行时注入的额外根：App 启动时用 A2A_LOCAL_FILE_ROOTS 传入授权目录
+        // （如 macOS 端传入 .entitlements 的 temporary-exception 授权目录，与 AGENTS.md 同步）
+        ...(process.env.A2A_LOCAL_FILE_ROOTS?.split(":").map((s) => s.trim()).filter(Boolean) ?? []),
       ];
       // Normalize for HarmonyOS (POSIX) and Windows unit-test hosts (drive letter + backslash).
       const candidates = [filePath, resolved].map((p) =>
