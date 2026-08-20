@@ -1,77 +1,79 @@
-#!/bin/sh
-# openclaw 集成验证脚本 —— 用法:  sh openclaw-integration/verify.sh
-# App 需已在 Xcode 里 Run 起来。输出每项 ✅/❌ 并汇总。
+#!/bin/bash
+# Mac ↔ HarmonyOS A2A 双向消息/文件测试
 set -u
 
+PHONE_IP="10.86.84.12"
+MAC_IP="10.86.84.245"
+PHONE_A2A="http://${PHONE_IP}:18800"
+MAC_A2A="http://${MAC_IP}:18810"
+A2A_TOKEN="12345678"
+GATEWAY_TOKEN="openclaw-token"
+PHONE_FIXTURE="/data/local/.openclaw/workspace/a2a-fixtures/phone-to-pc-test.txt"
+PHONE_RECEIVE_DIR="/storage/media/100/local/files/Docs/OPENCLAW"
+MAC_WORKSPACE="/Users/jiahaoli/Agent_Workspace"
 CONT="$HOME/Library/Containers/com.HarmonyOSInterconnection.app/Data"
-LOG="$CONT/Library/Logs/MutualInfectionMac/NodeRuntime"
+STATE_DIR="$CONT/Library/Application Support/MutualInfectionMac/NodeRuntime/state"
 CFG="$CONT/Library/Application Support/MutualInfectionMac/NodeRuntime/config/openclaw.json"
+HDC="/tmp/hdc-tool/command-line-tools/sdk/default/openharmony/toolchains/hdc"
+pass=0
+fail=0
 
-pass=0; fail=0
-ok(){ printf "  \033[32m✅\033[0m %s\n" "$1"; pass=$((pass+1)); }
-no(){ printf "  \033[31m❌\033[0m %s\n" "$1"; fail=$((fail+1)); }
-hr(){ printf "\n========== %s ==========\n" "$1"; }
+ok() { printf '✅ %s\n' "$1"; pass=$((pass + 1)); }
+bad() { printf '❌ %s\n' "$1"; fail=$((fail + 1)); }
+section() { printf '\n========== %s ==========\n' "$1"; }
 
-hr "进程链（App → openclaw → openclaw-gateway）"
-if pgrep -fl openclaw >/dev/null 2>&1; then
-  ps -eo pid,ppid,comm | grep -i openclaw | sed 's/^/    /'
-  ok "openclaw 进程存在"
+section '1. 查找 Mac 内置 Node/OpenClaw'
+APP="$(find "$HOME/Library/Developer/Xcode/DerivedData" -path '*/Build/Products/*/鸿蒙星河互联.app' -type d -print 2>/dev/null | while IFS= read -r p; do stat -f '%m %N' "$p"; done | sort -rn | cut -d' ' -f2- | head -1)"
+NODE_BIN="$APP/Contents/Resources/NodeRuntime/node/bin/node"
+OPENCLAW_MJS="$APP/Contents/Resources/NodeRuntime/openclaw/openclaw.mjs"
+if [ -x "$NODE_BIN" ] && [ -f "$OPENCLAW_MJS" ]; then
+  echo "App: $APP"
+  ok '内置 Node/OpenClaw 已找到'
 else
-  no "未发现 openclaw 进程 —— App 是否已在 Xcode 里 Run 起来？"
+  bad "未找到内置 Node/OpenClaw: $APP"
+  exit 1
 fi
 
-hr "Node22 修复（stderr 期望 0 个 TypeError）"
-if [ -f "$LOG/stderr.log" ]; then
-  n=$(grep -c "Cannot set property signal" "$LOG/stderr.log" 2>/dev/null || echo 0)
-  [ "$n" = "0" ] && ok "stderr 无 signal TypeError（count=$n）" || no "stderr 仍有 $n 个 TypeError —— Node 可能还是 26"
+section '2. 检查双方 Agent Card'
+PHONE_CARD=$(curl -fsS --max-time 8 "$PHONE_A2A/.well-known/agent-card.json" 2>/dev/null || true)
+printf '%s' "$PHONE_CARD" | grep -q 'HW-Phone1-Agent1' && ok '手机 Agent Card 可达' || bad '手机 Agent Card 不可达'
+MAC_CARD=$(curl -fsS --max-time 8 "$MAC_A2A/.well-known/agent-card.json" 2>/dev/null || true)
+printf '%s' "$MAC_CARD" | grep -q 'TargetMac' && ok 'Mac Agent Card 可达' || bad 'Mac Agent Card 不可达'
+
+section '3. Mac → 手机文本（直接 A2A）'
+BODY='{"jsonrpc":"2.0","id":"mac-msg","method":"message/send","params":{"message":{"messageId":"mac-msg","role":"user","parts":[{"kind":"text","text":"Mac到手机消息测试：MAC_TO_PHONE_OK"}]},"configuration":{}}}'
+RESULT=$(curl -fsS --max-time 120 -H 'Content-Type: application/json' -H "Authorization: Bearer $A2A_TOKEN" --data-binary "$BODY" "$PHONE_A2A/a2a/jsonrpc" 2>/dev/null || true)
+printf '%s' "$RESULT" | grep -q 'completed\|taskId\|MAC_TO_PHONE_OK' && ok 'Mac → 手机文本请求已接受' || { bad 'Mac → 手机文本失败'; printf '%s\n' "$RESULT"; }
+
+section '4. 手机 → Mac 文本（直接 A2A）'
+BODY='{"jsonrpc":"2.0","id":"phone-msg","method":"message/send","params":{"message":{"messageId":"phone-msg","role":"user","parts":[{"kind":"text","text":"手机到Mac消息测试：PHONE_TO_MAC_OK"}]},"configuration":{}}}'
+RESULT=$(curl -fsS --max-time 120 -H 'Content-Type: application/json' -H "Authorization: Bearer $A2A_TOKEN" --data-binary "$BODY" "$MAC_A2A/a2a/jsonrpc" 2>/dev/null || true)
+printf '%s' "$RESULT" | grep -q 'completed\|taskId\|PHONE_TO_MAC_OK' && ok '手机 → Mac 文本请求已接受' || { bad '手机 → Mac 文本失败'; printf '%s\n' "$RESULT"; }
+
+section '5. Mac → 手机文件（gateway method）'
+mkdir -p "$MAC_WORKSPACE"
+MAC_FILE="$MAC_WORKSPACE/mac-to-phone.txt"
+printf 'MAC_TO_PHONE_FILE_OK\ncreated=%s\n' "$(date '+%Y-%m-%d %H:%M:%S')" > "$MAC_FILE"
+export OPENCLAW_HOME="$CONT/Library/Application Support/MutualInfectionMac/NodeRuntime"
+export OPENCLAW_STATE_DIR="$STATE_DIR"
+export OPENCLAW_CONFIG_PATH="$CFG"
+PARAMS=$(printf '{"peer":"HW-Phone1","path":"%s"}' "$MAC_FILE")
+RESULT=$("$NODE_BIN" "$OPENCLAW_MJS" gateway call a2a.send_local_file --url=ws://127.0.0.1:18800 --token="$GATEWAY_TOKEN" --timeout=300000 --params="$PARAMS" 2>&1 || true)
+printf '%s' "$RESULT" | grep -qi 'success\|accepted\|taskId' && ok 'Mac → 手机文件请求已接受' || { bad 'Mac → 手机文件失败'; printf '%s\n' "$RESULT"; }
+
+section '6. 手机 → Mac 文件（手机 gateway method）'
+if [ ! -x "$HDC" ]; then
+  bad "找不到 HDC: $HDC"
 else
-  no "stderr.log 不存在: $LOG/stderr.log"
+  PHONE_PARAMS=$(printf '{"peer":"TargetMac","path":"%s"}' "$PHONE_FIXTURE")
+  RESULT=$("$HDC" shell "/data/local/npm/bin/openclaw gateway call a2a.send_local_file --token=openclaw-token --timeout=300000 --params='$PHONE_PARAMS'" 2>&1 || true)
+  printf '%s' "$RESULT" | grep -qi 'success\|accepted\|taskId' && ok '手机 → Mac 文件请求已接受' || { bad '手机 → Mac 文件失败'; printf '%s\n' "$RESULT"; }
 fi
 
-hr "配置自愈 + a2a 端口分离"
-if [ -f "$LOG/runtime.log" ]; then
-  if grep -q "已按模板重新生成" "$LOG/runtime.log"; then
-    ok "配置已按模板重新生成（configVersion 自愈生效）"
-  else
-    no "未见配置重生成日志 —— 容器旧配置未被覆盖"
-  fi
-  line=$(grep "a2a-gateway: HTTP listening" "$LOG/runtime.log" | tail -1)
-  echo "    $line"
-  case "$line" in *18810*) ok "a2a-gateway 监听 18810";; *) no "a2a-gateway 未监听 18810（仍 18800 或未启动）";; esac
-else
-  no "runtime.log 不存在: $LOG/runtime.log"
-fi
-
-hr "a2a 身份端点 18810（期望 JSON）"
-body=$(curl -s -m 3 http://127.0.0.1:18810/.well-known/agent-card.json 2>/dev/null)
-if echo "$body" | grep -q "protocolVersion"; then
-  echo "$body" | head -c 200 | sed 's/^/    /'; echo
-  ok "agent-card 返回有效 JSON（a2a-gateway 可用）"
-else
-  no "agent-card 无响应或非 JSON —— 端口分离可能未生效"
-  echo "    返回: ${body:-（空）}"
-fi
-
-hr "主 gateway 健康 18800"
-h=$(curl -s -m 3 http://127.0.0.1:18800/health 2>/dev/null)
-echo "    $h"
-echo "$h" | grep -q '"ok":true' && ok "主 gateway 健康" || no "主 gateway 健康检查失败"
-
-hr "容器运行配置内容（应纯净：无 configVersion，port 18810）"
-if [ -f "$CFG" ]; then
-  grep -E "\"port\"|configVersion|\"mode\"" "$CFG" | sed 's/^/    /'
-  grep -q '"port": 18810' "$CFG" && ok "配置 a2a port=18810" || no "配置 a2a port 非 18810"
-  if grep -q "configVersion" "$CFG"; then no "openclaw.json 仍含 configVersion（会被 openclaw 严格 schema 拒绝→启动失败）"; else ok "openclaw.json 无 configVersion（schema 合法）"; fi
-else
-  no "配置文件不存在: $CFG"
-fi
-VF="$CONT/Library/Application Support/MutualInfectionMac/NodeRuntime/config/.template_version"
-if [ -f "$VF" ]; then echo "    .template_version = $(cat "$VF" | tr -d ' \n')"; grep -qx "2" "$VF" && ok "旁路版本文件=2（配置已是最新）" || no "旁路版本非 2"; else no "旁路版本文件 .template_version 不存在（配置未被 App 重生成）"; fi
-
-hr "汇总"
-printf "通过 %d / 失败 %d\n" "$pass" "$fail"
-if [ "$fail" = 0 ]; then
-  printf "\n🎉 全部通过 —— openclaw 集成成功（Node22 + a2a 端口分离均生效）\n"
-else
-  printf "\n⚠️  有 %d 项未通过，请按上方 ❌ 提示排查\n" "$fail"
-fi
+section '7. 文件结果（只读检查）'
+echo '手机收件目录：'
+[ -x "$HDC" ] && "$HDC" shell "find '$PHONE_RECEIVE_DIR' -maxdepth 1 -type f 2>/dev/null | tail -10"
+echo 'Mac 收件目录：'
+find "$STATE_DIR" -type f \( -name 'phone-to-pc-test.txt' -o -name 'mac-to-phone.txt' \) -print 2>/dev/null
+printf '\n结果：通过 %d，失败 %d\n' "$pass" "$fail"
+[ "$fail" -eq 0 ]

@@ -1,112 +1,97 @@
 # 阶段 0 — openclaw-source 本地基线跑通
 
-> 状态：✅ 完成（跑通标准达成，含 1 个已记录的已知问题）
-> 日期：2026-08-04
-> 执行人：Claude（与用户协作）
+> 状态：✅ 历史阶段已完成
+> 原执行日期：2026-08-04
+> 最后同步：2026-08-20
 
 ## 目标
 
-在动打包之前，证明 `openclaw-source/` 能在本机跑起来、a2a-gateway 能作为常驻进程监听端口并响应。定义"跑通标准"。
+在改动打包链之前，证明 `openclaw-source/` 能在本机启动，a2a-gateway 能作为常驻服务监听端口并响应请求，为后续离线打包与 App 托管建立基线。
 
-## 执行的操作（可复制）
+## 当时执行的操作
 
 ```bash
-# 1. 准备 pnpm（package.json 指定 packageManager: pnpm@10.23.0）
+# package.json 当时指定 pnpm@10.23.0
 corepack enable
 corepack prepare pnpm@10.23.0 --activate
-pnpm -v   # → 10.23.0
 
-# 2. 补全依赖（见下方"问题与决策"为何要重建）
 cd openclaw-source
 CI=true pnpm install --ignore-scripts --prefer-offline
-# → Done in 2m 1.1s
 
-# 3. 验证基础可执行
-node openclaw.mjs --version        # → OpenClaw 2026.3.13
+node openclaw.mjs --version
 
-# 4. 用临时目录 + 环境变量重定向，避免污染 ~/.openclaw
 mkdir -p /tmp/oc-test/.openclaw
 export OPENCLAW_HOME=/tmp/oc-test
 export OPENCLAW_STATE_DIR=/tmp/oc-test/.openclaw
 export OPENCLAW_CONFIG_PATH=/tmp/oc-test/.openclaw/openclaw.json
 
-# 5. 确认 a2a-gateway 是 stock 内置且 loaded
 node openclaw.mjs plugins list | grep -i a2a
-# → A2A Gateway | a2a-gateway | loaded | stock:a2a-gateway/index.ts | 1.3.0
-
-# 6. 启动 gateway（--allow-unconfigured 见"问题与决策"）
-node openclaw.mjs gateway run --force --port 18800 --allow-unconfigured &
-
-# 7. 探测端点
-curl -s http://127.0.0.1:18800/health                 # → 200
-curl -s http://127.0.0.1:18800/a2a/jsonrpc            # → 200
-curl -s http://127.0.0.1:18800/.well-known/agent-card.json   # → 404（已知问题）
+node openclaw.mjs gateway run --force --port 18800 --allow-unconfigured
 ```
 
-## 修改的文件清单
+当时的探测：
 
-本阶段**没有修改任何源码**。变更均为环境/依赖层面：
+```bash
+curl -s http://127.0.0.1:18800/health
+curl -s http://127.0.0.1:18800/a2a/jsonrpc
+curl -s http://127.0.0.1:18800/.well-known/agent-card.json
+```
 
-| 路径 | 变更 | 说明 |
-|------|------|------|
-| `openclaw-source/node_modules/` | 重建 | 见下"问题与决策①"。1.9G → 1.1G |
-| `~/Library/pnpm/store/v10/` | 新增 1.1G | pnpm 全局 store（重建时填充，后续阶段复用） |
-| `/tmp/oc-test/` | 新增（临时） | 阶段 0 验证用的运行时目录，**不进仓库** |
+## 当时的验证结论
 
-> 注：`/tmp/oc-test/.openclaw/openclaw.json` 是测试配置，openclaw 启动时还会自动往里写入 `gateway.auth.token`、`agents.defaults`、`commands`、`meta` 等字段（自动配置行为）。
+| 验证项 | 结果 | 说明 |
+|---|---|---|
+| OpenClaw CLI 可执行 | ✅ | 当时版本输出 `OpenClaw 2026.3.13` |
+| a2a-gateway 插件加载 | ✅ | `plugins list` 显示 stock plugin loaded |
+| `OPENCLAW_*` 重定向 | ✅ | 基础运行数据写入 `/tmp/oc-test` |
+| gateway / A2A JSON-RPC | ✅ | `/health`、`/a2a/jsonrpc` 可响应 |
+| agent-card | ❌ 404 | 当时主 gateway 与 a2a 插件共用 18800，实际命中主 gateway 404 |
+| 依赖可用性 | ✅（重建后） | 拷贝来的 pnpm `node_modules` 因 store 路径变化出现断链，重装后恢复 |
 
-## 验证结果
+## 当时发现的问题与后续处理
 
-| 验证项 | 结果 | 证据 |
-|--------|------|------|
-| `openclaw --version` | ✅ | `OpenClaw 2026.3.13`，exit 0 |
-| a2a-gateway 插件加载 | ✅ | `plugins list` 显示 `loaded`，Source=`stock:a2a-gateway/index.ts` |
-| `OPENCLAW_*` 环境变量重定向 | ✅ | 运行数据写到 `/tmp/oc-test/.openclaw`，未污染 home |
-| gateway 进程启动并监听 | ✅ | 日志 `a2a-gateway: HTTP listening on 127.0.0.1:18800` + `gRPC listening on 18801` |
-| `/health` | ✅ 200 | 可作 ready 信号 |
-| `/a2a/jsonrpc`、`/a2a/metrics` | ✅ 200 | a2a 服务可用 |
-| `/`（Control UI） | ✅ 200 | HTML（OpenClaw Control 页面） |
-| `/.well-known/agent-card.json` | ❌ 404 | **已知问题，见下** |
+### 1. 拷贝来的 `node_modules` 不可复用
 
-**跑通标准达成**：openclaw 可执行 + a2a-gateway 监听并响应（`/health`、`/a2a/jsonrpc` 200）。
+- 现象：`Cannot find package 'chalk'`，且 pnpm 检测到 store 不一致。
+- 根因：pnpm 顶层依赖是指向全局 store 的符号链接；项目拷贝后原 store 不存在。
+- 决策：用 `CI=true pnpm install --ignore-scripts` 重建。
+- 后续影响：促成 PHASE1 使用 hoisted 扁平依赖构造可分发产物。
 
-## 遇到的问题与决策
+### 2. 未配置 gateway mode 时启动被阻止
 
-### ① 现有 node_modules 不可用，pnpm 触发重建
-- **现象**：首次 `node openclaw.mjs` 报 `Cannot find package 'chalk'`；`pnpm install` 报 `ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY`。
-- **根因**：`openclaw-source/` 是从别处拷贝进本仓库的，`node_modules`（1.9G）随之拷来，但 pnpm 全局 store 路径变了（本机 `~/Library/pnpm/store/v10` 为空）→ 顶层符号链接（如 `node_modules/chalk`）断链 → ESM `import "chalk"` 解析失败。pnpm 检测到 `.modules.yaml` 与当前 store 不一致，要求重建。
-- **决策**：设 `CI=true` 让 pnpm 非交互重建（`pnpm install --ignore-scripts` 跳过原生编译，先验证纯 JS 主链路）。重建耗时 2m1s，store 填充 1.1G，此后可复用。
-- **对后续阶段的影响**：阶段 1 打包时，store 已有缓存，重新 `pnpm install --prod --node-linker=hoisted` 会快很多。
+- 当时使用 `--allow-unconfigured` 临时绕过。
+- 后续在模板中固化 `gateway.mode=local`，正式启动不再依赖该 flag。
 
-### ② gateway 启动被门控拦截
-- **现象**：`gateway run` 日志 `Gateway start blocked: set gateway.mode=local (current: unset) or pass --allow-unconfigured`。
-- **决策**：阶段 0 用 `--allow-unconfigured` 绕过；阶段 3 Swift 注入配置时，应在 `openclaw.json` 写 `"gateway": {"mode": "local"}`（更规范，不依赖命令行 flag）。
+### 3. agent-card 404
 
-### ③ agent-card 端点 404（已知问题，待阶段 3 处理）
-- **现象**：`/.well-known/agent-card.json` 返回 404，而 `/a2a/jsonrpc`、`/a2a/metrics`、`/health` 都 200。
-- **分析**：
-  - `@a2a-js/sdk` 的 `AGENT_CARD_PATH = ".well-known/agent-card.json"`，`a2a-gateway/index.ts:570-575` 确实在该路径注册了 `agentCardHandler`。
-  - `agentCardHandler` 出错时返回 **500**（非 404）；404 响应头含 `X-Content-Type-Options: nosniff`（gateway 主 server 的 header，非 express）。
-  - 结论：请求**未到达** a2a-gateway 的 express app——gateway 主 server 把 `/a2a/*` 代理到 a2a app，但未把 `/.well-known/*` 代理过去。这是定制版 gateway 框架与 a2a-gateway 插件的路由集成细节。
-- **影响**：A2A 协议的标准"发现"端点暂时不可达，外部 peer 无法通过 agent-card 发现本节点。但不影响 gateway 自身运行和 a2a jsonrpc 通信。
-- **决策**：不在阶段 0 深挖（需读 openclaw gateway 框架的 HTTP 代理逻辑，超出范围）。如实记录，留待后续阶段排查。**阶段 3 的 ready 检测改用 `/health`（已验证 200），不依赖 agent-card。**
+- 当时发现 `/.well-known/agent-card.json` 未命中 a2a express app。
+- 后续确认是 Mac 主 gateway 和 a2a-gateway 都占用 18800。
+- 最终由 A2A 端口分离改动解决：Mac 主 gateway 18800，Mac A2A HTTP 18810；详细历史已汇总到 `00_集成总览.md` 与 `工作总结.md`。
 
-### ④ 路径泄漏（阶段 3 必须处理）
-- **现象**：日志显示 `a2a-gateway: durable task store at /Users/jiahaoli/.openclaw/a2a-tasks` 和 `log file: /tmp/openclaw/openclaw-2026-08-04.log`——这些**没被** `OPENCLAW_HOME` 重定向。
-- **根因**：a2a-gateway 的 `storage.tasksDir`、`observability.auditLogPath` 有独立默认值（见 `openclaw.plugin.json`，默认 `~/.openclaw/...`），不受 `OPENCLAW_HOME` 控制。
-- **决策**：阶段 3 注入配置时，在 `plugins.entries.a2a-gateway.config` 里显式设 `storage.tasksDir`、`storage.auditLogPath` 指向 App 的 Application Support 目录，避免写用户 home。
+### 4. a2a 存储路径泄漏到用户 Home
 
-### ⑤ 裁剪线索（供阶段 5）
-`plugins list` 显示大量插件 `disabled`（discord/telegram/whatsapp/matrix/feishu/line/slack/imessage/.../playwright 渠道、llm-task、memory-lancedb 等），仅 `a2a-gateway`、`device-pair`、`memory-core` 是 `loaded`。阶段 5 裁剪时可优先剔除这些 disabled 插件及其依赖。
+- 当时日志显示 durable tasks/audit 使用默认路径。
+- 当前模板已显式配置：
+  - `storage.tasksDir=${OPENCLAW_STATE_DIR}/a2a-tasks`
+  - `observability.auditLogPath=${OPENCLAW_STATE_DIR}/a2a-audit.jsonl`
+- 当前入站文件另配置为用户可见的 `~/Desktop/A2A-Files`。
 
-## 体积数据
+## 2026-08-20 当前状态补充
 
-| 阶段 | node_modules | 说明 |
-|------|--------------|------|
-| 拷贝来的原始 | 1.9G | 含 Windows/Linux 跨平台二进制 + devDependencies |
-| pnpm 重建后（全量，含 dev） | 1.1G | `--ignore-scripts` 未编译原生；结构规整 |
-| 阶段 1 目标（仅 arm64 生产依赖） | 待测 | 预计进一步显著下降 |
+阶段 0 的最小本地验证已演进为真实跨端 A2A 系统：
 
-## 下一步
+- Mac 身份：`TargetMac`；A2A HTTP 18810；主 gateway 18800。
+- HarmonyOS 手机身份：`HW-Phone1`；A2A HTTP 18800。
+- A2A 入站鉴权：bearer token，不再是 `none`。
+- Agent Card URL 使用运行时探测到的 LAN IPv4，而非固定 localhost。
+- 双端通过 registry/tunnel 发现和通信；`verify.sh` 覆盖双向消息与双向文件。
+- 本阶段当时的 404、路径泄漏和无鉴权均已解决或替换。
 
-进入阶段 1：用 `pnpm install --prod --node-linker=hoisted` + `supported-architectures=darwin/arm64` 构造扁平、仅 arm64 生产依赖的离线产物，并用私有 node 验证其自包含可跑。
+## 历史体积数据
+
+| 项目 | 当时数据 | 说明 |
+|---|---:|---|
+| 拷贝来的原始 `node_modules` | 1.9G | 含断链与跨平台内容 |
+| pnpm 重建后 | 1.1G | 阶段 0 基线值 |
+
+> 当前依赖树和构建脚本已更新，体积优化应重新统计最新 `openclaw-bundle-output/`，不应把上述历史数值当成当前精确值。
